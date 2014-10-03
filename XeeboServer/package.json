@@ -1,0 +1,9 @@
+{
+  "name": "xeebo-server",
+  "description": "talks to xeebo sub control and communicates to web interface",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "express": "4.x"
+  }
+}
