@@ -1,10 +1,10 @@
 # Site settings
 title: Xeebo
-email: team@xeebola.com
+email: team@xeeboLA.com
 description: > # this means to ignore newlines until "baseurl:"
   Xeebo is UUV developed by California State University, Long Beach students.
 baseurl: "" # the subpath of your site, e.g. /blog/
-url: "http://xeeboLA.com" # the base hostname & protocol for your site
+url: "http://xeebola.com" # the base hostname & protocol for your site
 #twitter_username: mwvartan
 #github_username:  vartan
 
