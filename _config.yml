@@ -3,20 +3,31 @@ title: Xeebo
 email: team@xeeboLA.com
 description: > # this means to ignore newlines until "baseurl:"
   Xeebo is a UUV developed by students at California State University, Long Beach.
+# Build settings
+safe: true
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://xeebola.com" # the base hostname & protocol for your site
 #twitter_username: mwvartan
 #github_username:  vartan
 permalink: "/:categories/:year/:month/:day/:title/"
-# Build settings
-markdown: kramdown
+
 comments :
   provider : disqus
   disqus :
     short_name : xeebola
+  livefyre :
+    site_id : 123
+  intensedebate :
+    account : 123abc
+  facebook :
+    appid : 123
+    num_posts: 5
+    width: 580
+    colorscheme: light
 
 analytics :
   provider : google
   google : 
       tracking_id : 'UA-38383194-2'
-safe: true
+  getclicky :
+    site_id :
