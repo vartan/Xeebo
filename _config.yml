@@ -2,7 +2,7 @@
 title: Xeebo
 email: team@xeeboLA.com
 description: > # this means to ignore newlines until "baseurl:"
-  Xeebo is a UUV developed by California State University, Long Beach students.
+  Xeebo is a UUV developed by students at California State University, Long Beach.
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://xeebola.com" # the base hostname & protocol for your site
 #twitter_username: mwvartan
