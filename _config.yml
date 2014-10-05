@@ -10,24 +10,3 @@ url: "http://xeebola.com" # the base hostname & protocol for your site
 #twitter_username: mwvartan
 #github_username:  vartan
 permalink: "/:categories/:year/:month/:day/:title/"
-
-comments :
-  provider : disqus
-  disqus :
-    short_name : xeebola
-  livefyre :
-    site_id : 123
-  intensedebate :
-    account : 123abc
-  facebook :
-    appid : 123
-    num_posts: 5
-    width: 580
-    colorscheme: light
-
-analytics :
-  provider : google
-  google : 
-      tracking_id : 'UA-38383194-2'
-  getclicky :
-    site_id :
