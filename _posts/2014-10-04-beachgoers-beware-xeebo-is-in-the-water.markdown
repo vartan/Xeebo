@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Beachgoers beware! Xeebo is now in the water"
+title:  "Beachgoers beware! Xeebo is now in the water!"
 date:   2014-10-04 08:30:36
 categories: water test
 ---
