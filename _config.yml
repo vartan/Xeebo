@@ -10,3 +10,12 @@ url: "http://xeebola.com" # the base hostname & protocol for your site
 permalink: "/:categories/:year/:month/:day/:title/"
 # Build settings
 markdown: kramdown
+comments :
+  provider : disqus
+  disqus :
+    short_name : xeebola
+
+analytics :
+  provider : google
+  google : 
+      tracking_id : 'UA-38383194-2'
