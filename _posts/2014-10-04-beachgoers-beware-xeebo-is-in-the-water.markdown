@@ -2,7 +2,7 @@
 layout: post
 title:  "Beachgoers beware! Xeebo is now in the water"
 date:   2014-10-04 08:30:36
-categories: water, test
+categories: water test
 ---
 Thanks to all of the work of our team members, Xeebo had its first successful underwater test and is now swimming in the water! 
 
