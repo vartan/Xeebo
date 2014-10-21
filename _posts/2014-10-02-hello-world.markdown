@@ -9,8 +9,8 @@ Welcome to the Xeebo Team website! This website has been created for us to publi
 Xeebo is an **Unmanned Underwater Vehicle** which is being designed by undergraduate Senior Project students at California State University, Long Beach. The current Computer Engineering team consists of the following members:
 
 
-* [Brent](mailto:brent@xeebola.com)
-* [Matt](mailto:matt@xeebola.com)
-* [Michael](mailto:michael@xeebola.com)
-* [Sam](mailto:sam@xeebola.com)
-* [Steven](mailto:steven@xeebola.com)
+* [Brent](mailto:brent@zeebo.org)
+* [Matt](mailto:matt@zeebo.org)
+* [Michael](mailto:michael@zeebo.org)
+* [Sam](mailto:sam@zeebo.org)
+* [Steven](mailto:steven@zeebo.org)
