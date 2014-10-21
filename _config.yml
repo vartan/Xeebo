@@ -2,7 +2,7 @@
 title: Zeebo
 email: team@zeebo.org
 description: > # this means to ignore newlines until "baseurl:"
-  Zeebo is a UUV developed by students at California State University, Long Beach.
+  Zeebo is a AUV being developed by students at California State University, Long Beach.
 # Build settings
 safe: true
 baseurl: "" # the subpath of your site, e.g. /blog/
