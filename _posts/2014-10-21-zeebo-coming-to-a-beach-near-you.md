@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Introducing Zeebo, Coming to a Beach Near You"
-date:   2014-10-21 14:30:99
+date:   2014-10-21 14:29:00
 categories: zeebo
 ---
 ![Go Beach!](/images/go-beach.png)
