@@ -12,6 +12,13 @@ Zeebo will be an autonomous underwater vehicle (AUV). The goal of Zeebo is to co
 #Xeebo
 Xeebo is our experimental **Unmanned Underwater Vehicle** which is being designed by undergraduate Senior Project students at California State University, Long Beach. The current Computer Engineering team consists of the following members:
 
-[Brent](mailto:brent@zeebo.org) (Electrical) &bull; [Matt](mailto:matt@zeebo.org) (Wildcard) &bull; [Michael](mailto:michael@zeebo.org) (Programming) &bull; [Sam](mailto:sam@zeebo.org) (Structure) &bull; [Steven](mailto:steven@zeebo.org) (Special Systems)
+Name             | E-mail                                          | Role
+-----------------|-------------------------------------------------|----------------
+Brent Scheneman  | [brent@zeebo.org)](mailto:brent@zeebo.org)      | Electrical
+Michael Vartan   | [michael@zeebo](mailto:michael@zeebo.org)       | Programming
+Samuel Jacobs    | [sam@zeebo.org](mailto:sam@zeebo.org)           | Structure
+Steven Le        | [steven@zeebo.org](mailto:steven@zeebo.org)     | Special Systems
+Matthew Connolly | [mailto:matt@zeebo.org](mailto:matt@zeebo.org)  | Wildcard
+
 
 ![Team Xeebo](/images/team.jpg "Team Xeebo")
