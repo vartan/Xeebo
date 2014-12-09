@@ -4,8 +4,6 @@ title: About
 permalink: /about/
 ---
 
-Welcome to the Zeebo Team website! This website has been created for us to publicly keep track of the progress of our project. You may be asking yourself, *what is Xeebo/Zeebo*?
-
 #Zeebo
 Zeebo will be an autonomous underwater vehicle (AUV). The goal of Zeebo is to compete in AUVSI Robosub 2015.
 
