@@ -4,6 +4,8 @@ title: Team
 permalink: /team/
 ---
 
+The Zeebo team consists of Senior Level Computer Engineering students at California State University, Long Beach.
+
 Name             | E-mail                                          | Role
 -----------------|-------------------------------------------------|----------------
 Brent Scheneman  | [brent@zeebo.org](mailto:brent@zeebo.org)       | Electrical
