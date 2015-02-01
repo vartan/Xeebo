@@ -8,7 +8,7 @@ enum {
   MODE_RELEASE_BINARY
 } BuildMode;
 
-const byte BUILD_MODE = MODE_DEBUG_VERBOSE;
+const byte BUILD_MODE = MODE_RELEASE_BINARY;
 
 const byte PS2_CLK = 13;
 const byte PS2_CMD = 11;
@@ -103,7 +103,15 @@ int initializeControllers() {
   return controllerResponse;
 }
 
-
+/**
+ * Map to Percentage Vector
+ * 
+ * Maps controller vector values to vector signed char format.
+ * @param  value  controller value (From 0 to 255)
+ * @param  invert whether the controller positive is different than the 
+ *                vector value.
+ * @return        vector value (from -127 to +127 inclusive)
+ */
 char mapToPercentageVector(byte value, boolean invert) {
   char newValue = value - 128;
   if(newValue == -128) newValue = -127;
@@ -111,14 +119,19 @@ char mapToPercentageVector(byte value, boolean invert) {
   return newValue;
 }
 
+/**
+ * Calculate motor speeds
+ * 
+ * Calculates motor speeds and checks if they've changed
+ * @return true if motors changed, false if no change.
+ */
 boolean calculateMotorSpeedsChanged() {
   SixMotorControl newMotors = {127,127,127,127,127,127};
   const float INVERTED = -1;
   const float NORMAL   = 1;
-  const float DIAGONAL = 1; //sqrt(2)/2; // should be preprocessed into a good value
 
   motorsDrivenByVectors(&newMotors.pitch_bow, &newMotors.pitch_stern, 
-    subMotion.pitch, NORMAL, INVERTED, subMotion.heave, NORMAL, NORMAL);
+    subMotion.pitch, INVERTED, NORMAL, subMotion.heave, NORMAL, NORMAL);
 
   motorsDrivenByVectors(&newMotors.yaw_port, &newMotors.yaw_starboard, 
     subMotion.yaw, NORMAL, INVERTED, subMotion.surge, NORMAL, NORMAL);
@@ -154,7 +167,7 @@ boolean calculateMotorSpeedsChanged() {
  *                               -1 or 1 depending on motor direction)
  * @return                       void
  */
-void   motorsDrivenByVectors(signed char *motor1, signed char *motor2, 
+void motorsDrivenByVectors(signed char *motor1, signed char *motor2, 
         signed char vector1, char vector1motor1modifier, 
         char vector1motor2modifier, signed char vector2, 
         char vector2motor1modifier, char vector2motor2modifier) {
@@ -164,74 +177,80 @@ void   motorsDrivenByVectors(signed char *motor1, signed char *motor2,
     motor2value,motor1_half_modifier,motor2_half_modifier, signDiffMotor1, 
     signDiffMotor2;
     
+    // Calculate effective motor 1 vectors with modifiers
     motor1values[0] = vector1 * vector1motor1modifier;
     motor1values[1] = vector2 * vector2motor1modifier;
-    
+
+    // Calculate effective motor 2 vectors with modifiers    
     motor2values[0] = vector1 * vector1motor2modifier;
     motor2values[1] = vector2 * vector2motor2modifier;
     
+    // get absolute values of motor values.
     absValues[0] = abs(motor1values[0]);
     absValues[1] = abs(motor1values[1]);
+
+    // get the absolute larger vector
     larger   = (absValues[1] > absValues[0]) ? 1 : 0;
     
+    // motor 1 base is the larger vector of the two
     motor1base     = motor1values[larger];
+    // motor 1 modifier is the smaller of the two vectors
     motor1modifier = motor1values[!larger];
+    // motor 2 base is the larger vector of the two
     motor2base     = motor2values[larger];
+    // motor 2 modifier is the smaller of the two vectors
     motor2modifier = motor2values[!larger];
-    //
+    
+    // Calculate the sign difference (multiplier). The sign difference
+    // will be used to move overflow out of one motor and into another.
+    // This calculation is 100% magic and has no sensible logic -- Michael
     if(larger) {
         signDiffMotor2 = vector1motor1modifier==vector1motor2modifier ? 1 : -1;
         signDiffMotor1 = vector2motor1modifier==vector2motor2modifier ? 1 : -1;
-        //std::cout << "HERE" << a;
     } else {
-
         signDiffMotor1 =  vector1motor1modifier==vector1motor2modifier ? 1 : -1;
         signDiffMotor2 =  vector2motor1modifier==vector2motor2modifier ? 1 : -1;
     }
     signDiffMotor1 *= vector1motor2modifier==vector2motor2modifier ? 1 : -1;
     signDiffMotor2 *= vector1motor1modifier==vector2motor1modifier ? 1 : -1;
     
-    //
-    motor1_half_modifier = motor1modifier/2;
-    motor2_half_modifier = motor2modifier/2;
-    
-    
-    
+    // The motors begin at the base value.
     motor1value = motor1base;
     motor2value = motor2base;
-    
+
+    // Calculate half of the modifier value. This is used because
+    // we modify half on one motor, half on the other.
+    motor1_half_modifier = motor1modifier/2;
+    motor2_half_modifier = motor2modifier/2;   
+    // Add the modifiers
     motor1value += motor1_half_modifier;
     motor2value += motor2_half_modifier;
     
+    // When a value overflows past 127, move the overflow to the other motor.
     if(motor1value > 127) {
         motor2value += signDiffMotor2 * (motor1value-127);
         motor1value = 127;
-
     } else if(motor1value < -127) {
         motor2value += signDiffMotor2 * (motor1value + 127);
         motor1value = -127;
-        
     }
     if(motor2value > 127) {
         motor1value += signDiffMotor1 * (motor2value-127);
         motor2value = 127;
-
     } else if(motor2value < -127) {
-
         motor1value += signDiffMotor1 * (motor2value + 127);
         motor2value = -127;
-
     }
     *motor1 = motor1value;
     *motor2 = motor2value;
-    
 }
 
 
 void loop() {
 
   readController();
-  if(calculateMotorSpeedsChanged())
+  calculateMotorSpeedsChanged();
+  //if(calculateMotorSpeedsChanged())
     sendMotorSpeeds();
   
   delay(50);
