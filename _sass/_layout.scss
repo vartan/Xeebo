@@ -149,7 +149,7 @@
 }
 
 @include media-query($on-palm) {
-    .post-content img {
+    .page-content img {
         float:right;
     }
     .footer-col {
