@@ -13,6 +13,7 @@ It's not gonna work.
 ---
 
 #Michael Vartan
+![Computer](/images/zeebo_computer.jpg)
 
 ##Main Computer
 
