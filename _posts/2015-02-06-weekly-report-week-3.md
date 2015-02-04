@@ -90,6 +90,7 @@ Description 10 OD x .250 wall x 9.50 ID 6061 Aluminum Round Tube
 I have been designing aluminum flanges that will be welded to the main housing. 12 inch diamater acrylic disks will be secured to the flanges with a rubber gasket sitting between them. The layered-materials will be held together with 6 1/2 inch bolts.
 
 ##Projectile Launcher
+
 ###Concept
 The AUVSI RoboSub committie requires that the projectile launcher be non lethal and that the projeciles it launches not reach a velocity in air great enough such that they would cause harm to anyone that they impact. In short, the projectile launcher must be very low performance.
 
