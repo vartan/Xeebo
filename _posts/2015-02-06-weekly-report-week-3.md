@@ -8,7 +8,7 @@ categories: weekly
 This is our first weekly report of the semester
 
 #Brent Scheneman
-...
+It's not gonna work.
 
 #Michael Vartan
 ##Main Computer
