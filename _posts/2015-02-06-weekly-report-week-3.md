@@ -77,7 +77,9 @@ Once the camera arrived, we performed the same test with the live camera feed. W
 
 
 #Sam Jacobs
+
 ##Main Structure Housing Acquisition
+
 The main housing was ordered from metals depot.
 ![T3R10250](/images/tube.jpg)
 
