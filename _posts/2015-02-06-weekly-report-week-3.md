@@ -79,8 +79,8 @@ Once the camera arrived, we performed the same test with the live camera feed. W
 #Sam Jacobs
 ##Main Strcuture Housing Acquisition
 The main housing was ordered from metals depot.
-
-![T3R10250](/images/aluminumtube.jpg)
+###Main Structure Housing
+![T3R10250](/images/aluminumTube.jpg)
 
 Part # T3R10250	
 Description 10 OD x .250 wall x 9.50 ID 6061 Aluminum Round Tube
