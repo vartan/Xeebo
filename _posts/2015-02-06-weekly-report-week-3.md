@@ -61,10 +61,9 @@ We ran into an issue with python versioning, which required us to make a symlink
 Lastly, we installed the “opencv” package via NPM in order to use openCV with NodeJS.
 
 ##Testing
+![OpenCV Test - Live Webcam](/images/michael_circle.png)
 
 ###OpenCV
-
-![OpenCV Test - Live Webcam](/images/michael_circle.png)
 
 We began testing OpenCV via the example program packaged in NPM, which uses face detection to detect Mona Lisa’s face, and then draws a circle over it. 
  
