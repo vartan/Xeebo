@@ -149,6 +149,9 @@
 }
 
 @include media-query($on-palm) {
+    .post-content img {
+        float:right;
+    }
     .footer-col {
         float: none;
         width: -webkit-calc(100% - (#{$spacing-unit} / 2));
@@ -218,7 +221,4 @@
 
 hr {
     clear:both;
-}
-article.post-content img {
-    float:right;
 }
