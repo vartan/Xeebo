@@ -149,10 +149,12 @@
 }
     .page-content img {
         float:right;
+        -webkit-transform: scale(0.95,0.95); /*lazy padding*/
     }
 @include media-query($on-palm) {
     .page-content img {
         float:none;
+        -webkit-transform: scale(1,1);
     }
     .footer-col {
         float: none;
