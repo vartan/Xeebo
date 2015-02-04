@@ -27,9 +27,9 @@ Next, we decided that Arch Linux fit our needs for Zeebo because it is a very ba
   
 ###We used the following resources to install Arch Linux:
 
-* [http://www.linuxveda.com/2014/06/07/arch-linux-tutorial/](http://www.linuxveda.com/2014/06/07/arch-linux-tutorial/)
-* [https://wiki.archlinux.org/index.php/installation_guide#Connect_to_the_Internet](https://wiki.archlinux.org/index.php/installation_guide#Connect_to_the_Internet)
-* [http://www.wikihow.com/Install-Arch-Linux](http://www.wikihow.com/Install-Arch-Linux)
+* [Linux Veda](http://www.linuxveda.com/2014/06/07/arch-linux-tutorial/)
+* [Archlinux Wiki](https://wiki.archlinux.org/index.php/installation_guide#Connect_to_the_Internet)
+* [WikiHow](http://www.wikihow.com/Install-Arch-Linux)
 
 
 
