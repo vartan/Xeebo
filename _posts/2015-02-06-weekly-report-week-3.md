@@ -77,9 +77,8 @@ Once the camera arrived, we performed the same test with the live camera feed. W
 
 
 #Sam Jacobs
-##Main Strcuture Housing Acquisition
+##Main Structure Housing Acquisition
 The main housing was ordered from metals depot.
-###Main Structure Housing
 ![T3R10250](/images/aluminumTube.jpg)
 
 Part: T3R10250	
