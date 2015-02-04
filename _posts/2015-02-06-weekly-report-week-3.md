@@ -15,8 +15,7 @@ This is our first weekly report of the semester
 ...
 
 #Sam Jacobs
-UNDER CONSTRUCTION
-# Main Strcuture Housing Acquisition
+##Main Strcuture Housing Acquisition
 The main housing was ordered from metals depot.
 
 ![T3R10250](/images/aluminumtube.jpg)
@@ -24,10 +23,8 @@ The main housing was ordered from metals depot.
 Part # T3R10250	
 Description 10 OD x .250 wall x 9.50 ID 6061 Aluminum Round Tube
 
-
-Ordered Aluminum Housning
-Received Aluminum Housnig
-Design Refined and Passed off to 
+##Design of Bulkeads for Main Housing
+I have been designing aluminum flanges that will be welded to the main housing. 12 inch diamater acrylic disks will be secured to the flanges with a rubber gasket sitting between them. The "Sandwhich of materials" will be held together with 6 bolts.
 
 CStarted Com[piling parts list for torpeedo
 Design in progress
