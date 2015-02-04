@@ -89,9 +89,7 @@ I have been designing aluminum flanges that will be welded to the main housing. 
 
 ##Projectile Launcher
 ###Concept
-The AUVSI RoboSub committie requires that the projectile launcher be non lethal and that the projeciles it launches not reach a velocity in air great enough such that they would cause harm to anyone that they impact. 
-
-In short, the projectile launcher must be very low performance.
+The AUVSI RoboSub committie requires that the projectile launcher be non lethal and that the projeciles it launches not reach a velocity in air great enough such that they would cause harm to anyone that they impact. In short, the projectile launcher must be very low performance.
 
 ###Projectile Launcher Feature
 The launcher will be 3/4inch PVC with 1/2inch inner diamaeter. One end (the breach) will be capped and have an attachment point such that it sill afix to the main structure of the Zeebo UUV. The breach will have a spring that will compress when the missile is loaded. The muzzle end will be open to the water, and the missile will exit the muzzle end of the launcher when fired.
