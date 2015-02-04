@@ -10,6 +10,8 @@ This is our first weekly report of the semester
 #Brent Scheneman
 It's not gonna work.
 
+---
+
 #Michael Vartan
 
 ##Main Computer
@@ -70,10 +72,13 @@ Once the camera arrived, we performed the same test with the live camera feed. W
 
 ![OpenCV Test - Live Webcam](/images/michael_circle.png)
 
+---
 
 
 #Sam Jacobs
 Yelling!!!!
+
+---
 
 #Steven Le
 ...
