@@ -146,12 +146,14 @@
         width: -webkit-calc(100% - (#{$spacing-unit} / 2));
         width:         calc(100% - (#{$spacing-unit} / 2));
     }
+}
     .page-content img {
         float:right;
     }
-}
-
 @include media-query($on-palm) {
+    .page-content img {
+        float:none;
+    }
     .footer-col {
         float: none;
         width: -webkit-calc(100% - (#{$spacing-unit} / 2));
