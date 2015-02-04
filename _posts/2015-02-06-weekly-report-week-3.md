@@ -24,9 +24,9 @@ Next, we decided that Arch Linux fit our needs for Zeebo because it is a very ba
   
 ###We used the following resources to install Arch Linux:
 
-* http://www.linuxveda.com/2014/06/07/arch-linux-tutorial/
-* https://wiki.archlinux.org/index.php/installation_guide#Connect_to_the_Internet
-* http://www.wikihow.com/Install-Arch-Linux
+* [http://www.linuxveda.com/2014/06/07/arch-linux-tutorial/](http://www.linuxveda.com/2014/06/07/arch-linux-tutorial/)
+* [https://wiki.archlinux.org/index.php/installation_guide#Connect_to_the_Internet](https://wiki.archlinux.org/index.php/installation_guide#Connect_to_the_Internet)
+* [http://www.wikihow.com/Install-Arch-Linux](http://www.wikihow.com/Install-Arch-Linux)
 
 
 
@@ -68,6 +68,7 @@ We began testing OpenCV via the example program packaged in NPM, which uses face
 
 Once the camera arrived, we performed the same test with the live camera feed. We benchmarked that our computer could perform face detection on over 10 frames per second. We anticipate that face detection is more resource intensive than finding simple shapes and colors, so we will have no problem with being able to react quick enough for our missions. 
 
+![OpenCV Test - Live Webcam](/images/michael_circle.png)
 
 
 
