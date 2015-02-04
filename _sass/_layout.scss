@@ -147,8 +147,16 @@
         width:         calc(100% - (#{$spacing-unit} / 2));
     }
 }
-
+    .page-content img {
+        border-radius: 10px;
+        float:right;
+        -webkit-transform: scale(0.95,0.95); /*lazy padding*/
+    }
 @include media-query($on-palm) {
+    .page-content img {
+        float:none;
+        -webkit-transform: scale(1,1);
+    }
     .footer-col {
         float: none;
         width: -webkit-calc(100% - (#{$spacing-unit} / 2));
@@ -210,31 +218,12 @@
 .post-content {
     margin-bottom: $spacing-unit;
 
-    h2 {
-        font-size: 32px;
-
-        @include media-query($on-laptop) {
-            font-size: 28px;
-        }
-    }
-
-    h3 {
-        font-size: 26px;
-
-        @include media-query($on-laptop) {
-            font-size: 22px;
-        }
-    }
-
-    h4 {
-        font-size: 20px;
-
-        @include media-query($on-laptop) {
-            font-size: 18px;
-        }
-    }
 }
 
 .rss-subscribe {
     font-size:smaller;
+}
+
+hr {
+    clear:both;
 }
