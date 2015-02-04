@@ -205,13 +205,13 @@ pre {
 
 /* Create a step size.*/
 /* This is the percentage each heading will be reduced by. */
-$step-size-heading: 0.33333;
+$step-size-heading: 0.2;
 /* The mixin */
 @mixin heading-size($size) {
     font-size: $size * $step-size-heading + em;
 }
 h1 {
-    @include heading-size(6);
+    @include heading-size(8);
 }
 h2 {
     @include heading-size(5);
