@@ -64,13 +64,14 @@ Lastly, we installed the “opencv” package via NPM in order to use openCV wit
 
 ###OpenCV
 
+![OpenCV Test - Live Webcam](/images/michael_circle.png)
+
 We began testing OpenCV via the example program packaged in NPM, which uses face detection to detect Mona Lisa’s face, and then draws a circle over it. 
  
 ###Camera
 
 Once the camera arrived, we performed the same test with the live camera feed. We benchmarked that our computer could perform face detection on over 10 frames per second. We anticipate that face detection is more resource intensive than finding simple shapes and colors, so we will have no problem with being able to react quick enough for our missions. 
 
-![OpenCV Test - Live Webcam](/images/michael_circle.png)
 
 ---
 
