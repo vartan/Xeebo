@@ -82,7 +82,7 @@ The main housing was ordered from metals depot.
 ###Main Structure Housing
 ![T3R10250](/images/aluminumTube.jpg)
 
-Part # T3R10250	
+Part: T3R10250	
 Description 10 OD x .250 wall x 9.50 ID 6061 Aluminum Round Tube
 
 ##Design of Bulkeads for Main Housing
