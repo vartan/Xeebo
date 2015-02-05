@@ -8,11 +8,13 @@ categories: weekly
 This is our first weekly report of the semester
 
 #Brent Scheneman
-![BreakoutBrd](/images/zeebo_breakoutBrd.jpg)
 
 ##LPC11U24 Breakout Board
+![BreakoutBrd](/images/zeebo_breakoutBrd.jpg)
 
-To help with the developement of the firmware for the thruster driver/control board, designing of a breakout board for the LPC11U24 microcontroller began. This will speed up the thruster driver/control board development because while the physical aspects of the thruster driver/control board is being designed, the firmware can be developed in parallel. After a schematic and a preliminary board layout was finished, Team Zeebo decided to purchase a pre-made breakout board. This has saved both time and money. 
+To help with the developement of the firmware for the thruster driver/control board, we decided to designa  breakout board for the LPC11U24 microcontroller. This will speed up the thruster driver/control board development because while the physical aspects of the thruster driver/control board is being designed, the firmware can be developed and tested in parallel. After a schematic and a preliminary board layout was finished, Team Zeebo decided to purchase a pre-made breakout board (LPXCpresso LPC11U24). This has saved both time and money.
+
+![LPCXpresso](/images/zeebo_lpcxpresso.jpg)
 
 ##Thruster Driver/Control Board
 
