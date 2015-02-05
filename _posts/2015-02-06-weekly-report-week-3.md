@@ -14,6 +14,10 @@ This is our first weekly report of the semester
 
 To help with the developement of the firmware for the thruster driver/control board, designing of a breakout board for the LPC11U24 microcontroller began. This will speed up the thruster driver/control board development because while the physical aspects of the thruster driver/control board is being designed, the firmware can be developed in parallel. After a schematic and a preliminary board layout was finished, Team Zeebo decided to purchase a pre-made breakout board. This has saved both time and money. 
 
+##Thruster Driver/Control Board
+
+The first stages of designing the thruster driver board has begun. Currently it is in the schematic phase. So far all the component layouts and schematic symbols have been created. The schematic and board layout has been completed for the H-Bridges, which include four N-Channel MOSFETs. The next step is to add the Full-Bridge MOSFET Driver (A3940) and LPC11U24 to the design. 
+
 ---
 
 #Michael Vartan
