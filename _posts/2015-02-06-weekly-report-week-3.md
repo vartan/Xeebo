@@ -86,21 +86,22 @@ Once the camera arrived, we performed the same test with the live camera feed. W
 ---
 
 
+
 #Sam Jacobs
-
 ##Main Structure Housing Acquisition
-
 The main housing was ordered from metals depot.
-![T3R10250](/images/tube.jpg)
+#![T3R10250](/images/tube.jpg)
 
-Part: T3R10250	
+Part: T3R10250  
 Description 10 OD x .250 wall x 9.50 ID 6061 Aluminum Round Tube
 
 ##Design of Bulkeads for Main Housing
 I have been designing aluminum flanges that will be welded to the main housing. 12 inch diamater acrylic disks will be secured to the flanges with a rubber gasket sitting between them. The layered-materials will be held together with 6 1/2 inch bolts.
 
-##Projectile Launcher
+##Conceptual Design: Bulkhead Integration with Housing
+#![bulkheadDesign](/images/bulkheadDesign.jpg)
 
+##Projectile Launcher
 ###Concept
 The AUVSI RoboSub committie requires that the projectile launcher be non lethal and that the projeciles it launches not reach a velocity in air great enough such that they would cause harm to anyone that they impact. In short, the projectile launcher must be very low performance.
 
@@ -108,10 +109,10 @@ The AUVSI RoboSub committie requires that the projectile launcher be non lethal 
 The launcher will be 3/4inch PVC with 1/2inch inner diamaeter. One end (the breach) will be capped and have an attachment point such that it sill afix to the main structure of the Zeebo UUV. The breach will have a spring that will compress when the missile is loaded. The muzzle end will be open to the water, and the missile will exit the muzzle end of the launcher when fired.
 
 ####Launcher Apparatus
-At a length in the launcher the length of the torpedo there will be an aparatus that will be controlled with an electormechanical device, either a stepper motor with a lever, a high tourque servo motor (cheapest) attached to a rotating cylinder, or a linear actuator (expensive). When the electromechanical device is actived it will cause the apparatus to unobstruct the blocking component that is holding the torpedo in the launcher, causing the spring to expand and the torpedo to achieve a linear velocity and exit the launcher. 
+At a length in the launcher the length of the missile there will be an aparatus that will be controlled with an electormechanical device, either a stepper motor with a lever, a high tourque servo motor (cheapest) attached to a rotating cylinder, or a linear actuator (expensive). When the electromechanical device is actived it will cause the apparatus to unobstruct the blocking component that is holding the missile in the launcher, causing the spring to expand and the missile to achieve a linear velocity and exit the launcher. 
 
-####Torpedos
-The torpedos will be made of Pipe 1/2 inch in diamater 6 inches long with stabalizing fins and a nose-cone. The pipe will be made out af a lightweight material and will be small enough in diamater that it will be able to freely slide out of the launcher while still being held in place by the launcher.
+####Missiles(Torpedos) 
+The missiles will be made of Pipe 1/2 inch in diamater 6 inches long with stabalizing fins and a nose-cone. The pipe will be made out af a lightweight material and will be small enough in diamater that it will be able to freely slide out of the launcher while still being held in place by the launcher.
 
 
 ---
