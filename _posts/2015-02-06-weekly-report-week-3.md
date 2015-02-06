@@ -111,4 +111,39 @@ The missiles will be made of Pipe 1/2 inch in diamater 6 inches long with stabal
 ---
 
 #Steven Le
-...
+
+##Procurement of Parts
+
+Parts from Digikey and Digilent have come in to complete the list of components for this project:
+    8-ohm, 3-watt speaker (100Hz-20kHz frequency range)
+    Electret Condenser Microphone (omnidirectional 20Hz-20kHz)
+    Various ranges of resistors, capacitors, transistors
+    Jumper wires
+    Pushbuttons
+    Breadboard
+    LM741 Operational Amplifiers
+    mbed LPC1768 Microcontroller
+
+###Additional Notes
+An additional microcontroller is purchased with an expected lead time of a week to save time and separating the circuits for receive and transmit.  It proved time consuming to testing circuits using one uC.
+
+##Debugging Tools & Software
+I will be utilizing the Analog Discovery from Digilent which will supplement in troubleshooting throughout the project using oscilloscope features and measuring capabilities on provided software Digilent WaveForms.
+
+##Concept
+In designing the acoustic modem, the approached method is binary frequency-shift keying.
+http://en.wikipedia.org/wiki/Frequency-shift_keying#Audio_FSK
+This modulation method (BFSK) will be using a pair of frequencies for data transmission through series of 0s and 1s (binary).
+
+"1" = mark frequency
+"0" = space frequency
+
+An example from wikipedia is shown below:
+[img]http://en.wikipedia.org/wiki/Frequency-shift_keying#mediaviewer/File:Fsk.svg[/img]
+
+In regards to demodulating a BFSK signal, I'm researching into utilizing the "Goertzel algorithm" on the microcontroller as a more efficient method to perform tone detection with less CPU power than utilizing the Fast Fourier Transform (FFT).
+(Resource: http://www.embedded.com/design/configurable-systems/4024443/The-Goertzel-Algorithm)
+
+##Application
+
+##Flowchart
