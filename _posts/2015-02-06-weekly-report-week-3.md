@@ -154,3 +154,4 @@ In regards to demodulating a BFSK signal, I'm researching into utilizing the "Go
 ##Application
 
 ##Flowchart
+#![Receive Flowchart](/images/am_flowchart.png)
