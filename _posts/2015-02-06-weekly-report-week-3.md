@@ -121,15 +121,7 @@ The missiles will be made of Pipe 1/2 inch in diamater 6 inches long with stabal
 
 ##Procurement of Parts
 
-Parts from Digikey and Digilent have come in to complete the list of components for this project:
-####8-ohm, 3-watt speaker (100Hz-20kHz frequency range)
-####Electret Condenser Microphone (omnidirectional 20Hz-20kHz)
-####Various ranges of resistors, capacitors, transistors
-####Jumper wires
-####Pushbuttons
-####Breadboard
-####LM741 Operational Amplifiers
-####mbed LPC1768 Microcontroller
+Parts from Digikey and Digilent have come in to complete the list of components for this project: 8-ohm, 3-watt speaker (100Hz-20kHz frequency range), Electret Condenser Microphone (omnidirectional 20Hz-20kHz), Various ranges of resistors, capacitors, transistors, Jumper wires, Pushbuttons, Breadboards, LM741 Operational Amplifiers, mbed LPC1768 Microcontroller
 
 ###Additional Notes
 An additional microcontroller is purchased with an expected lead time of a week to save time and separating the circuits for receive and transmit.  It proved time consuming to testing circuits using one uC.
