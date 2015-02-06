@@ -8,11 +8,17 @@ categories: weekly
 This is our first weekly report of the semester
 
 #Brent Scheneman
-![BreakoutBrd](/images/zeebo_breakoutBrd.jpg)
 
 ##LPC11U24 Breakout Board
+![BreakoutBrd](/images/zeebo_breakoutBrd.jpg)
 
-To help with the developement of the firmware for the thruster driver/control board, designing of a breakout board for the LPC11U24 microcontroller began. This will speed up the thruster driver/control board development because while the physical aspects of the thruster driver/control board is being designed, the firmware can be developed in parallel. After a schematic and a preliminary board layout was finished, Team Zeebo decided to purchase a pre-made breakout board. This has saved both time and money. 
+To help with the developement of the firmware for the thruster driver/control board, we decided to designa  breakout board for the LPC11U24 microcontroller. This will speed up the thruster driver/control board development because while the physical aspects of the thruster driver/control board is being designed, the firmware can be developed and tested in parallel. After a schematic and a preliminary board layout was finished, Team Zeebo decided to purchase a pre-made breakout board (LPXCpresso LPC11U24). This has saved both time and money.
+
+![LPCXpresso](/images/zeebo_lpcxpresso.jpg)
+
+##Thruster Driver/Control Board
+
+The first stages of designing the thruster driver board has begun. Currently it is in the schematic phase. So far all the component layouts and schematic symbols have been created. The schematic and board layout has been completed for the H-Bridges, which include four N-Channel MOSFETs. The next step is to add the Full-Bridge MOSFET Driver (A3940) and LPC11U24 to the design. 
 
 ---
 
@@ -80,21 +86,22 @@ Once the camera arrived, we performed the same test with the live camera feed. W
 ---
 
 
+
 #Sam Jacobs
-
 ##Main Structure Housing Acquisition
-
 The main housing was ordered from metals depot.
-![T3R10250](/images/tube.jpg)
+#![T3R10250](/images/tube.jpg)
 
-Part: T3R10250	
+Part: T3R10250  
 Description 10 OD x .250 wall x 9.50 ID 6061 Aluminum Round Tube
 
 ##Design of Bulkeads for Main Housing
 I have been designing aluminum flanges that will be welded to the main housing. 12 inch diamater acrylic disks will be secured to the flanges with a rubber gasket sitting between them. The layered-materials will be held together with 6 1/2 inch bolts.
 
-##Projectile Launcher
+##Conceptual Design: Bulkhead Integration with Housing
+#![bulkheadDesign](/images/bulkheadDesign.jpg)
 
+##Projectile Launcher
 ###Concept
 The AUVSI RoboSub committie requires that the projectile launcher be non lethal and that the projeciles it launches not reach a velocity in air great enough such that they would cause harm to anyone that they impact. In short, the projectile launcher must be very low performance.
 
@@ -104,7 +111,7 @@ The launcher will be 3/4inch PVC with 1/2inch inner diamaeter. One end (the brea
 ####Launcher Apparatus
 At a length in the launcher the length of the missile there will be an aparatus that will be controlled with an electormechanical device, either a stepper motor with a lever, a high tourque servo motor (cheapest) attached to a rotating cylinder, or a linear actuator (expensive). When the electromechanical device is actived it will cause the apparatus to unobstruct the blocking component that is holding the missile in the launcher, causing the spring to expand and the missile to achieve a linear velocity and exit the launcher. 
 
-####Missiles(Torpedos)
+####Missiles(Torpedos) 
 The missiles will be made of Pipe 1/2 inch in diamater 6 inches long with stabalizing fins and a nose-cone. The pipe will be made out af a lightweight material and will be small enough in diamater that it will be able to freely slide out of the launcher while still being held in place by the launcher.
 
 
