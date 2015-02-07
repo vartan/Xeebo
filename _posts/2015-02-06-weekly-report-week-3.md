@@ -146,8 +146,9 @@ In regards to demodulating a BFSK signal, I'm researching into utilizing the "Go
 ##Transmit Circuit
 The current design for data transmission utilizes the speaker, pushbuttons, mbed, and an 2N3904 transistor.  For testing purposes, the mbed microcontroller supplies the speaker with an output 3.3V with the power source from USB via laptop.  The circuit was successfully tested live with pushbuttons to send out different frequency tones with UART output on Tera Term for verification.  Following this test, coding was modified to send out a single signal with a pair of frequencies to further test BFSK.  This was verified through audible hearing ranges and the Analog Discovery.
 
+![Receive/Transmit Schematic](/images/am_schematic.png)
+These are the current schematics implemented in hardware.  The receive is still being tested this week due to unacceptable voltage readings.
+
 ##Receive Circuit
 ![Receive Flowchart](/images/am_flowchart.png)
 This is the current flow chart for the data receiving end of the acoustic modem.  It may be modified when the amplified microphone is implemented in hardware for testing and prototyping.  Software coding is being written and a test will be completed next report.
-
-##Application
