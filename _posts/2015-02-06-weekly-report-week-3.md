@@ -128,6 +128,7 @@ An additional microcontroller is purchased with an expected lead time of a week 
 
 ##Debugging Tools & Software
 I will be utilizing the Analog Discovery from Digilent which will supplement in troubleshooting throughout the project using oscilloscope features and measuring capabilities on provided software Digilent WaveForms.
+![Analog Discovery](/images/am_parts.jpg)
 
 ##Concept
 In designing the acoustic modem, the approached method is binary frequency-shift keying.
