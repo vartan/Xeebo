@@ -12,13 +12,15 @@ This is our first weekly report of the semester
 ##LPC11U24 Breakout Board
 ![BreakoutBrd](/images/zeebo_breakoutBrd.jpg)
 
-To help with the developement of the firmware for the thruster driver/control board, we decided to designa  breakout board for the LPC11U24 microcontroller. This will speed up the thruster driver/control board development because while the physical aspects of the thruster driver/control board is being designed, the firmware can be developed and tested in parallel. After a schematic and a preliminary board layout was finished, Team Zeebo decided to purchase a pre-made breakout board (LPXCpresso LPC11U24). This has saved both time and money.
+To help with the developement of the firmware for the thruster driver/control board, we decided to design a  breakout board for the LPC11U24 micro-controller. This will speed up the thruster driver/control board development because while the physical aspects of the thruster driver/control board is being designed, the firmware can be developed and tested in parallel. After a schematic and a preliminary board layout was finished, Team Zeebo decided to purchase a pre-made breakout board (LPXCpresso LPC11U24). This has saved both time and money. Since receiving the breakout board, it has become obvious that we will use Keil instead of the intended LPCXpresso IDE that the JTAG debugger was designed for. LPCXpresso is built off of Eclipse and thus, requires more depedent library packages to be loaded compared to Keil. Plus, the entire team is familiar with Keil.
 
 ![LPCXpresso](/images/zeebo_lpcxpresso.jpg)
 
 ##Thruster Driver/Control Board
 
 The first stages of designing the thruster driver board has begun. Currently it is in the schematic phase. So far all the component layouts and schematic symbols have been created. The schematic and board layout has been completed for the H-Bridges, which include four N-Channel MOSFETs. The next step is to add the Full-Bridge MOSFET Driver (A3940) and LPC11U24 to the design. 
+
+![H-Bridge](/images/zeebo_hbridge.jpg)
 
 ---
 
