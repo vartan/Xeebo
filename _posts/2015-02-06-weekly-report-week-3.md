@@ -18,7 +18,7 @@ To help with the developement of the firmware for the thruster driver/control bo
 
 ##Thruster Driver/Control Board
 
-The first stages of designing the thruster driver board has begun. Currently it is in the schematic phase. So far all the component layouts and schematic symbols have been created. The schematic and board layout has been completed for the H-Bridges, which include four N-Channel MOSFETs. The next step is to add the Full-Bridge MOSFET Driver (A3940) and LPC11U24 to the design. 
+The first stages of designing the thruster driver board has begun. Currently it is in the schematic phase. So far all the component layouts and schematic symbols have been created. The schematic and board layout has been completed for the H-Bridges, which include four N-Channel MOSFETs. Also included in the output stage of the board are current sensors (AC711). The are hall effect current sensors that will used to monitor the current usage of the 6 individual thrusters. The next step is to add the Full-Bridge MOSFET Driver (A3940) and LPC11U24 to the design. 
 
 ![H-Bridge](/images/zeebo_hbridge.jpg)
 
