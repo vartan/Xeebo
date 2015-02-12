@@ -5,7 +5,7 @@ date:   2015-02-13 00:00:00
 categories: weekly
 ---
 
-This is our first weekly report of the semester
+This is our second weekly report of the semester
 
 #Brent Scheneman
 
