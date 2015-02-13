@@ -5,17 +5,6 @@
  *      Author: vartan
  */
 
-/*
-typedef struct {
-	uint32_t *pwmRegister;
-	uint8_t pwmMask;
-	uint32_t *directionRegister;
-	uint8_t directionMask;
-	int8_t value;
-} PWM_Pin;
-
-static PWM_Pin *pwmPins;
-static uint8_t pwmPinCount;*/
 #include "globals.h"
 
 #include "MotorDriver.h"
@@ -28,22 +17,19 @@ void initMotorDrivers(struct MotorDriver *_motorDrivers) {
 }
 
 void motorDriverPWMCycle() {
-	static uint8_t currentPWMPercent;
+	static uint8_t currentPWMCycle;
 
-	int i;
-	struct MotorDriver motor;
+	int i, motorValue;
 	for(i = 0; i < MOTOR_COUNT; i++) {
-		motor = motorDrivers[i];
-		if(motor.value > currentPWMPercent) {
-			*motor.pwmRegister |= motor.pwmMask;
-			if(motor.value<0)
-				*motor.directionRegister |= motor.directionMask;
-			else
-				*motor.directionRegister &= ~motor.directionMask;
-
+	    motorValue = motorDrivers[i].speed;
+	    // add 100 to motor value in order to convert from [-100, 100] to [0, 100]
+		if(motorValue && motorValue + 100 > currentPWMCycle) {
+	        *motorDrivers[i].enabledRegister |= motorDrivers[i].enabledMask;
+		    *motorDrivers[i].pwmRegister |= motorDrivers[i].pwmMask;
 		} else {
-			*motor.pwmRegister &= (~motor.pwmMask);
+		    *motorDrivers[i].enabledRegister &= ~motorDrivers[i].enabledMask;
+		    *motorDrivers[i].enabledRegister &= ~motorDrivers[i].pwmMask;
 		}
 	}
-	currentPWMPercent++;
+	currentPWMCycle = (currentPWMCycle + 1) % PWM_RESOLUTION;
 }

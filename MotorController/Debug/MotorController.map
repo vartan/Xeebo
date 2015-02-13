@@ -5,7 +5,7 @@ Archive member included because of file (symbol)
 /Applications/lpcxpresso_7.6.2_326/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m/libcr_c.a(__weak__main.o)
                               ./cr_startup_lpc11u.o (__main)
 /Applications/lpcxpresso_7.6.2_326/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m/libcr_eabihelpers.a(division_32.o)
-                              /Users/vartan/LPCXpresso/workspace/CMSISv2p00_LPC11Uxx/Debug/libCMSISv2p00_LPC11Uxx.a(system_LPC11Uxx.o) (__aeabi_uidiv)
+                              ./MotorDriver.o (__aeabi_idivmod)
 /Applications/lpcxpresso_7.6.2_326/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m/libcr_eabihelpers.a(division_idiv0.o)
                               /Applications/lpcxpresso_7.6.2_326/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m/libcr_eabihelpers.a(division_32.o) (__aeabi_idiv0)
 
@@ -106,17 +106,9 @@ Discarded input sections
  .text          0x0000000000000000        0x0 /Applications/lpcxpresso_7.6.2_326/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m/libcr_eabihelpers.a(division_32.o)
  .data          0x0000000000000000        0x0 /Applications/lpcxpresso_7.6.2_326/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m/libcr_eabihelpers.a(division_32.o)
  .bss           0x0000000000000000        0x0 /Applications/lpcxpresso_7.6.2_326/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m/libcr_eabihelpers.a(division_32.o)
- .text.__aeabi_division_idivmod
-                0x0000000000000000       0x78 /Applications/lpcxpresso_7.6.2_326/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m/libcr_eabihelpers.a(division_32.o)
- .ARM.attributes
-                0x0000000000000000       0x21 /Applications/lpcxpresso_7.6.2_326/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m/libcr_eabihelpers.a(division_32.o)
  .text          0x0000000000000000        0x0 /Applications/lpcxpresso_7.6.2_326/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m/libcr_eabihelpers.a(division_idiv0.o)
  .data          0x0000000000000000        0x0 /Applications/lpcxpresso_7.6.2_326/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m/libcr_eabihelpers.a(division_idiv0.o)
  .bss           0x0000000000000000        0x0 /Applications/lpcxpresso_7.6.2_326/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m/libcr_eabihelpers.a(division_idiv0.o)
- .text.__aeabi_division_idiv0
-                0x0000000000000000        0x2 /Applications/lpcxpresso_7.6.2_326/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m/libcr_eabihelpers.a(division_idiv0.o)
- .ARM.attributes
-                0x0000000000000000       0x21 /Applications/lpcxpresso_7.6.2_326/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m/libcr_eabihelpers.a(division_idiv0.o)
 
 Memory Configuration
 
@@ -141,7 +133,7 @@ END GROUP
                 0x0000000010002000                __top_RamLoc8 = 0x10002000
                 0x0000000020004800                __top_RamUsb2 = 0x20004800
 
-.text           0x0000000000000000      0x39c
+.text           0x0000000000000000      0x474
  FILL mask 0xff
                 0x0000000000000000                __vectors_start__ = ABSOLUTE (.)
  *(.isr_vector)
@@ -150,10 +142,10 @@ END GROUP
                 0x00000000000000c0                . = ALIGN (0x4)
                 0x00000000000000c0                __section_table_start = .
                 0x00000000000000c0                __data_section_table = .
-                0x00000000000000c0        0x4 LONG 0x39c LOADADDR (.data)
+                0x00000000000000c0        0x4 LONG 0x474 LOADADDR (.data)
                 0x00000000000000c4        0x4 LONG 0x10000000 ADDR (.data)
                 0x00000000000000c8        0x4 LONG 0x0 SIZEOF (.data)
-                0x00000000000000cc        0x4 LONG 0x39c LOADADDR (.data_RAM2)
+                0x00000000000000cc        0x4 LONG 0x474 LOADADDR (.data_RAM2)
                 0x00000000000000d0        0x4 LONG 0x20004000 ADDR (.data_RAM2)
                 0x00000000000000d4        0x4 LONG 0x0 SIZEOF (.data_RAM2)
                 0x00000000000000d8                __data_section_table_end = .
@@ -197,56 +189,66 @@ END GROUP
                 0x0000000000000158       0x1c ./MotorDriver.o
                 0x0000000000000158                initMotorDrivers
  .text.motorDriverPWMCycle
-                0x0000000000000174       0xb0 ./MotorDriver.o
+                0x0000000000000174      0x10c ./MotorDriver.o
                 0x0000000000000174                motorDriverPWMCycle
- .text.main     0x0000000000000224       0x10 ./main.o
-                0x0000000000000224                main
+ .text.main     0x0000000000000280       0x10 ./main.o
+                0x0000000000000280                main
  .text.NVIC_EnableIRQ
-                0x0000000000000234       0x2c ./timers.o
+                0x0000000000000290       0x2c ./timers.o
  .text.initMotorTimers
-                0x0000000000000260       0x58 ./timers.o
-                0x0000000000000260                initMotorTimers
+                0x00000000000002bc       0x58 ./timers.o
+                0x00000000000002bc                initMotorTimers
  .text.TIMER32_0_IRQHandler
-                0x00000000000002b8        0xc ./timers.o
-                0x00000000000002b8                TIMER32_0_IRQHandler
+                0x0000000000000314        0xc ./timers.o
+                0x0000000000000314                TIMER32_0_IRQHandler
  .text.SystemInit
-                0x00000000000002c4       0xd0 /Users/vartan/LPCXpresso/workspace/CMSISv2p00_LPC11Uxx/Debug/libCMSISv2p00_LPC11Uxx.a(system_LPC11Uxx.o)
-                0x00000000000002c4                SystemInit
+                0x0000000000000320       0xd0 /Users/vartan/LPCXpresso/workspace/CMSISv2p00_LPC11Uxx/Debug/libCMSISv2p00_LPC11Uxx.a(system_LPC11Uxx.o)
+                0x0000000000000320                SystemInit
  .text.__weak_main
-                0x0000000000000394        0x8 /Applications/lpcxpresso_7.6.2_326/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m/libcr_c.a(__weak__main.o)
-                0x0000000000000394                __main
-                0x0000000000000394                __weak_main
+                0x00000000000003f0        0x8 /Applications/lpcxpresso_7.6.2_326/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m/libcr_c.a(__weak__main.o)
+                0x00000000000003f0                __main
+                0x00000000000003f0                __weak_main
+ .text.__aeabi_division_idivmod
+                0x00000000000003f8       0x78 /Applications/lpcxpresso_7.6.2_326/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m/libcr_eabihelpers.a(division_32.o)
+                0x00000000000003f8                __aeabi_idiv
+                0x00000000000003f8                __aeabi_idivmod
+                0x00000000000003fe                __aeabi_uidiv
+                0x00000000000003fe                __aeabi_uidivmod
+ .text.__aeabi_division_idiv0
+                0x0000000000000470        0x2 /Applications/lpcxpresso_7.6.2_326/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m/libcr_eabihelpers.a(division_idiv0.o)
+                0x0000000000000470                __aeabi_idiv0
  *(.rodata .rodata.* .constdata .constdata.*)
-                0x000000000000039c                . = ALIGN (0x4)
+                0x0000000000000474                . = ALIGN (0x4)
+ *fill*         0x0000000000000472        0x2 ff
 
-.glue_7         0x000000000000039c        0x0
+.glue_7         0x0000000000000474        0x0
  .glue_7        0x0000000000000000        0x0 linker stubs
 
-.glue_7t        0x000000000000039c        0x0
+.glue_7t        0x0000000000000474        0x0
  .glue_7t       0x0000000000000000        0x0 linker stubs
 
-.vfp11_veneer   0x000000000000039c        0x0
+.vfp11_veneer   0x0000000000000474        0x0
  .vfp11_veneer  0x0000000000000000        0x0 linker stubs
 
-.v4_bx          0x000000000000039c        0x0
+.v4_bx          0x0000000000000474        0x0
  .v4_bx         0x0000000000000000        0x0 linker stubs
 
-.iplt           0x000000000000039c        0x0
+.iplt           0x0000000000000474        0x0
  .iplt          0x0000000000000000        0x0 ./MotorDriver.o
 
-.rel.dyn        0x000000000000039c        0x0
+.rel.dyn        0x0000000000000474        0x0
  .rel.iplt      0x0000000000000000        0x0 ./MotorDriver.o
 
 .ARM.extab
  *(.ARM.extab* .gnu.linkonce.armextab.*)
-                0x000000000000039c                __exidx_start = .
+                0x0000000000000474                __exidx_start = .
 
 .ARM.exidx
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
-                0x000000000000039c                __exidx_end = .
-                0x000000000000039c                _etext = .
+                0x0000000000000474                __exidx_end = .
+                0x0000000000000474                _etext = .
 
-.data_RAM2      0x0000000020004000        0x0 load address 0x000000000000039c
+.data_RAM2      0x0000000020004000        0x0 load address 0x0000000000000474
  FILL mask 0xff
                 0x0000000020004000                PROVIDE (__start_data_RAM2, .)
  *(.ramfunc.$RAM2)
@@ -262,7 +264,7 @@ END GROUP
                 0x0000000010000000                . = ALIGN (0x4)
                 0x0000000010000000                _end_uninit_RESERVED = .
 
-.data           0x0000000010000000        0x0 load address 0x000000000000039c
+.data           0x0000000010000000        0x0 load address 0x0000000000000474
  FILL mask 0xff
                 0x0000000010000000                _data = .
  *(vtable)
@@ -271,7 +273,7 @@ END GROUP
                 0x0000000010000000                . = ALIGN (0x4)
                 0x0000000010000000                _edata = .
 
-.igot.plt       0x0000000010000000        0x0 load address 0x000000000000039c
+.igot.plt       0x0000000010000000        0x0 load address 0x0000000000000474
  .igot.plt      0x0000000000000000        0x0 ./MotorDriver.o
 
 .bss_RAM2       0x0000000020004000        0x0
@@ -284,7 +286,7 @@ END GROUP
 .bss            0x0000000010000000        0x8
                 0x0000000010000000                _bss = .
  *(.bss*)
- .bss.currentPWMPercent.3822
+ .bss.currentPWMCycle.3822
                 0x0000000010000000        0x1 ./MotorDriver.o
  *(COMMON)
  *fill*         0x0000000010000001        0x3 
@@ -363,23 +365,23 @@ OUTPUT(MotorController.axf elf32-littlearm)
  .debug_macro   0x0000000000002636       0x1c /Users/vartan/LPCXpresso/workspace/CMSISv2p00_LPC11Uxx/Debug/libCMSISv2p00_LPC11Uxx.a(system_LPC11Uxx.o)
  .debug_macro   0x0000000000002652      0x10e /Users/vartan/LPCXpresso/workspace/CMSISv2p00_LPC11Uxx/Debug/libCMSISv2p00_LPC11Uxx.a(system_LPC11Uxx.o)
 
-.debug_line     0x0000000000000000      0x8c3
- .debug_line    0x0000000000000000      0x162 ./MotorDriver.o
- .debug_line    0x0000000000000162      0x1c8 ./cr_startup_lpc11u.o
- .debug_line    0x000000000000032a      0x1b5 ./main.o
- .debug_line    0x00000000000004df      0x1ef ./timers.o
- .debug_line    0x00000000000006ce      0x1f5 /Users/vartan/LPCXpresso/workspace/CMSISv2p00_LPC11Uxx/Debug/libCMSISv2p00_LPC11Uxx.a(system_LPC11Uxx.o)
+.debug_line     0x0000000000000000      0x8cd
+ .debug_line    0x0000000000000000      0x16c ./MotorDriver.o
+ .debug_line    0x000000000000016c      0x1c8 ./cr_startup_lpc11u.o
+ .debug_line    0x0000000000000334      0x1b5 ./main.o
+ .debug_line    0x00000000000004e9      0x1ef ./timers.o
+ .debug_line    0x00000000000006d8      0x1f5 /Users/vartan/LPCXpresso/workspace/CMSISv2p00_LPC11Uxx/Debug/libCMSISv2p00_LPC11Uxx.a(system_LPC11Uxx.o)
 
-.debug_str      0x0000000000000000     0x5b48
- .debug_str     0x0000000000000000     0x3bb2 ./MotorDriver.o
-                                       0x3c3f (size before relaxing)
- .debug_str     0x0000000000003bb2      0x273 ./cr_startup_lpc11u.o
+.debug_str      0x0000000000000000     0x5b47
+ .debug_str     0x0000000000000000     0x3bb1 ./MotorDriver.o
+                                       0x3c3e (size before relaxing)
+ .debug_str     0x0000000000003bb1      0x273 ./cr_startup_lpc11u.o
                                        0x3c6e (size before relaxing)
- .debug_str     0x0000000000003e25     0x1421 ./main.o
-                                       0x4f72 (size before relaxing)
- .debug_str     0x0000000000005246      0x4f7 ./timers.o
+ .debug_str     0x0000000000003e24     0x1421 ./main.o
+                                       0x4f6e (size before relaxing)
+ .debug_str     0x0000000000005245      0x4f7 ./timers.o
                                        0x5492 (size before relaxing)
- .debug_str     0x000000000000573d      0x40b /Users/vartan/LPCXpresso/workspace/CMSISv2p00_LPC11Uxx/Debug/libCMSISv2p00_LPC11Uxx.a(system_LPC11Uxx.o)
+ .debug_str     0x000000000000573c      0x40b /Users/vartan/LPCXpresso/workspace/CMSISv2p00_LPC11Uxx/Debug/libCMSISv2p00_LPC11Uxx.a(system_LPC11Uxx.o)
                                        0x5457 (size before relaxing)
 
 .comment        0x0000000000000000       0x70
@@ -405,6 +407,10 @@ OUTPUT(MotorController.axf elf32-littlearm)
                 0x00000000000000c4       0x31 /Users/vartan/LPCXpresso/workspace/CMSISv2p00_LPC11Uxx/Debug/libCMSISv2p00_LPC11Uxx.a(system_LPC11Uxx.o)
  .ARM.attributes
                 0x00000000000000f5       0x31 /Applications/lpcxpresso_7.6.2_326/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m/libcr_c.a(__weak__main.o)
+ .ARM.attributes
+                0x0000000000000126       0x21 /Applications/lpcxpresso_7.6.2_326/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m/libcr_eabihelpers.a(division_32.o)
+ .ARM.attributes
+                0x0000000000000147       0x21 /Applications/lpcxpresso_7.6.2_326/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m/libcr_eabihelpers.a(division_idiv0.o)
 
 .debug_frame    0x0000000000000000      0x1e4
  .debug_frame   0x0000000000000000       0x50 ./MotorDriver.o

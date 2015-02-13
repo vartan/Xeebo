@@ -12,6 +12,7 @@
 
 int main() {
 	struct MotorDriver motors[MOTOR_COUNT];
+
 	initMotorDrivers(motors);
 	while(1) {
 	}
