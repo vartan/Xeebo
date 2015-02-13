@@ -20,7 +20,8 @@ This week I began working on the LPC11u24, our microcontroller we will be using 
 Unfortunately, this week I lack the hardware required to actually test the board, and don't have access to a windows computer to debug code using Keil. I have been building with the LPCXpresso software for mac, and will begin ASAP.
 
 ##Motor Drivers
-I have been primarily working on starting the motor drivers.    
+I have been primarily working on starting the motor drivers. 
+<script src="https://gist.github.com/vartan/387c45f51185bb266d43.js"></script>   
 ---
 
 #Sam Jacobs
