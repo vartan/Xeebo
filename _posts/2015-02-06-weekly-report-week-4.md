@@ -20,8 +20,19 @@ This week I began working on the LPC11u24, our microcontroller we will be using 
 Unfortunately, this week I lack the hardware required to actually test the board, and don't have access to a windows computer to debug code using Keil. I have been building with the LPCXpresso software for mac, and will begin ASAP.
 
 ##Motor Drivers
-I have been primarily working on starting the motor drivers. 
+I have been primarily working on starting the motor drivers. I have generated a struct which represents all of the information required to control the motors independent whatever else is going on in the processor. This can be seen in `MotorDriver.h` as shown below:
+
 <script src="https://gist.github.com/vartan/387c45f51185bb266d43.js"></script>   
+To avoid polluting the global namespace, I have decided to not have the motors declared as a global variable. Any part of the program which requires access to the motors must have a pointer to the motors passed to it from main. This can be seen in action in the current `main.c`:
+
+<script src="https://gist.github.com/vartan/536645732eda5920834b.js"></script>
+
+The motors are very straightforward to control in the code. See the example below.
+
+<script src="https://gist.github.com/vartan/3f43cfe15a8703215b85.js"></script>
+
+Next week I hope to have the PWM timing optimized to recalculate timer interrupt on the fly in order to reduce the amount of interrupts. This would reduce the interrupt count from `PWM_FREQUENCY * PWM_RESOLUTION` Hz (where PWM_RESOLUTION IS 200) to a maximum of `PWM_FREQUENCY * (MOTOR_COUNT * 2)` Hz.
+
 ---
 
 #Sam Jacobs
