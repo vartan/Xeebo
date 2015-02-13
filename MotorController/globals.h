@@ -1,0 +1,19 @@
+/*
+ * globals.h
+ *
+ *  Created on: Feb 12, 2015
+ *      Author: vartan
+ */
+#include <stdint.h>
+#ifndef MOTORCONTROLLER_GLOBALS_H_
+#define MOTORCONTROLLER_GLOBALS_H
+
+#define SYSTEM_CLOCK 		12000000
+
+#define PWM_FREQUENCY 		20000
+
+// DO NOT MODIFY BELOW THIS LINE, FUNCTIONALITY MAY BE BROKEN
+#define SYSTEM_CLOCK_PERIOD 1.0/SYSTEM_CLOCK
+#define PWM_RESOLUTION 		100
+
+#endif /* MOTORCONTROLLER_GLOBALS_H */
