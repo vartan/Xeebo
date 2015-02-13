@@ -34,7 +34,7 @@ The motors are very straightforward to control in the code. See the example belo
 Next week I hope to have the PWM timing optimized to recalculate timer interrupt on the fly in order to reduce the amount of interrupts. This would reduce the interrupt count from `PWM_FREQUENCY * PWM_RESOLUTION` Hz (where PWM_RESOLUTION IS 200) to a maximum of `PWM_FREQUENCY * (MOTOR_COUNT * 2)` Hz.
 
 All of the code for the MotorControllers can be seen (live) at 
-[https://github.com/vartan/Xeebo/tree/master/MotorController](https://github.com/vartan/Xeebo/tree/master/MotorController). A snapshot of the code at the time of this post can be seen [here](https://github.com/vartan/Xeebo/tree/aa099bb59fe80b94c9b2bfb9b9bf18905909a856/MotorController).
+[our MotorController folder in github](https://github.com/vartan/Xeebo/tree/master/MotorController). A snapshot of the code at the time of this post can be seen [here](https://github.com/vartan/Xeebo/tree/aa099bb59fe80b94c9b2bfb9b9bf18905909a856/MotorController).
 
 ---
 
