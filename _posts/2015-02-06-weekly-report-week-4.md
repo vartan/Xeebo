@@ -43,3 +43,18 @@ All of the code for the MotorControllers can be seen (live) at
 ---
 
 #Steven Le
+(Draft)
+
+##Receive Circuit (Electret Microphone)
+
+Receiving circuit has been tested.  Here is the updated block diagram:
+[Placeholder for Photo]
+
+Oscope readings measured in volts.
+[Placeholder for Waveform]
+
+###Additional Notes
+Still waiting on second mbed microcontroller from SparkFun.  Expect latest mid next week.  In the mean time, 2 protoboards are utilized together to swap between circuits.  When the mbed comes in, testing will commence to communicate between circuits.
+
+##JANUS
+I've been looking into open source JANUS that utilizes a signaling protocol for underwater communications.  It is fairly new to me and am currently seeing if it would prove useful with a short learning curve.  MATLAB and C libraries are included.  More information and report next week.  The website can be seen here: http://januswiki.org/tiki-index.php
