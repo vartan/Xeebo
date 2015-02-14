@@ -73,7 +73,17 @@ This week I started the initial design for the projectile launcher. This design 
 It will be activated with a single pin input. The main control system will interface with the launching system by asserting a signal high.
 
 This will initlize the launch sequnce and the torpedo will fire.
+# Launcher Control System
+The projectile launcher control system will consist of a selenoid in a waterproof module. It will have an push against a shaft that will lock the projectile in place.
 
+The selenoid along with its electronics will interace from a dry environment with the suberged environemnt with a rubber boot. On the submerged side, the shaft will lock the torpedo in place.
+
+When the selenoid is activated, the arm will retract and the projectile will launch.
+
+A manual safety lock will be installed that will block the torpedo once it is placed into the launcher.
+
+The safety will be removed manually and the system will go into live mode. In live mode, the launcherwill fire the projectile when the selenoid is acvivated by the onboard computer.
+![ThrusterDriver](/images/projectileLaunchSystemOverview.png)
 
 ---
 
