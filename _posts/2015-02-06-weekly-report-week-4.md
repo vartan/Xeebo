@@ -67,12 +67,42 @@ All of the code for the MotorControllers can be seen (live) at
 #Sam Jacobs
 ##Projectile Launcher Design
 
-![ThrusterDriver](/images/projectileSystemLoadedView.png)
+![overviewLauncher](/images/projectileSystemLoadedView.png)
 This week I started the initial design for the projectile launcher. This design will serve as a jumping-off point and will be refined in the following reports. Construction will begin in 2 to 3 weeks, or when the design is finalized. The projectile launcher will fire a ABS Plastic torpedo at a velocity sufficient to propel it through the water at distances and speeds enough to achieve the goals in the RoboSub competition.
 
 It will be activated with a single pin input. The main control system will interface with the launching system by asserting a signal high.
 
 This will initlize the launch sequnce and the torpedo will fire.
+# Launcher Control System
+The projectile launcher control system will consist of a selenoid in a waterproof module. It will have an push against a shaft that will lock the projectile in place.
+
+The selenoid along with its electronics will interace from a dry environment with the suberged environemnt with a rubber boot. On the submerged side, the shaft will lock the torpedo in place.
+
+When the selenoid is activated, the arm will retract and the projectile will launch.
+
+A manual safety lock will be installed that will block the torpedo once it is placed into the launcher.
+
+The safety will be removed manually and the system will go into live mode. In live mode, the launcherwill fire the projectile when the selenoid is acvivated by the onboard computer.
+![launchSystem](/images/projectileLaunchSystemOverview.png)
+
+## Launch Sequence
+### Step 1
+![launchSystem](/images/Step 1.png)
+### Step 2
+![launchSystem](/images/Step 2.png)
+### Step 3
+![launchSystem](/images/Step 3.png)
+### Step 4
+![launchSystem](/images/Step 4.png)
+### Step 5
+![launchSystem](/images/Step 5.png)
+### Step 6
+![launchSystem](/images/Step 6.png)
+### Step 7
+![launchSystem](/images/Step 7.png)
+### Step 8
+![launchSystem](/images/Step 8.png)
+
 
 
 ---
