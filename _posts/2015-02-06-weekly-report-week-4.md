@@ -16,6 +16,7 @@ This is our second weekly report of the semester
 As mentioned last week, we chose to go with the LPC11U24 microcontroller for all our microcontroller needs. We will be using it for our thruster driver board. The breakout board that was purchased is intended to be used with the LPCXpresso IDE, which turned out to be overly complicated. To use the breakout board with the Keil IDE, I desoldered the JTAG jumpers and cut the board in half to allow the U-Link Debugger to plug into the JTAG header on the breakout board.
 
 
+
 ##Thruster Driver Board
 
 ###Board Layout
@@ -23,6 +24,7 @@ As mentioned last week, we chose to go with the LPC11U24 microcontroller for all
 ![ThrusterDriver](/images/MotorDriver.PNG)
 
 The schematic of the H-Bridges that I created last week have since been transfered into the board layout software. Six identical full H-Bridges have been laid out on the board. The next step is to place the LPC11U24 microcontroller onto the board along with the requisite power, communication, and crystal components.
+
 
 
 ###Concerns/Considerations
