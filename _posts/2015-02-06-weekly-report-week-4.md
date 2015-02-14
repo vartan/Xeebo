@@ -65,6 +65,15 @@ All of the code for the MotorControllers can be seen (live) at
 ---
 
 #Sam Jacobs
+##Projectile Launcher Design
+
+![ThrusterDriver](/images/projectileSystemLoadedView.png)
+This week I started the initial design for the projectile launcher. This design will serve as a jumping-off point and will be refined in the following reports. Construction will begin in 2 to 3 weeks, or when the design is finalized. The projectile launcher will fire a ABS Plastic torpedo at a velocity sufficient to propel it through the water at distances and speeds enough to achieve the goals in the RoboSub competition.
+
+It will be activated with a single pin input. The main control system will interface with the launching system by asserting a signal high.
+
+This will initlize the launch sequnce and the torpedo will fire.
+
 
 ---
 
