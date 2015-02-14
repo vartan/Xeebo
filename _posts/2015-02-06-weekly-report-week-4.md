@@ -78,18 +78,19 @@ This will initlize the launch sequnce and the torpedo will fire.
 ---
 
 #Steven Le
-(Draft)
 
 ##Receive Circuit (Electret Microphone)
 
-Receiving circuit has been tested.  Here is the updated block diagram:
-[Placeholder for Photo]
+Current receive circuit has is under test.  Here is the current block diagram:
+![Testing Receive Circuit](/images/am_rxtest.jpg)
 
 Oscope readings measured in volts.
-[Placeholder for Waveform]
+![Testing Receive Circuit Oscoped](/images/am_mic.PNG)
+It's currently reading half the voltage from source (3.3V).  I still seem to be having issues talking into the mic and seeing a change through the oscope.  I need to debug and find out if the issue is the circuit or inaccurate measurements.  This will push me back this weekend until the issue is resolved.
 
 ###Additional Notes
-Still waiting on second mbed microcontroller from SparkFun.  Expect latest mid next week.  In the mean time, 2 protoboards are utilized together to swap between circuits.  When the mbed comes in, testing will commence to communicate between circuits.
+Still waiting on second mbed microcontroller from SparkFun.  Expect latest mid next week.  In the mean time, 2 protoboards are utilized together to swap between circuits.  When the mbed comes in, testing will commence to communicate between circuits successfully.
 
 ##JANUS
 I've been looking into open source JANUS that utilizes a signaling protocol for underwater communications.  It is fairly new to me and am currently seeing if it would prove useful with a short learning curve.  MATLAB and C libraries are included.  More information and report next week.  The website can be seen here: http://januswiki.org/tiki-index.php
+Hopefully I'll be posting code next week.
