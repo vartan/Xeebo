@@ -9,6 +9,11 @@ This is our second weekly report of the semester
 
 #Brent Scheneman
 
+##LPC11U24 24Breakout Board
+
+![BreakoutBrd](/images/breakout_seperated.jpg)
+As mentioned last week, we chose to go with the LPC11U24 microcontroller for all our microcontroller needs. We will be using it for our thruster driver board. The breakout board that was purchased is intended to be used with the LPCXpresso IDE, which turned out to be overly complicated. To use the breakout board with the Keil IDE, I desoldered the JTAG jumpers and cut the board in half to allow the U-Link Debugger to plug into the JTAG header on the breakout board.
+
 ---
 
 #Michael Vartan
