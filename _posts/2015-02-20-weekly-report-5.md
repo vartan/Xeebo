@@ -8,7 +8,15 @@ categories: weekly
 This is our third weekly report of the semester
 
 #Brent Scheneman
+Due to the problems we are having with debugging the LPCXpresso board, it was discussed that we will try an alternative to the LPC Link debugger for our debugging needs. We will begin to use Segger's J-Link JTAG device which has been proven to work in the past. To solve the logistical aspect of actually connecting the J-Link to the target board, I'm going to make an adapter that goes from the 2x10 pin rectangular connector of the J-Link to an 8 pin straight pin header on the target board.
 
+I made progress on the thruster driver board. I created the driver subsystems that include a Full-Bridge N-Channel MOSFET Driver, a MOSFET H-Bridge, and a current sensor. Six of these together create the top level system of the thruster driver board itself, along with the LPC 11u24 microcontroller. The last step before the final board layout can be completed is the additon of decoupling capacitors throughout the board. These will ensure all electronic components are receiving clean power.
+
+##Thruster Driver Sub-System
+![SubSystem](/images/ThrusterDriverSubAssy.png)
+
+##Thruster Driver Top Level
+![TopLevel](/images/ThrusterDriverTopLevel.png)
 ---
 
 #Michael Vartan
