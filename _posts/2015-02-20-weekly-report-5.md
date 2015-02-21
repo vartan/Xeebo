@@ -78,13 +78,13 @@ The Camera will be placed inside of the housing and point forwards. The thruster
 The exoskeleton will hold the center electronics housing in place with braces as well as protect the thrusters from damage should the craft suffer a collision.
 
 ![ZEEBO_DESIGN_1_BACKSIDE](/images/ZEEBO_DESIGN_1_BACKSIDE.png)
-![ZEEBO_DESIGN_1_BOTTOM](ZEEBO_DESIGN_1_BOTTOM.png)
-![ZEEBO_DESIGN_1_FRONT](ZEEBO_DESIGN_1_FRONT.png)
-![ZEEBO_DESIGN_1_SIDE](ZEEBO_DESIGN_1_SIDE.png)
-![ZEEBO_DESIGN_1_TOP](ZEEBO_DESIGN_1_TOP.png)
-![ZEEBO_DESIGN_FRONT_DETAIL](ZEEBO_DESIGN_FRONT_DETAIL.png)
-![ZEEBO_DESIGN_UNDERSIDE](ZEEBO_DESIGN_UNDERSIDE.png)
-![ZEEBO_STRUCTURE_PHOTO_1](ZEEBO_STRUCTURE_PHOTO_1.png)
+![ZEEBO_DESIGN_1_BOTTOM](/images/ZEEBO_DESIGN_1_BOTTOM.png)
+![ZEEBO_DESIGN_1_FRONT](/images/ZEEBO_DESIGN_1_FRONT.png)
+![ZEEBO_DESIGN_1_SIDE](/images/ZEEBO_DESIGN_1_SIDE.png)
+![ZEEBO_DESIGN_1_TOP](/images/ZEEBO_DESIGN_1_TOP.png)
+![ZEEBO_DESIGN_FRONT_DETAIL](/images/ZEEBO_DESIGN_FRONT_DETAIL.png)
+![ZEEBO_DESIGN_UNDERSIDE](/images/ZEEBO_DESIGN_UNDERSIDE.png)
+![ZEEBO_STRUCTURE_PHOTO_1](/images/ZEEBO_STRUCTURE_PHOTO_1.png)
 ---
 
 #Steven Le
