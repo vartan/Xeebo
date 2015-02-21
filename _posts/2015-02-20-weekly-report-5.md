@@ -77,22 +77,30 @@ The Camera will be placed inside of the housing and point forwards. The thruster
 
 The exoskeleton will hold the center electronics housing in place with braces as well as protect the thrusters from damage should the craft suffer a collision.
 
-##Isometric Projection
+###Isometric Projection
 ![ZEEBO_STRUCTURE_PHOTO_1](/images/ZEEBO_STRUCTURE_PHOTO_1.png)
-##Rear View Showing Thruster Placement in Xeebo Pattern
+
+###Rear View Showing Thruster Placement in Xeebo Pattern
 ![ZEEBO_DESIGN_1_BACKSIDE](/images/ZEEBO_DESIGN_1_BACKSIDE.png)
-##Bottom View
+
+###Bottom View
 ![ZEEBO_DESIGN_1_BOTTOM](/images/ZEEBO_DESIGN_1_BOTTOM.png)
-##Front View
+
+###Front View
 ![ZEEBO_DESIGN_1_FRONT](/images/ZEEBO_DESIGN_1_FRONT.png)
-##Side View
+
+###Side View
 ![ZEEBO_DESIGN_1_SIDE](/images/ZEEBO_DESIGN_1_SIDE.png)
-##Top View
+
+### Top View
 ![ZEEBO_DESIGN_1_TOP](/images/ZEEBO_DESIGN_1_TOP.png)
-##Camera Unobstructed by Vertical  Thrusters
+
+### Camera Unobstructed by Vertical  Thrusters
 ![ZEEBO_DESIGN_FRONT_DETAIL](/images/ZEEBO_DESIGN_FRONT_DETAIL.png)
-##Underside Detail where Claw will be Mounted
+
+### Underside Detail where Claw will be Mounted
 ![ZEEBO_DESIGN_UNDERSIDE](/images/ZEEBO_DESIGN_UNDERSIDE.png)
+
 
 ---
 
