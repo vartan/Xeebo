@@ -12,6 +12,8 @@ Due to the problems we are having with debugging the LPCXpresso board, it was di
 
 I made progress on the thruster driver board. I created the driver subsystems that include a Full-Bridge N-Channel MOSFET Driver, a MOSFET H-Bridge, and a current sensor. Six of these together create the top level system of the thruster driver board itself, along with the LPC 11u24 microcontroller. The last step before the final board layout can be completed is the additon of decoupling capacitors throughout the board. These will ensure all electronic components are receiving clean power.
 
+Once the thruster driver is completed, the next board to be designed will the be the power management board. This will be responsible for converting the 22.1V from the batteries to 19V, 5V, and 3.3V for all electronic sub-systems. 
+
 ###Thruster Driver Sub-System
 ![SubSystem](/images/ThrusterDriverSubAssy.png)
 
