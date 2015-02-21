@@ -76,8 +76,6 @@ The exoskeleton will be designed around modularity using 8020 Aluminum Tubing.
 The Camera will be placed inside of the housing and point forwards. The thrusters that control pitch and heave will not block the view of the camera. The camera will be completely unobstructed.
 
 The exoskeleton will hold the center electronics housing in place with braces as well as protect the thrusters from damage should the craft suffer a collision.
-![Sample Period](/images/am_sampleperiod.PNG)
-
 
 ![ZEEBO_DESIGN_1_BACKSIDE](/images/ZEEBO_DESIGN_1_BACKSIDE.png)
 ![ZEEBO_DESIGN_1_BOTTOM](ZEEBO_DESIGN_1_BOTTOM.png)
