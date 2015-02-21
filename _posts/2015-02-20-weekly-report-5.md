@@ -28,7 +28,55 @@ Using this code, I successfully multiplied the clock to
 
 ---
 #Sam Jacobs
-Sam Jacobs
+##Structure Update
+### Status: Nearing End of Design Phase... About to start build phase
+
+##Team Stratagey Regarding Structure
+Per our team meeting Monday, Feb 16, 2015: 
+
+Our team has made the decision to move forward and build the robot of which the design origitinated from within this team in parallel to the effort being undertaken by the M.E. team. 
+
+Our team's strategy, philosophy and motivation is to move at an accellerated pace in order to complete the project and particiapte in the 2015 RoboSub competition.
+
+Thus, after taking acount of the work I did last semester for the design of the structre, I cereated a new design that we will discuss and refine monday Feb 23.
+
+Once the design is finalized by our team, construction of the frame will begin. 
+
+The strcuture is absolutely critical to the development of this project. Major testing of the AI system controlling the motors and interfacing with the sensor suite inside of a functioning unit will be possilbe once the structure is complete and the electronics are inside of it.
+
+
+##Structure Requirements
+
+### Requirements
+
+1. The structure must allow for the placement of all 6 motors such that full range of moment (yaw, pitch, heave, roll, thrust, rotation) is possilbe using vectored thrusting.
+2. The strucutre shall be comprised of materials that we already have on hand
+3. The structure must be designed such that heat dissipation will be efficient
+4. The structure be designed such that the weight of the payload combined with the weight of the structure itself offset the positive bouynace from the volume of the air inside the electronics housing itself
+5. The structure must be designed such that the payload can be readily accessable.
+6. The completed craft must be within the weight and size requirements established in the RoboSub 2015 Competition Rules
+
+## The Design
+### Specifications
+
+Max Width: 	2'""
+Max Heigh: 	2'0"
+Max Lenght: 2'0"
+
+Electronics Housing Length: 		12"
+Electronics Housing inner Diamater: 9.75"
+
+Estimated Weight: 40 lbs
+
+
+Zeebo's structure will be built around the 10" OD aluminum tube that we will cut to 1 foot in length. We will integrate the flange, gasket, and clear cover design in order to create a waterproof access point and to seal the main housing.
+
+The exoskeleton will be designed around modularity using 8020 Aluminum Tubing. 
+
+The Camera will be placed inside of the housing and point forwards. The thrusters that control pitch and heave will not block the view of the camera. The camera will be completely unobstructed.
+
+The exoskeleton will hold the center electronics housing in place with braces as well as protect the thrusters from damage should the craft suffer a collision.
+
 ---
 
 #Steven Le
