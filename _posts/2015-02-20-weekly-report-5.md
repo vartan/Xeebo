@@ -28,8 +28,10 @@ Using this code, I successfully multiplied the clock to
 
 ---
 #Sam Jacobs
+
 ##Structure Update
-### Status: Nearing End of Design Phase... About to start build phase
+
+###Status: Nearing End of Design Phase... About to start build phase
 
 ##Team Stratagey Regarding Structure
 Per our team meeting Monday, Feb 16, 2015: 
@@ -57,6 +59,7 @@ The strcuture is absolutely critical to the development of this project. Major t
 6. The completed craft must be within the weight and size requirements established in the RoboSub 2015 Competition Rules
 
 ## The Design
+
 ### Specifications
 
 Max Width: 	2'""
