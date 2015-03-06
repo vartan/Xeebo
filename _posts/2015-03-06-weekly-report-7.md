@@ -46,6 +46,7 @@ I found the volume of the main hull by calculating its shape as a cylinder. I al
 In order to find the volume of the structure, I took the weight of the 80/20 we are expected to use, and divided it by the density of the aluminum (6105 alloy). 
 
 In total, we are very close to neutral buoyancy of Zeebo. Before adding our PCB hardware, 80/20 connectors, and wiring, we are just over 3lbs buoyant. I project that we will have to add floats slightly to keep Zeebo neutrally buoyant.
+
 ---
 
 #Sam Jacobs
