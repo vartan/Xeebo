@@ -9,6 +9,18 @@ This is our fourth weekly report of the semester
 
 #Brent Scheneman
 
+This week I concentrated on polishing up the schematic for the thruster driver board so that can be sent to get fabricated in the near future. I also focused on creating the schematic for the power board for the main computer. This board will be capable of outputing 19 V @ 4 A. This is done using a highly efficient (>90% efficiency) step-down switching regulator (LM22679) from Texas Instruments.
+
+
+##Computer Power Board Schematic
+![Computer Power Board](/images/computer_pwr_brd.png)
+
+Before the schematic layout was started, I performed a few calculations to determine the correct supplement component values that are required for proper operation. These were dependent on the operating condition of the LM22679. Another circuit like this will be used to create a 5 V output as well. The set up is the same, the only difference will be the suppliment component values.
+
+##Computer Power Board Calculations
+![Inductor Calculation](/images/InductorCalculation.png)
+![Volateg Divider Calculation](/images/VoltageDividerCalculation.png)
+
 ---
 
 #Michael Vartan
