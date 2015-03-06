@@ -60,9 +60,17 @@ I worked with Michael in the weight calculation effort by analyzing the design o
 
 Thursday Mar 5 we procured parts from local suppliers. We obtained a solution for mounting the main electronics encolsure to the frame at Fergeson industrial supply in Signal Hill, Long Beach. I developed a way to mount the thrusters to the 80/20. The seabotix thrusters were supplied with #6 3/4" metal screws. We purchased #6 1 1/2" metal screws and will use a drill press to create 1/4" diamater holes in the 80/20 and secure the thrusters.
 
+![aluminum hull](/images/pvc1.png)
+
 I constructed a 1:1 scale prototype out of PVC material. After creating the protoype, the other team members and I were able to have a common vision of how the robot will be built.
 
-After all the team members accepted the PVC protoype, I began custructing the 80/20 frame. I plan to have it completed in 2 weeks. I am going to use different hardware that is cheaper, stronger, less prone to rust, and more readily available. After reading what others have done to get around using the expensive proprietary 80/20 hardware that is described here: http://www.instructables.com/id/8020-Fastener-Alternatives/ 
+
+After finishing the building of the PVC protoype, I began custructing the 80/20 frame. I plan to have it completed in 2 weeks. 
+
+![aluminum hull](/images/week7_cutting.png)
+
+
+I am propsing to use different hardware that is cheaper, stronger, less prone to rust, and more readily available. After reading what others have done to get around using the expensive proprietary 80/20 hardware that is described here: http://www.instructables.com/id/8020-Fastener-Alternatives/.
 
 
 
