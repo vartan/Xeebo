@@ -19,6 +19,8 @@ Before the schematic layout was started, I performed a few calculations to deter
 
 ###Computer Power Board Calculations
 ![Inductor Calculation](/images/InductorCalculation.png)
+<br>
+<br>
 ![Volateg Divider Calculation](/images/VoltageDividerCalculation.png)
 
 ---
