@@ -22,7 +22,7 @@ In the meantime, I've been working on getting the PLL on the clock working. Wher
 
 <script src="https://gist.github.com/vartan/c702672c2bc576ce34b7.js"></script>
 
-Using this code, I successfully multiplied the clock to 
+Using this code, I successfully multiplied the clock to 50MHz.
 
 ![50MHz clock](/images/50mhz.png)
 
