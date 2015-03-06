@@ -31,17 +31,9 @@ This week I spent most of my efforts on Zeebo calculating water displacements in
 Some of our components we were able to pull weights off of datasheets. This included most of the electronic components, visible in rows 4-9. The rest of the items, however, had to be calculated.
 
 ###Aluminum Pieces
-Luckily, for the aluminum pieces we have, I was able to find an online calculator which calculated the weight of each of our pieces easily.
+Luckily, for the aluminum pieces we have, I was able to find an online calculator which calculated the weight of each of our pieces easily. Below are the aluminum hull, flanges (both weights combined), and cover respectively.
 
-**Aluminum hull: **
-
-![aluminum hull](/images/weight_hull.png)
-
-**Aluminum flanges (combined weight)**
-![aluminum flanges](/images/weight_flange.png)
-
-**Aluminum cover**
-![aluminum cover](/images/weight_cover.png)
+![aluminum hull](/images/weight_hull.png) ![aluminum flanges](/images/weight_flange.png) ![aluminum cover](/images/weight_cover.png)
 
 
 ##Calculating Displacement
