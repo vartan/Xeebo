@@ -50,6 +50,10 @@ In total, we are very close to neutral buoyancy of Zeebo. Before adding our PCB 
 ---
 
 #Sam Jacobs
+## Refined Design 
+I refined the design in order to shed weight. I redesigned the structure such that it would hug the central electronics tube instead of surround the craft in the form of an exoskeleton.
+
+![aluminum hull](/images/refinedZeebo.png)
 
 ---
 
