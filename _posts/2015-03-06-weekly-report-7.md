@@ -91,8 +91,6 @@ I am propsing to use different hardware that is cheaper, stronger, less prone to
 ---
 
 #Steven Le
-
-
-
-
-
+![Mic Raw Readings](/images/am_mic_raw.png)
+This week was dedicated to grab data from the microphone circuit through the analog signal.  After referencing from the LPC1768 datasheet and user manual, I was able to convert the measured AnalogIn signal to current voltage (~1.66V stabilized with some noise) and then to it's binary value representation with the 12-bit ADC.  AnalogIn signal is measured using the mic.read() function that measures a percentage of the reference voltage (which is 3.3V from VOUT from the LPC1768).  After getting the data calculated into useable values in digital realm. 
+![Mic Code](/images/am_mic_read.png)
