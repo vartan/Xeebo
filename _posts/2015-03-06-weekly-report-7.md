@@ -92,7 +92,7 @@ I am propsing to use different hardware that is cheaper, stronger, less prone to
 
 #Steven Le
 
-![Current Circuit](/images/am_circuit.jpg)
+![Current Circuit](/images/am_circuits.jpg)
 
 ##Microphone Input Readings
 
