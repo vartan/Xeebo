@@ -91,6 +91,20 @@ I am propsing to use different hardware that is cheaper, stronger, less prone to
 ---
 
 #Steven Le
+
+![Current Circuit](/images/am_circuit.jpg)
+
+##Microphone Input Readings
+
 ![Mic Raw Readings](/images/am_mic_raw.png)
+
+
 This week was dedicated to grab data from the microphone circuit through the analog signal.  After referencing from the LPC1768 datasheet and user manual, I was able to convert the measured AnalogIn signal to current voltage (~1.66V stabilized with some noise) and then to it's binary value representation with the 12-bit ADC.  AnalogIn signal is measured using the mic.read() function that measures a percentage of the reference voltage (which is 3.3V from VOUT from the LPC1768).  After getting the data calculated into useable values in digital realm. 
-![Mic Code](/images/am_mic_read.png)
+
+![Mic Code](/images/am_mic_read.PNG)
+
+I also noted that when the volume reaches too high, the readings output 0 volts.
+
+##Interfacing with MATLAB
+For troubleshooting purposes besides utilizing the Analog Discovery, the mbed website has a MATLAB RPC library that can be used to take the acquired data from my mic readings and interface with MATLAB in real-time to plot a graph for checking correlations of my data.  I'm still having issues getting the interface to read from the COM port even when following the directions on the website.  This will be resolved by the end of the weekend.
+https://developer.mbed.org/cookbook/Interfacing-with-Matlab#serial-communication
