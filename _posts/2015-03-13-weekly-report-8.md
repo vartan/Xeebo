@@ -28,11 +28,21 @@ I started off the week by making the JTAG adapter cable which will allow us to p
 ---
 
 #Sam Jacobs
-## This week I went from design to construction to test of the structure. 
+##Week's Summarry
+This week I went from design to construction to test of the structure. 
+###Sam and Matt Transporting Zeebo
+![Sam and Matt Transporting Zeebo](/images/samAndMatt.png)
+###Design - Monday/Tuesday
+![Design - Monday/Tuesday](/images/design.png)
+###Construction - Tuesday/Wednesday
+![Construction - Tuesday/Wednesday](/images/construction.png)
+###Assembled Frame - Thursday
+![Assembled Frame - Thursday](/images/built1.png)
+###Test - Thursday
+![Test - Thursday](/images/test.png)
 
 
-
-The findings were this:
+##The findings:
 The weight of the structure is low enough such that we have the potential to achieve netural buoyancy.
 
 The calculations for neutral buoyancy were incorrect as the volume of the motors were not factored into the original calculations. On Thursday night we put the structure sans the motors and electronic equipment into the pool and it floated. After the approx 10 lbs of motors and equipment are added to the craft it will approach slight negative buoyancy. 
@@ -49,29 +59,46 @@ The savings in weight are going to be calculated and included in the next report
 80/20 material was transferred to ME team to be cut for a design I was to make this week. The requirement was to have exact measurements to be cut by the ME team once and only once.
 
 ###Structure
-![JTAG Adapter](/images/zeeboStructure.png)
+![Structure](/images/zeeboStructure.png)
 
-### Connectors Used	
-![JTAG Adapter](/images/zeebo_connectors.png)
+###Connectors Used in Structure
+![Connectors Used](/images/zeebo_connectors.png)
 
-### Itemized Lengths of Pieces of Frame
-![JTAG Adapter](/images/80_20_Lengths_Catalog.png)
+###Itemized Lengths of Pieces of Frame
+![Itemized Lengths of Pieces of Frame](/images/80_20_Lengths_Catalog.png)
 
 
 ##Tuesday
+###Design and Fabrication
+![Design and Fabrication](/images/fab1.png)
 Designed the structure with exact measurements and placement of brackets.
-
+###Design and Fabrication
+![Design and Fabrication](/images/fab2.png)
 Went to ME team to get the pieces cut.
-
+###Design and Fabrication
+![Design and Fabrication](/images/fab3.png)
 Worked with Steven and Michael to begin assembly of the frame.
+###Construction
+![Construction](/images/const1.png)
 
 ##Wednesday
 Continued to work on the frame.
-
+###Construction
+![Construction](/images/const2.png)
+###Construction
+![Construction]((/images/const3.png)
+###Construction
+![Construction]((/images/const4.png)
 ##Thursday
 Completed the frame. Attached the clear covers to the flanged with Matt.
+###Assembled Frame
+![Assembled Frame](/images/built2.png)
+###Assembled Frame
+![Assembled Frame](/images/built3.png)
 
 Tested the frame by submerging it in the pool. The next task is to redesign and reconstruct a symmetrical frame and reduce the weight of the craft by 2-5 pounds.
+###Post Test Dihydrogen Monoxide Ballast Purge
+![Leak](/images/leak.png)
 ---
 
 #Steven Le
