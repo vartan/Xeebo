@@ -96,11 +96,40 @@ Float Test
 ![Float Test](/images/floatingZeebo2.png)
 Post Test Dihydrogen Monoxide Ballast Purge
 ![Leak](/images/leak.png)
+
 ---
 
 #Steven Le
+#Steven Le
+##Frame
+Assisted Sam and Michael with building the frame for the housing after parts have been machined and delivered to specifications from the ME team.  Testing has been done as shown above from other members.  Delivery time was on schedule with satisfactory results.
+![Build](/images/work1.png)
+![Build](/images/work2.png)
+![Build](/images/work3.png)
 
+##mbed to MATLAB
+I solved the error when transmitting data from the mbed uC to MATLAB.  Tera Term which is the software emulator used to output data cannot be used in the COM port when MATLAB is accessing the COM to retrieve the data.
+![Data Retrieval](/images/am_MATLAB_test.png)
+With this, I can analyze and manipulate the values to visual see data representation between binary, decimal, and correlate the information.
 
+##MSGEQ7 Graphic Equalizer Display Filter
+![MSGEQ7](/images/am_msgeq7_block.png)
+Recommended by Matthew, this IC is a CMOS chip that can divide the audio spectrum into seven bands: 
+63Hz
+160Hz
+400Hz
+1kHz
+2.5kHz
+6.25kHz
+16kHz
+In a nuthshell, they're 7 built-in bandpass filters.  An audio signal can be sent through it and see an audio spectrum analyzer.  They are peak detected and muxed to the output to give DC representation of amplitude of each band.  It operates between 2.7-5.5 volts (5 volts best performance) and utilizes an anti-alias filter.  5 of these components have been ordered with expected delivery no later than Monday, May 16th.  This in the hardware domain can prove useful in frequency detection, filtering out undesired noise and range boundaries.  It will be utilized in the receive circuit with the electret microphone.
+For convenience, there is a MSGEQ7 Library API that will be utilized in coding the software aspect since this IC is normally used in Spectrum Analyzation in LCD displays.
+For reference:
+http://developer.mbed.org/users/chrisisthefish/code/MSGEQ7/
+While the components are enroute, software is be written.
 
-
-
+##Schematic Revision
+In the revised schematic with the MSGEQ7, the AUD input of the electret microphone circuit will feed into pin 5 of the IC (Signal 'In').  The remaining pins will include capacitors and a resistor for the clk (Pin 8) with credit to Chris Wilson and the datashseet in the mbed forums: http://developer.mbed.org/users/chrisisthefish/notebook/mbed-audio-spectrum-analyzer/
+![Typical Wiring](/images/am_msgeq7.png)
+![Strobe Timing Diagram](/images/am_strobe.png)
+The strobe input will be controlled by the mbed which will be clocked to retrieve the 7 frequencies sequentially.  Each output of the frequencies will be saved into an array for later processing.
