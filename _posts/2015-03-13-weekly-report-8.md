@@ -33,9 +33,9 @@ This week I went from design to construction to test of the structure.
 ###Sam and Matt Transporting Zeebo
 ![Sam and Matt Transporting Zeebo](/images/samAndMatt.png)
 ###Design - Monday/Tuesday
-![Design - Monday/Tuesday](/images/design.png)
+![Design - Monday/Tuesday](/images/zeebo_connectors.png)
 ###Construction - Tuesday/Wednesday
-![Construction - Tuesday/Wednesday](/images/construction.png)
+![Construction - Tuesday/Wednesday](/images/const1.png)
 ###Assembled Frame - Thursday
 ![Assembled Frame - Thursday](/images/built1.png)
 ###Test - Thursday
