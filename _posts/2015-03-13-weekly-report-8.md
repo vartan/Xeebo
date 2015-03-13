@@ -100,7 +100,7 @@ Post Test Dihydrogen Monoxide Ballast Purge
 ---
 
 #Steven Le
-#Steven Le
+
 ##Frame
 Assisted Sam and Michael with building the frame for the housing after parts have been machined and delivered to specifications from the ME team.  Testing has been done as shown above from other members.  Delivery time was on schedule with satisfactory results.
 ![Build](/images/work1.png)
