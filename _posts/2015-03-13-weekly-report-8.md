@@ -29,7 +29,7 @@ I started off the week by making the JTAG adapter cable which will allow us to p
 
 #Sam Jacobs
 
-##Week's Summarry
+##Week's Summary
 This week I went from design to construction to test of the structure. 
 ###Sam and Matt Transporting Zeebo
 ![Sam and Matt Transporting Zeebo](/images/samAndMatt.png)
