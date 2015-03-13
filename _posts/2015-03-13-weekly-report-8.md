@@ -103,9 +103,9 @@ Post Test Dihydrogen Monoxide Ballast Purge
 
 ##Frame
 Assisted Sam and Michael with building the frame for the housing after parts have been machined and delivered to specifications from the ME team.  Testing has been done as shown above from other members.  Delivery time was on schedule with satisfactory results.
-![Build](/images/work1.png)
-![Build](/images/work2.png)
-![Build](/images/work3.png)
+![Build](/images/work1.jpg)
+![Build](/images/work2.jpg)
+![Build](/images/work3.jpg)
 
 ##mbed to MATLAB
 I solved the error when transmitting data from the mbed uC to MATLAB.  Tera Term which is the software emulator used to output data cannot be used in the COM port when MATLAB is accessing the COM to retrieve the data.
