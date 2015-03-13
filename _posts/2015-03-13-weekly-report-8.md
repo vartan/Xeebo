@@ -40,6 +40,8 @@ This week I went from design to construction to test of the structure.
 ![Assembled Frame - Thursday](/images/built1.png)
 ###Test - Thursday
 ![Test - Thursday](/images/test.png)
+###Test - Thursday
+![Float Test]((/images/floatingZeeebo.png)
 
 
 ##The findings:
@@ -97,6 +99,8 @@ Completed the frame. Attached the clear covers to the flanged with Matt.
 ![Assembled Frame](/images/built3.png)
 
 Tested the frame by submerging it in the pool. The next task is to redesign and reconstruct a symmetrical frame and reduce the weight of the craft by 2-5 pounds.
+###Float Test
+![Float Test]((/images/floatingZeeebo2.png)
 ###Post Test Dihydrogen Monoxide Ballast Purge
 ![Leak](/images/leak.png)
 ---
