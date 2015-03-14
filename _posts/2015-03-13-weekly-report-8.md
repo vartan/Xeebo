@@ -21,6 +21,25 @@ I started off the week by making the JTAG adapter cable which will allow us to p
 ###JTAG Adapter
 ![JTAG Adapter](/images/JTAG_Adapter.png)
 
+
+##Thruster Driver Control Board
+This week I focused on finishing up the board layout for the thruster driver control board so it can be sent out for fabrication this coming Sunday (March 15). Most of the work was reconfiguring the MOSFET H-Bridge layouts to better utilize board space. 
+
+###H-Bridge Revised
+![H-Bridge Revised](/images/RevisedThrusterOutputs.png)
+
+After revising the board, I opted to change out the IC we are using for the drivers. Instead we will be using a VNH5019A-E from ST Electronics. The reason for this is because it will cut down on board space because its a single chip compared to 6 chips which we are currently using, which will reduce the cost to get the board fabricated. Second, the control needed is less complicated than our current control scheme. This chip has built in H-Bridges and current sensor.
+
+###VNH5019A-E
+![VNH5019A-E](/images/VNH5019A-E.png)
+
+##Main Computer Power Board
+After completing the main computer power board and calculating the total cost to produce, I discovered that a store boughten power module that outputs 19V @ 4A was cheaper. I place an order for one and it will be here next Monday (March 16). This will also cut down on the time it would take to get a working board. If this was custom produced, it would take a minimum of a week (1 week for FAB and a few hours to assemble).
+
+###Main Computer Power Board
+![Main Computer Power Board](/images/MainComputerPowerBoard.png)
+
+
 ---
 
 #Michael Vartan
