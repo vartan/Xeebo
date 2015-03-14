@@ -26,7 +26,7 @@ I started off the week by making the JTAG adapter cable which will allow us to p
 This week I focused on finishing up the board layout for the thruster driver control board so it can be sent out for fabrication this coming Sunday (March 15). Most of the work was reconfiguring the MOSFET H-Bridge layouts to better utilize board space. 
 
 ###H-Bridge Revised
-![H-Bridge Revised](/images/RevisedThrusterOutputs2.png)
+![H-Bridge Revised](/images/RevisedThrusterOutputs.png)
 
 After revising the board, I opted to change out the IC we are using for the drivers. Instead we will be using a VNH5019A-E from ST Electronics. The reason for this is because it will cut down on board space because its a single chip compared to 6 chips which we are currently using, which will reduce the cost to get the board fabricated. Second, the control needed is less complicated than our current control scheme. This chip has built in H-Bridges and current sensor.
 
