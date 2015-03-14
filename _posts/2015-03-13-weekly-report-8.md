@@ -53,6 +53,16 @@ On Wednesday night, I rested.
 
 On Thursday, we continued putting Zeebo together and discussed weight reduction/materials. 
 
+Today, I revised our weights to take into account the displacement of the motors for buoyancy force, and I changed the density of water to reflect seawater, since the robosub competition uses seawater. The new calculations are in the spreadsheet below.
+
+<div id="iframehere"></div>
+<script>
+//workaround because github/jekyll won't let me put an 
+//iframe directly into the html.
+    document.getElementById("iframehere").innerHTML = "<iframe width='100%' height='600px' frameborder='0' src='https://docs.google.com/spreadsheets/d/1r5tAl0xX0g0Y5hXtF5OFBNnbssQBHQ7P4RdQyiwTomY/edit?usp=sharing&single=true&gid=0&output=html'>test</iframe>";
+</script>
+
+
 All in all, I probably spent about 20 hours working on Zeebo this week. I would document my work better, but Sam did such an amazing job in his report, there is nothing else for me to report that he hasn't done already. Please enjoy his report below, with pictures. 
 
 ---
