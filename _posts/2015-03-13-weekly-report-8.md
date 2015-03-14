@@ -43,6 +43,17 @@ After completing the main computer power board and calculating the total cost to
 ---
 
 #Michael Vartan
+This week I primarily helped Sam work on the structure. 
+
+On Monday night, we discussed finalizing our structure for fabrication. On Tuesday, we had the hull welded together and the doors fabricated. 
+
+That night, we bolted together much of the structure and made a trip to Lowe's to buy remaining hardware. 
+
+On Wednesday night, I rested.
+
+On Thursday, we continued putting Zeebo together and discussed weight reduction/materials. 
+
+All in all, I probably spent about 20 hours working on Zeebo this week. I would document my work better, but Sam did such an amazing job in his report, there is nothing else for me to report that he hasn't done already. Please enjoy his report below, with pictures. 
 
 ---
 
@@ -50,18 +61,31 @@ After completing the main computer power board and calculating the total cost to
 
 ##Week's Summary
 This week I went from design to construction to test of the structure. 
+
 ###Sam and Matt Transporting Zeebo
+
 ![Sam and Matt Transporting Zeebo](/images/samAndMatt.png)
+
 ###Design - Monday/Tuesday
+
 ![Design - Monday/Tuesday](/images/zeebo_connectors.png)
+
 ###Construction - Tuesday/Wednesday
+
 ![Construction - Tuesday/Wednesday](/images/const1.png)
+
 ###Assembled Frame - Thursday
+
 ![Assembled Frame - Thursday](/images/built1.png)
+
 ###Test - Thursday
+
 ![Float Test](/images/floatingZeebo.png)
+
 ##The findings:
-The weight of the structure is low enough such that we have the potential to achieve netural buoyancy.
+
+The weight of the structure is low enough such that we have the potential to 
+achieve netural buoyancy.
 
 The calculations for neutral buoyancy were incorrect as the volume of the motors were not factored into the original calculations. On Thursday night we put the structure sans the motors and electronic equipment into the pool and it floated. After the approx 10 lbs of motors and equipment are added to the craft it will approach slight negative buoyancy. 
 
