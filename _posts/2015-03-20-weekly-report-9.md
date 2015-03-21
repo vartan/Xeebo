@@ -37,6 +37,28 @@ Last week we recieved the power board for the Main Computer. This coming week I'
 ---
 
 #Michael Vartan
+This week I primarily helped Sam and Matt work on the structure again. 
+
+Matt has been building a backup PVC frame just in case the aluminum one won't 
+work out in the end, and I've been supporting him with that. The mounting 
+method for the PVC frame is by using a long bolt through the flange/cover and 
+then through the PVC. This is an absolutely stable way to mount the frame, 
+however it makes it a little more difficult to work inside of the robot.
+
+Once again Sam documented this much better than I ever could and I would just
+be repeating his report. We did a waterproofing test with Zeebo and found that
+it unfortunately did leak. We are suspecting that that the leak was from the rubber gasket, we are looking to get a silicone gasket instead. I am hoping that it is from our seal and not from the weld.
+
+When it was in the water, we found that it was barely sinking after we weighed it down. After the test, we brought it to the school gym to weigh it, and found it to be exactly 50lb. This means that our weight calculations were accurate.
+
+<div id="iframehere"></div>
+<script>
+//workaround because github/jekyll won't let me put an 
+//iframe directly into the html.
+    document.getElementById("iframehere").innerHTML = "<iframe width='100%' height='600px' frameborder='0' src='https://docs.google.com/spreadsheets/d/1r5tAl0xX0g0Y5hXtF5OFBNnbssQBHQ7P4RdQyiwTomY/edit?usp=sharing&single=true&gid=0&output=html'>test</iframe>";
+</script>
+
+
 
 ---
 
