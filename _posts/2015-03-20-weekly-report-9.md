@@ -41,7 +41,36 @@ Last week we recieved the power board for the Main Computer. This coming week I'
 ---
 
 #Sam Jacobs
+Worked with Matt and Michael to assemble the housing. We conducted another live test in the pool to check the integrity of the seals on the housing.
+![week8_1](/images/week8_1.png)
+The results of the test showed leaks forming and water accumulating at a rate of approximately 1 cup per minute at a depth of 10 feet.
 
+We weighed the hull, fully sealed, with an acrylic front cover and aluminum back cover, 12 bolts of 1/2 diameter and 2-3 inch length, and a payload consisting of approximately 20 lbs of water and weighed in the entire craft at 50 lbs. 
+![week8_2](/images/week8_2.png)
+At 50lbs in freshwater, the hull sank to the bottom of the pool. It was tied to a cord and I was able to lift it up from the pool floor using only my index finger and thumb. I estimate that it was 5 lbs too heavy in its state.
+
+The team is going to buy a spring scale to make testing and honing in on the ideal neutral buoyancy more feasible during actual testing.
+![week8_3](/images/week8_3.png)
+I revised the structure from last week’s test to design in the fixes that the team and I deliberated on. I reduced the overall amount of 80/20 material used by 24”. We used 8 feet or 64” of 80/20 in the previous design, and have reduced the overall amount of 80/20 used by 25%. 
+
+I have used a significantly less amount of hardware (which is what adds up to contribute to a lot of weight) on the new design.
+![week8_4](/images/week8_4.png)
+I have designed it to be symmetrical across the x-axis, the y-axis, and the z-axis, independently.
+
+I have in mind a method for attaching the hull to the frame that will significantly reduce weight. 
+
+The focus of my next week’s work will be to design in the attachment system that I have been developing and planning. 
+![week8_5](/images/week8_5.png)
+We will conduct another test using the newly designed structure and determine the maximum weight of the payload. 
+
+After that, I will send the pieces to Brent to be drilled using his professional industrial fabrication systems that he has and the motors will be mounted to the frame.
+
+Following the motor attachment, there will be 2 major designs:
+![week8_6](/images/week8_6.png)
+
+1. The inner frame that mounts the payload electronics to the hull. We will need to develop requirements for that to design to. Some initial requirements may include the ability to transfer heat from the boards to the interior of the hull and to design it as lightweight as possible.
+
+2. The  through-hole connector array afixed to the acriylic faceplate.
 ---
 
 #Steven Le
