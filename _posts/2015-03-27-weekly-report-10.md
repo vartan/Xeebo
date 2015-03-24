@@ -22,6 +22,7 @@ This is our seventh weekly report of the semester
 #Steven Le
 
 (DRAFT)
+
 ##Circuit Issue Resolved
 The mbed was not turning on last week due to a short in the system.  When utilizing a LM7805 linear regulator to output +5V on the rail (used as an external power supply), the voltage readings is verified with common reference ground.  However, when applying both circuits to that rail, the voltage drops to 0.16 volts.  After isolating both circuits, the culprit is from the MSGEQ7 circuit where there was erronous wiring leading to ground.  This was fixed and the circuit is now functional in hardware.  
 
