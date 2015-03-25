@@ -16,5 +16,4 @@ int main() {
 	initMotorDrivers(motors);
 	while(1) {
 	}
-	return 0;
 }

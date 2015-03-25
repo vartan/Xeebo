@@ -37,6 +37,6 @@ struct MotorDriver {
  * for the motors.
  */
 void initMotorDrivers(struct MotorDriver *_motorDrivers);
-void motorDriverPWMCycle();
+void motorDriverPWMCycle(void);
 
 #endif /* MOTORDRIVER_H_ */
