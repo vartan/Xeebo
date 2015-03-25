@@ -17,8 +17,8 @@
 struct MotorDriver {
     uint8_t pwmPort;                  /**< Pointer to the pwm pio control register */
     uint8_t pwmPin;
-    uint8_t enabledPort;
-    uint8_t enabledPin;
+    uint8_t directionPort;
+    uint8_t directionPin;
     volatile int8_t speed;                    /**< Value which is read/written which
                                       controls motor speed. -100 is full 
                                       backwards, 100 is full forwards, and 0 is 
@@ -43,6 +43,6 @@ void initMotorDrivers(struct MotorDriver *_motorDrivers);
  * of this code will calculate the next timer interrupt based on 
  * calculating when the next change will be required for the pwm cycle.
  */
-void motorDriverPWMCycle();
+void motorDriverPWMCycle(void);
 
 #endif /* MOTORDRIVER_H_ */

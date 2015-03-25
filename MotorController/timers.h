@@ -15,6 +15,6 @@
  * Generated time depends on PWM_FREQUENCY, PWM_RESOLUTION, and SYSTEM_CLOCK 
  * from globals.h, and TIMER_DIVIDER in timers.h
  */
-void initMotorTimers();
+void initMotorTimers(void);
 
 #endif /* MOTORCONTROLLER_TIMERS_H_ */

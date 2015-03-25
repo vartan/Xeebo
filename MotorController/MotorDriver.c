@@ -17,38 +17,38 @@ void initMotorDrivers(struct MotorDriver *_motorDrivers) {
 	motorDrivers = _motorDrivers;
 
 
-    motorDrivers[0].enabledPort   = 0;
-    motorDrivers[0].enabledPin    = 21;
+    motorDrivers[0].directionPort   = 0;
+    motorDrivers[0].directionPin    = 21;
     motorDrivers[0].pwmPort       = 0;
     motorDrivers[0].pwmPin        = 22;
 
-    motorDrivers[1].enabledPort   = 0;
-    motorDrivers[1].enabledPin    = 3;
+    motorDrivers[1].directionPort   = 0;
+    motorDrivers[1].directionPin    = 3;
     motorDrivers[1].pwmPort       = 0;
     motorDrivers[1].pwmPin        = 4;
 
-    motorDrivers[2].enabledPort   = 0;
-    motorDrivers[2].enabledPin    = 5;
+    motorDrivers[2].directionPort   = 0;
+    motorDrivers[2].directionPin    = 5;
     motorDrivers[2].pwmPort       = 0;
     motorDrivers[2].pwmPin        = 6;
 
-    motorDrivers[3].enabledPort   = 0;
-    motorDrivers[3].enabledPin    = 8;
+    motorDrivers[3].directionPort   = 0;
+    motorDrivers[3].directionPin    = 8;
     motorDrivers[3].pwmPort       = 0;
     motorDrivers[3].pwmPin        = 7; // led?
 
-    motorDrivers[4].enabledPort   = 0;
-    motorDrivers[4].enabledPin    = 9;
+    motorDrivers[4].directionPort   = 0;
+    motorDrivers[4].directionPin    = 9;
     motorDrivers[4].pwmPort       = 0;
     motorDrivers[4].pwmPin        = 16;
 
-    motorDrivers[5].enabledPort   = 0;
-    motorDrivers[5].enabledPin    = 17;
+    motorDrivers[5].directionPort   = 0;
+    motorDrivers[5].directionPin    = 17;
     motorDrivers[5].pwmPort       = 0;
     motorDrivers[5].pwmPin        = 18;
 
-    motorDrivers[6].enabledPort   = 0;
-    motorDrivers[6].enabledPin    = 19;
+    motorDrivers[6].directionPort   = 0;
+    motorDrivers[6].directionPin    = 19;
     motorDrivers[6].pwmPort       = 0;
     motorDrivers[6].pwmPin        = 20;
 
@@ -59,16 +59,16 @@ void initMotorDrivers(struct MotorDriver *_motorDrivers) {
     for(i=0;i<MOTOR_COUNT;i++) {
         motorDrivers[i].speed                         = 0;
         LPC_GPIO->DIR[motorDrivers[i].pwmPort] |= 1<<motorDrivers[i].pwmPin;
-        LPC_GPIO->DIR[motorDrivers[i].enabledPort] |= 1<<motorDrivers[i].enabledPin;
+        LPC_GPIO->DIR[motorDrivers[i].directionPort] |= 1<<motorDrivers[i].directionPin;
         if(!motorDrivers[i].pwmPort)
             LPC_GPIO->B0[motorDrivers[i].pwmPin]     |= (1<<3) | (1<<4);
         else
             LPC_GPIO->B1[motorDrivers[i].pwmPin]     |= (1<<3) | (1<<4);
 
-        if(!motorDrivers[i].enabledPort)
-            LPC_GPIO->B0[motorDrivers[i].enabledPin] |= (1<<3) | (1<<4);
+        if(!motorDrivers[i].directionPort)
+            LPC_GPIO->B0[motorDrivers[i].directionPin] |= (1<<3) | (1<<4);
         else
-            LPC_GPIO->B1[motorDrivers[i].enabledPin] |= (1<<3) | (1<<4);
+            LPC_GPIO->B1[motorDrivers[i].directionPin] |= (1<<3) | (1<<4);
     }
 
 
@@ -85,22 +85,21 @@ void motorDriverPWMCycle() {
 	nextPWMCycle = PWM_RESOLUTION;
 	// loop through each motor
 	for(i = 0; i < MOTOR_COUNT; i++) {
-	    motorValue = motorDrivers[i].speed;
+		  // absolute motor value
+			motorValue = motorDrivers[i].speed>0?motorDrivers[i].speed:-motorDrivers[i].speed;
+		  if(motorDrivers[i].speed>0)
+		      LPC_GPIO->CLR[motorDrivers[i].directionPort] |= 1<<motorDrivers[i].directionPin;
+			else
+		      LPC_GPIO->SET[motorDrivers[i].directionPort] |= 1<<motorDrivers[i].directionPin;
+				
+
         // add 100 to motor value in order to convert from [-100, 100] to [0, 100]
-	    motorPWM = motorValue*PWM_RESOLUTION/200 + PWM_RESOLUTION/2;
-	    if(motorValue == 0) {
-	    	// disable motor
-            LPC_GPIO->CLR[motorDrivers[i].enabledPort] |= 1<<motorDrivers[i].enabledPin;
-		    // turn off motor pwm
-            LPC_GPIO->CLR[motorDrivers[i].pwmPort]     |= 1<<motorDrivers[i].pwmPin;
-		} else if(motorPWM >= currentPWMCycle) {
+	    motorPWM = motorValue*PWM_RESOLUTION/100;
+			
+		if(motorPWM > currentPWMCycle) {
 			// force enable motor
-            LPC_GPIO->SET[motorDrivers[i].enabledPort] |= 1<<motorDrivers[i].enabledPin;
-	        // high motor PWM
             LPC_GPIO->SET[motorDrivers[i].pwmPort]     |= 1<<motorDrivers[i].pwmPin;
 		} else {
-			// force enable motor
-            LPC_GPIO->SET[motorDrivers[i].enabledPort] |= 1<<motorDrivers[i].enabledPin;
 	        // low motor PWM
             LPC_GPIO->CLR[motorDrivers[i].pwmPort]     |= 1<<motorDrivers[i].pwmPin;
 		}
@@ -110,7 +109,7 @@ void motorDriverPWMCycle() {
 	        nextPWMCycle = motorPWM;
 	    }
 	}
-    MOTOR_TIMER->MR[0] = (nextPWMCycle - currentPWMCycle) % PWM_RESOLUTION;
+    MOTOR_TIMER->MR0 = (nextPWMCycle - currentPWMCycle) % PWM_RESOLUTION;
 
 	// calculate next "current PWM cycle" value
 	currentPWMCycle = (nextPWMCycle)%PWM_RESOLUTION;
