@@ -1,5 +1,5 @@
 /*
- * PWM.h
+ * MotorDriver.h
  *
  *  Created on: Feb 12, 2015
  *      Author: vartan
@@ -15,15 +15,11 @@
  * This struct stores all of the information required to control the motors.
  */
 struct MotorDriver {
-    uint32_t *pwmRegister;       /**< Pointer to the register which drives pwm 
-                                      on motor. For our motor, 0% is back, 
-                                      100% is forwards, and as 50% is 
-                                      approached, speed is decreased          */
-    uint8_t pwmMask;             /**< Mask to isolate bits from pwm register  */
-    uint32_t *enabledRegister;   /**< Pointer to the register which selects
-                                      whether or not the motor is enabled     */
-    uint8_t enabledMask;         /**< Mask to isolate bits from en register   */
-    int8_t speed;                /**< Value which is read/written which 
+    uint8_t pwmPort;                  /**< Pointer to the pwm pio control register */
+    uint8_t pwmPin;
+    uint8_t enabledPort;
+    uint8_t enabledPin;
+    volatile int8_t speed;                    /**< Value which is read/written which
                                       controls motor speed. -100 is full 
                                       backwards, 100 is full forwards, and 0 is 
                                       stop                                    */
@@ -37,6 +33,16 @@ struct MotorDriver {
  * for the motors.
  */
 void initMotorDrivers(struct MotorDriver *_motorDrivers);
-void motorDriverPWMCycle(void);
+
+/**
+ * Motor Driver PWM Cycle
+ *
+ * This function is called by the CT32B0 interrupt controller in order to
+ * manage the PWM all motors. Currently the interrupt is called 
+ * PWM_FREQUENCY*PWM_RESOLUTION times per second. Future versions
+ * of this code will calculate the next timer interrupt based on 
+ * calculating when the next change will be required for the pwm cycle.
+ */
+void motorDriverPWMCycle();
 
 #endif /* MOTORDRIVER_H_ */

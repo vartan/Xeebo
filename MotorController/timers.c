@@ -9,6 +9,7 @@
 #include "globals.h"
 #include "MotorDriver.h"
 void initMotorTimers() {
+    /*
     //Ensure clock is enabled for C32B0
     //  Bit 9: C32B0
     //    0: Disable clock
@@ -16,33 +17,52 @@ void initMotorTimers() {
     LPC_SYSCON->SYSAHBCLKCTRL |= 1<<9;
 
     //Prescale register
-    //  Ignoring prescale register, our min frequency can be 90Hz
-    LPC_CT32B0->PC = TIMER_DIVIDER - 1;
+    //  Prescale register will be the minimum wait time for PWM
+    MOTOR_TIMER->PR = SYSTEM_CLOCK /
+            (PWM_FREQUENCY * PWM_RESOLUTION) - 1;
 
     //Match Register
     //  Match at PWM_RESOLUTION * PWM_FREQUENCY SECONDS
-    LPC_CT32B0->MR[0] = SYSTEM_CLOCK / 
-                            (PWM_FREQUENCY * PWM_RESOLUTION * TIMER_DIVIDER);
+    MOTOR_TIMER->MR[0] = 200; // wait whole cycle for first interrupt to be triggered
 
-    //CTCR
+    //TCR
     //  BIT 0: CEN
     //    0: The counters are disabled
     //    1: The Timer Counter and Prescale Counter are enabled for counting.
-    LPC_CT32B0->CTCR |= 1<<0;
+    MOTOR_TIMER->TCR |= 1<<0;
 
     //Match Control Register
     //  Bit 0: MR0I - Interrupt on MR0
     //    0: Disabled
     //    1: Enabled
-    LPC_CT32B0->MCR |= 1<<0;
+    MOTOR_TIMER->MCR |= (1<<0) | (1<<1);
 
     //Count Control Register
     //  Bit 1:0
     //    00: Timer counter - every rising PCLK edge (Default, redundant)
-    LPC_CT32B0->CTCR &= ~( (1<<0) | (1<<1) );
+    MOTOR_TIMER->CTCR &= ~( (1<<0) | (1<<1) );
+    MOTOR_TIMER->TCR = (MOTOR_TIMER->TCR & (~(1<<1))) | (1<<0);
+*/
+    NVIC_EnableIRQ(TIMER_32_0_IRQn);
+    LPC_SYSCON->SYSAHBCLKCTRL |= 1 << 9;          // enable 16-bit timer0 clock
+    MOTOR_TIMER->CTCR = 0;                         // disable counter mode
+    MOTOR_TIMER->IR   = 0x1F;                      // interrupt flag
+    MOTOR_TIMER->TCR  = (1<<1);       // disable/reset timer
 
-    NVIC_EnableIRQ(TIMER_32_1_IRQn);
+    MOTOR_TIMER->PR   = SYSTEM_CLOCK /
+            (PWM_FREQUENCY * PWM_RESOLUTION) - 1;        // set prescaler
+    MOTOR_TIMER->MR0  = 200;           // set match register
+
+    MOTOR_TIMER->MCR  = (1<<0) | (1<<1);      // enable interrupts/autoreset
+
+    MOTOR_TIMER->TCR  = (1<<0);       // enable run
 }
+static int timerLoopCount = 0;
 void TIMER32_0_IRQHandler() {
+    int interrupt = MOTOR_TIMER->IR;
+    //MOTOR_TIMER->TCR  = (1<<1);       // disable/reset timer
     motorDriverPWMCycle();
+    timerLoopCount++;
+    //MOTOR_TIMER->TCR  = (1<<0);       // enable run
+    MOTOR_TIMER->IR = interrupt;
 }
