@@ -17,6 +17,19 @@ This is our seventh weekly report of the semester
 
 #Sam Jacobs
 
+###Constructed the frame
+This week I assembled the frame.
+
+###Next Steps 
+The next step is to mount the thrusters. We are going to asses the necessety to protect the thrusters. We are going to determine if we are going to modify the frame such that the thrusters can be mounted to the inner part of the frame or if we are going to design a protective cover or cage to surround the motor.
+![sam10_15](/images/sam10_15.png)
+The craft will be weighed out of the water and the volume of it will be calcuatled so we can determine the ideal weight of the payload in order to achieve netural bouyancy.
+![sam10_13](/images/sam10_13.png)
+![sam10_10](/images/sam10_10.png)
+After the frame is in a comleted state I am going to transition to work on the electronics design for either test equipment for the various sensors we will have on the craft so we can have working subsystems to detect ranges and distances, listen for the pingers that will be placed around the competition area, etc.
+![sam10_6](/images/sam10_6.png)
+![sam10_8](/images/sam10_8.png)
+## 
 ---
 
 #Steven Le
