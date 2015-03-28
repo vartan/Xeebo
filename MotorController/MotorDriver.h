@@ -20,9 +20,8 @@ struct MotorDriver {
     uint8_t directionPort;
     uint8_t directionPin;
     volatile int8_t speed;                    /**< Value which is read/written which
-                                      controls motor speed. -100 is full 
-                                      backwards, 100 is full forwards, and 0 is 
-                                      stop                                    */
+                                      controls motor speed. 0% is stopped, 100% is
+                                      full backwards*/
 };
 /**
  * Initialize Motor Drivers
