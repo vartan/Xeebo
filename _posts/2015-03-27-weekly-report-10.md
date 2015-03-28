@@ -50,8 +50,6 @@ After the frame is in a comleted state I am going to transition to work on the e
 
 #Steven Le
 
-(DRAFT)
-
 ##Circuit Issue Resolved
 The mbed was not turning on last week due to a short in the system.  When utilizing a LM7805 linear regulator to output +5V on the rail (used as an external power supply), the voltage readings is verified with common reference ground.  However, when applying both circuits to that rail, the voltage drops to 0.16 volts.  After isolating both circuits, the culprit is from the MSGEQ7 circuit where there was erronous wiring leading to ground.  This was fixed and the circuit is now functional in hardware.  
 
@@ -74,4 +72,8 @@ This is the audio signal coming out of the MSGEQ7 before going into the mbed ADC
 When strobing the multiplexor to grab data from each frequency range in software, the output on the terminal reads constant values of 40-43.  When put under an oscilloscope, sporatic readings are introduced.
 Current debug solution will be to use the Analog Discovery to send a 1kHz/2.5kHz signal into the input of the MSGEQ7 and see if it can be analyzed and read.  In addition to output numbers on Tera Term emulator, a test circuit will be utilized with LEDs for visual representation (dimming of LEDS between frequency ranges).
 
-More to come.
+##Next Step
+Board design on the receive circuit will be drafted on DipTrace with all components from schematic.
+Successful resolution to frequency generation to the circuit for data manipulation.
+Boost converter to MSGEQ7 implementation with revised schematic to the board design.
+The goal is to have a functional design before the next presentation.
