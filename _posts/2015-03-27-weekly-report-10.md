@@ -9,6 +9,16 @@ This is our seventh weekly report of the semester
 
 #Brent Scheneman
 
+##Thruster Driver Boards
+
+This week I finished the thruster driver boards and sent them to OSHPark to get fabricated. We order 9 boards which give us three extra just in case something happens. These were re-designed to be modular due to several reasons. If a driver goes out, we can easily replace the specific driver instead of replacing the entire thruster controller board that had 6 drivers on it. This drastically reduces the cost and difficulty of debugging an issue. They have multiple main power inputs/outputs which allow us to daisy change the power across all drivers. We should have them back from the fab house by April 6 with the expedited process. Below are the board renderings and what the finished board are expected to look like.
+
+###Thruster Driver Board Rendering - TOP
+![Thruster Driver Board Rendering - TOP](/images/ThrusterBoardRenderingTop.png)
+
+###Thruster Driver Board Rendering - BOTTOM
+![Thruster Driver Board Rendering - BOTTOM](/images/ThrusterBoardRenderingBottom.png)
+
 ---
 
 #Michael Vartan
