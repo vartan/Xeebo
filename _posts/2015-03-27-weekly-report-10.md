@@ -30,7 +30,10 @@ I had three goals this week to meet:
 2. Converting the software to Brent's new motor driver design, using PWM/Direction instead of PWM and enable. 
 3. Getting the clock speed to run at 48MHz instead of 12MHz
 
-I was able to get to the bottom of the missed-timing-interrupt, I am able to get over it by forcing the processor to check for timer overrun after each interrupt is handled. I'm not entirely clear how exactly this didn't work originally.
+## Missed Timer 
+I was able to get to the bottom of the missed-timing-interrupt, I am able to get over it by forcing the processor to check for timer overrun after each interrupt is handled. I'm not entirely clear what is causing the timer to be overrun before the interrupt handler exists. The interrupt handler seemingly shouldn't take that long, and I've tried stopping/starting the interrupt timer in the middle of the handler and I was still getting the overrun problem. In the end, although I'm not sure what caused the issue, I was able to solve it.
+
+## New PWM Design 
 
 (currently writing this, please check again soon)
 
