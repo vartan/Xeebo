@@ -35,7 +35,19 @@ I was able to get to the bottom of the missed-timing-interrupt, I am able to get
 
 ## New PWM Design 
 
-(currently writing this, please check again soon)
+The old board design was supposed to have two pins: PWM and enable. The PWM channel would be slower as it approached 50%, 100% would be full speed forwards direction, and 0% would be full speed backwards direction. We decided to change the motor controls to match the motor controllers on our first submarine, Xeebo.
+
+This new (old) design dictates that the PWM channel now maps directly to speed. The lowest PWM duty cycle (0%) maps to off, and the highest PWM duty cycle (100%) matches to full power. 
+
+I have made the changes in the motor driver code to match this configuration. It has not been tested, but it can be seen below:
+<script src="https://gist.github.com/vartan/757383b16002378da006.js"></script>
+
+<script src="https://gist.github.com/vartan/fd13810118796413b725.js"></script>
+
+## Getting the clock speed to run at 48MHz instead of 12MHz
+I was having trouble getting this to work on LPCXpresso because the clock settings on the LPC11u24 are so finnicky and the documentation is complicated. If you make a mistake in programming this, you effectively brick the chip until you reset it by hand by putting it in ISP mode. By setting the clock sources correctly and the PLL correctly, I was able to get the clock to run at 48MHz.
+
+All of the changes I made this week, I have not been able to test with an oscilloscope. I am planning on spending all of my spring break free time working on this software to get it perfect.
 
 ---
 
