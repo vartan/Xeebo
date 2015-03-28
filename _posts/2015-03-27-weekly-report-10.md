@@ -23,6 +23,17 @@ This week I finished the thruster driver boards and sent them to OSHPark to get 
 
 #Michael Vartan
 
+This week I primarily worked on fixing up the thruster controls. Unfortunately, working with the lpc11 development board has been a nightmare, as shown in my previous senior project reports; it is from LPCXpresso and the LPCXpresso software uses eclipse, which I'm not a fan of. There were some debugging issues that I was not able to work out, so I moved up to keil µVision. At first I tried running it through Keil on my mac, but Keil lacks software debugging support for the LPC11u24, and the hardware drivers do not work through WINE. Next, I tried running it through a virtual machine on my mac, but there was another issue of getting the debugger working on the copy of windows that I had. Finally, I pulled my old windows laptop away from my work and started chugging away.
+
+I had three goals this week to meet:
+1. Getting to the bottom of the missed-timing-interrupt
+2. Converting the software to Brent's new motor driver design, using PWM/Direction instead of PWM and enable. 
+3. Getting the clock speed to run at 48MHz instead of 12MHz
+
+I was able to get to the bottom of the missed-timing-interrupt, I am able to get over it by forcing the processor to check for timer overrun after each interrupt is handled. I'm not entirely clear how exactly this didn't work originally.
+
+(currently writing this, please check again soon)
+
 ---
 
 #Sam Jacobs
@@ -45,7 +56,7 @@ The craft will be weighed out of the water and the volume of it will be calcuatl
 After the frame is in a comleted state I am going to transition to work on the electronics design for either test equipment for the various sensors we will have on the craft so we can have working subsystems to detect ranges and distances, listen for the pingers that will be placed around the competition area, etc.
 
 ![sam10_3](/images/sam10_3.png)
-## 
+ 
 ---
 
 #Steven Le
