@@ -75,6 +75,17 @@ int main(void) {
 
     message_queue_push(currentHandler, message);
 
+    uint8_t *message2 = malloc(currentHandler->receiveLength * sizeof(uint8_t)); 
+ 
+    //scenario: a 1 comes in over UART
+    message2[0] = 4;
+    //scenario: a 2 comes in over UART
+    message2[1] = 5;
+    //scenario: a 3 comes in over UART
+    message2[2] = 6;
+
+    message_queue_push(currentHandler, message2);
+
     
     struct message_queue_item incomingMessage;
     while(1) {
