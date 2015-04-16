@@ -72,6 +72,8 @@ int main(void) {
     message[1] = 2;
     //scenario: a 3 comes in over UART
     message[2] = 3;
+    // invalid:
+    message[3] = 3;
 
     message_queue_push(currentHandler, message);
 
