@@ -1,11 +1,11 @@
 ---
 layout: post
-title:  "Week #10- Weekly Report 7"
-date:   2015-03-27 00:00:00
+title:  "Week #11- Weekly Report 8"
+date:   2015-04-17 00:00:00
 categories: weekly
 ---
 
-This is our seventh weekly report of the semester
+This is our eigth weekly report of the semester
 
 #Brent Scheneman
 
