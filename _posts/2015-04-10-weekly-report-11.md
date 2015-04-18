@@ -23,31 +23,117 @@ This week I finished the thruster driver boards and sent them to OSHPark to get 
 
 #Michael Vartan
 
-This week I primarily worked on fixing up the thruster controls. Unfortunately, working with the lpc11 development board has been a nightmare, as shown in my previous senior project reports; it is from LPCXpresso and the LPCXpresso software uses eclipse, which I'm not a fan of. There were some debugging issues that I was not able to work out, so I moved up to keil µVision. At first I tried running it through Keil on my mac, but Keil lacks software debugging support for the LPC11u24, and the hardware drivers do not work through WINE. Next, I tried running it through a virtual machine on my mac, but there was another issue of getting the debugger working on the copy of windows that I had. Finally, I pulled my old windows laptop away from my work and started chugging away.
+Much has happened in the last few weeks! I am really excited to share all of the progress
 
-I had three goals this week to meet:
-1. Getting to the bottom of the missed-timing-interrupt
-2. Converting the software to Brent's new motor driver design, using PWM/Direction instead of PWM and enable. 
-3. Getting the clock speed to run at 48MHz instead of 12MHz
+##Missing timer interrupts
+The missing timer interrupts issue turns out to be the strangest issue I have ever encountered. Sam and I were able to solve it: there were two very strange issues that were both happening simultaneously. 
 
-## Missed Timer 
-I was able to get to the bottom of the missed-timing-interrupt, I am able to get over it by forcing the processor to check for timer overrun after each interrupt is handled. I'm not entirely clear what is causing the timer to be overrun before the interrupt handler exists. The interrupt handler seemingly shouldn't take that long, and I've tried stopping/starting the interrupt timer in the middle of the handler and I was still getting the overrun problem. In the end, although I'm not sure what caused the issue, I was able to solve it.
+1. There is a bit in the LPC11u24 timer settings called MR0R. This bit dictates that when the timer matches the match register, the timer counter will be reset. Somehow, sometimes the timer counter would NOT be reset by the match event. This was solved by manually setting TC=0 at the beginning of the interrupt routine. *Who knows?*
+2. When I was testing, I turned off compiler optimizations because it makes debugging the code easier. Once we fixed the timer using the above technique, I turned compiler optimizations back on. Guess what? *It stopped working again!!* Somehow, an evil compiler bug caused the interrupt handler to break as well. 
 
-## New PWM Design 
+When you have a hardware bug and a compiler bug in one function, clearly the deck is stacked against you. Luckily we were able to figure it out.
 
-The old board design was supposed to have two pins: PWM and enable. The PWM channel would be slower as it approached 50%, 100% would be full speed forwards direction, and 0% would be full speed backwards direction. We decided to change the motor controls to match the motor controllers on our first submarine, Xeebo.
+##Serial Communication on Zeebo-Brain "Server"
+From now on, I am going to call the linux computer inside of the submarine the "Server". I decided to install NodeJS on the server because it is relatively quick, but more importantly the language is event-driven. I want the robot to be built from the ground up around the concept of events. Using events through NodeJS means that the process will efficiently use all of its resources yet never "spin" waiting for information. 
 
-This new (old) design dictates that the PWM channel now maps directly to speed. The lowest PWM duty cycle (0%) maps to off, and the highest PWM duty cycle (100%) matches to full power. 
+Potentially the most critical event on the server is peripheral communication. That is why I put a huge amount of effort into making an actual nodejs package for serial communication. This package creates a quick, intuitive interface to both asynchronous and synchronous handling of fixed-length messages. You can see a table of our current message specifications below for a better understanding of what a fixed-length-message entails.
 
-I have made the changes in the motor driver code to match this configuration. It has not been tested, but it can be seen below:
-<script src="https://gist.github.com/vartan/757383b16002378da006.js"></script>
+<div id="iframehere"></div>
+<script>
+//workaround because github/jekyll won't let me put an 
+//iframe directly into the html.
+    document.getElementById("iframehere").innerHTML = "<iframe width='100%' height='600px' frameborder='0' src='https://docs.google.com/spreadsheets/d/1TP0-Qkuk-7ZXS9RNS5TpPRJ_JgtWoxkv3e7dtqB7E4Y/edit?usp=sharing&single=true&gid=0&output=html'>You must enable iframes, silly</iframe>";
+</script>
 
-<script src="https://gist.github.com/vartan/fd13810118796413b725.js"></script>
+The most important part of this interface is that it handles both **synchronous** and **asynchronous** message handling. What does this mean? Let's use `request motion vector` as an example. 
 
-## Getting the clock speed to run at 48MHz instead of 12MHz
-I was having trouble getting this to work on LPCXpresso because the clock settings on the LPC11u24 are so finnicky and the documentation is complicated. If you make a mistake in programming this, you effectively brick the chip until you reset it by hand by putting it in ISP mode. By setting the clock sources correctly and the PLL correctly, I was able to get the clock to run at 48MHz.
+* Asynchronous handling
 
-All of the changes I made this week, I have not been able to test with an oscilloscope. I am planning on spending all of my spring break free time working on this software to get it perfect.
+  - It would be favorable to have a knowledge at all times of what the robot is doing. Therefore, I may have a function called `updateMotionVectors` which will receive the serial data which contains the motion information, and then update the server's variable to reflect this change. This would look something like:
+    ```javascript
+    var getMotionHandler = messageHandler.addHandler({
+      id:       04, 
+      name:     "Get Motion Handler",
+      length:   5, 
+    }).on("message", updateMotionVectors);
+    ```
+
+* Synchronous handling:
+ - On the other hand, we may want to specifically request the motion data and then do something with it. For example, when I want to turn the robot 90°, I will send the `NEW_MOTION` command. Then, I would like to receive a motion vector from the lpc11u24 and check it against the motion data I sent out. This would look something like:
+```javascript
+var newMotionData = (...);
+sendMotionData(newMotionData)
+.then(getMotionHandler.receive())
+.then(verifyMotionVectors(newMotionData));
+```
+
+The message handling package that I wrote can be seen on [github.com/vartan/serialmessages](https://github.com/vartan/serialmessages) with better documentation. It can also be installed througn the npm package manager with the command `bash npm install serialmessages`. My favorite part of creating this was being able to install the package that I created on a different machine, and watching it work!
+
+##Serial Communication on LPC11u24
+I did not forget about our little microcontroller, or neglect it. I made a pretty slick way of handling communication on it as well. I have not tested it on the microcontroller, but I've tested it on my computer and compiled it as well, so hopefully it'll just work when it's on the board. All in all, this code is about 174 lines, it can be seen on our github page [here](https://github.com/vartan/Xeebo/tree/master/messageHandler_c).
+
+I was concerned about handling serial messages over the UART because if the handler takes too long, it may overflow the UART buffer. Therefore, I decided instead to create a queue of messages on the heap and handle them in a FCFS fashion. 
+
+The struct for an individual message handler looks as follows:
+```c
+struct message_type {
+    uint8_t id;
+    uint8_t sendLength;
+    uint8_t receiveLength;
+    void (*receiveHandler)(struct message_type *handler, uint8_t *buffer);
+};
+//Example:
+//struct message_handler exampleHandler = {
+//  .id             = 2,
+//  .sendLength     = 1,
+//  .receiveLength  = 3,
+//  .receiveHandler = &myReceiveHandler
+//}
+```
+
+When the first byte of a message comes in over UART, space gets allocated in the heap for a buffer of size receiveLength. Then, each byte gets put into the buffer until it is filled. Then, this buffer and message are both sent on the message queue, to be handled in main by the following code:
+```c
+while(1) {
+    if(message_queue_has_next()) {
+        incomingMessage = message_queue_pop();
+        incomingMessage.message_type->receiveHandler(incomingMessage.message_type,incomingMessage.buffer);
+    }
+}
+```
+
+Receive handlers also have their own syntactic sugar. Notice below, there is a struct called test_message_response. I create a pointer of test_message_response, and point it to the first byte in the buffer. This then becomes an alias for `uint8_t buffer`, with explicit naming. This can also be used to send raw integers and other datatypes bytwise over serial, and receive them as their native type on the handler side (as long as endianness is preserved). If I sent a 4 byte integer from the server, it would be received as 4 individual bytes on the lpc. However, if I replaced `uint8_t packet1` with `int integerPacket`, `integerPacket` would now be the original int sent over from the client. Wild!
+
+```c
+/**
+ * My Receive Handler
+ * @param handler Pointer to message type being handled
+ * @param buffer  Pointer to message in heap.
+ */
+void myReceiveHandler(struct message_type *handler, uint8_t *buffer) {
+
+    struct test_message_response {
+        uint8_t packet1;
+        uint8_t packet2;
+        uint8_t packet3;
+    };
+
+    // convert buffer to test_message
+    struct test_message_response *testMessage = (struct test_message_response *) buffer;
+
+    // accessing the data through struct instead of byte array:
+    printf("My packets are   %d %d %d\n", testMessage->packet1, testMessage->packet2, testMessage->packet3);
+    printf("My raw buffer is %d %d %d\n", buffer[0], buffer[1], buffer[2]);
+
+    // free message received from heap
+    free(buffer);
+}
+```
+
+##Server Reinstall
+Unfortunately, there was a kernel issue when upgrading the operating system, so I had to reinstall the server from scratch. Due to lack of time, I installed ubuntu server on the server instead of Arch Linux. 
+
+Then, I installed autossh and created a daemon which will detect when Zeebo is connected to the school's wifi, and automatically create an ssh tunnel, forwarding port 22 to a raspberry pi in my apartment. This allows me to ssh into the robot from anywhere, despite the closed network at CSULB.
+
 
 ---
 
