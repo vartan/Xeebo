@@ -53,6 +53,12 @@ All of the changes I made this week, I have not been able to test with an oscill
 
 #Sam Jacobs
 
+1:1 Scale 3D Renderings of Constructed Craft
+![final_iso](/images/final_top.png)
+![final_side](/images/final_side.png)
+![final_front](/images/final_front.png)
+![final_top](/images/final_top.png)
+
 ### Frame Construction
 
 This week I worked with the team to fabircate the parts for the frame. On thrusday I assembled the frame from the parts that the team worked on creating.
