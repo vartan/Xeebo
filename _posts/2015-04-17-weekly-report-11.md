@@ -21,7 +21,7 @@ This week I finished the thruster driver boards and sent them to OSHPark to get 
 
 ---
 
-#Michael Vartan
+#Michael Vartan <a name="vartan"></a>
 
 Much has happened in the last few weeks! I am really excited to share all of the progress
 
