@@ -89,6 +89,12 @@ Then, I installed autossh and created a daemon which will detect when Zeebo is c
 
 ### Frame Construction
 
+1:1 Scale 3D Renderings of Constructed Craft
+![final_iso](/images/final_top.png)
+![final_side](/images/final_side.png)
+![final_front](/images/final_front.png)
+![final_top](/images/final_top.png)
+
 This week I worked with the team to fabircate the parts for the frame. On thrusday I assembled the frame from the parts that the team worked on creating.
 ![sam10_5](/images/sam10_5.png)
 ![sam10_6](/images/sam10_6.png)
