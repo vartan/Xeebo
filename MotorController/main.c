@@ -4,6 +4,8 @@
  *  Created on: Feb 12, 2015
  *      Author: vartan
  */
+
+#include <stdbool.h>
 #include "lpc11uxx.h"
 #include "main.h"
 #include "globals.h"
@@ -11,7 +13,7 @@
 #include "timers.h"
 #include "message_handler.h"
 #include "message_queue.h"
-#include <stdbool.h>
+#include "uart.h"
 void doNothingHandler (struct message_type *handler, uint8_t *buffer) {
 }
 	struct message_type myHandlers[] = {
@@ -60,6 +62,7 @@ int main() {
 	
 	initMotorDrivers(motors);
 	simulateMessageReceive();
+	UARTInit(9600);
 	while(1) {
         if(message_queue_has_next()) {
             incomingMessage = message_queue_pop();
