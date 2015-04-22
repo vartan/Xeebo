@@ -39,7 +39,7 @@ void doNothingHandler(struct message_type *handler, uint8_t *buffer) {
 int main(void) {
     struct message_type myHandlers[] = {
         {
-        .id             = 0
+        .id             = 0,
         .sendLength     = 1,
         .receiveLength  = 2,
         .receiveHandler = &doNothingHandler
@@ -51,7 +51,7 @@ int main(void) {
         .receiveHandler = &doNothingHandler
         },
         {
-        .id             = 2
+        .id             = 2,
         .sendLength     = 1,
         .receiveLength  = 3,
         .receiveHandler = &myReceiveHandler
@@ -91,8 +91,9 @@ int main(void) {
     while(1) {
         if(message_queue_has_next()) {
             incomingMessage = message_queue_pop();
-            printf("Handling message %u", incomingMessage.message_type)
+            printf("Handling message ID %u\n", incomingMessage.message_type->id);
             incomingMessage.message_type->receiveHandler(incomingMessage.message_type,incomingMessage.buffer);
+            printf("%d messages left in queue.\n\n", message_queue_size());
         }
     }
     currentHandler->receiveHandler(currentHandler, message);
