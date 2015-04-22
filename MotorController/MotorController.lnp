@@ -3,7 +3,6 @@
 ".\motordriver.o"
 ".\timers.o"
 ".\uart.o"
-".\message_handler.o"
 ".\message_queue.o"
 ".\startup_lpc11uxx.o"
 ".\system_lpc11uxx.o"

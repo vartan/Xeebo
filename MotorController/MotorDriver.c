@@ -14,7 +14,7 @@ struct MotorDriver *motorDrivers;
 
 void initMotorDrivers(struct MotorDriver *_motorDrivers) {
     uint8_t i;
-	motorDrivers = _motorDrivers;
+		motorDrivers = _motorDrivers;
 
 
     motorDrivers[0].directionPort   = 0;
@@ -51,10 +51,6 @@ void initMotorDrivers(struct MotorDriver *_motorDrivers) {
     motorDrivers[6].directionPin    = 19;
     motorDrivers[6].pwmPort       = 0;
     motorDrivers[6].pwmPin        = 20;
-
-
-
-
 
     for(i=0;i<MOTOR_COUNT;i++) {
         motorDrivers[i].speed                         = 0;
@@ -109,7 +105,7 @@ void motorDriverPWMCycle() {
 	        nextPWMCycle = motorPWM;
 	    }
 	}
-    MOTOR_TIMER->MR0 = (nextPWMCycle - currentPWMCycle) % PWM_RESOLUTION;
+  MOTOR_TIMER->MR0 = (nextPWMCycle - currentPWMCycle) % PWM_RESOLUTION;
 
 	// calculate next "current PWM cycle" value
 	currentPWMCycle = (nextPWMCycle)%PWM_RESOLUTION;
