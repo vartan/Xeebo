@@ -17,30 +17,10 @@
 void doNothingHandler (struct message_type *handler, uint8_t *buffer) {
 }
 struct message_type myHandlers[] = {
-        {
-        .id             = 0,
-        .sendLength     = 0,
-        .receiveLength  = 0,
-        .receiveHandler = &doNothingHandler
-        },
-        {
-        .id             = 1,
-        .sendLength     = 0,
-        .receiveLength  = 0,
-        .receiveHandler = &doNothingHandler
-        },
-        {
-        .id             = 2,
-        .sendLength     = 0,
-        .receiveLength  = 0,
-        .receiveHandler = &doNothingHandler
-        },
-        {
-        .id             = 3,
-        .sendLength     = 0,
-        .receiveLength  = 6,
-        .receiveHandler = &updateMotionVectorHandler
-        }
+    {.id = 0, .sendLength = 0, .receiveLength  = 0, .receiveHandler = &doNothingHandler},
+    {.id = 1, .sendLength = 0, .receiveLength  = 0, .receiveHandler = &doNothingHandler},
+    {.id = 2, .sendLength = 0, .receiveLength  = 0, .receiveHandler = &doNothingHandler},
+    {.id = 3, .sendLength = 0, .receiveLength  = 6, .receiveHandler = &updateMotionVectorHandler}
 };
 void simulateMessageReceive(void) {
     struct message_type *currentHandler;
