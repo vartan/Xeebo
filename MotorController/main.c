@@ -22,6 +22,7 @@ struct message_type myHandlers[] = {
     {.id = 2, .sendLength = 0, .receiveLength  = 0, .receiveHandler = &doNothingHandler},
     {.id = 3, .sendLength = 0, .receiveLength  = 6, .receiveHandler = &updateMotionVectorHandler}
 };
+
 void simulateMessageReceive(void) {
     struct message_type *currentHandler;
     // scenario: no message is being handled, and a message containing ascii
@@ -39,11 +40,14 @@ void simulateMessageReceive(void) {
 int main() {
     struct message_queue_item *incomingMessage;
     struct MotorDriver *motors;
-    
+    // Initialize motor pins and set speeds to zero
     motors = initMotorDrivers();
+    // debugging code, test the message queue
     simulateMessageReceive();
+    // initialize uart with baud rate 9600
     UARTInit(9600);
     while(1) {
+        // if message queue isn't empty, handle next message
         if(message_queue_has_next()) {
             incomingMessage = message_queue_pop();
             incomingMessage->message_type->receiveHandler(
@@ -52,6 +56,6 @@ int main() {
             );
             free(incomingMessage->buffer);
             free(incomingMessage);
-        }
-    }
+        } // TODO: otherwise, sleep.
+    } // end while(1)
 }
