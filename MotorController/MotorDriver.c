@@ -10,7 +10,9 @@
 #include "LPC11Uxx.h"
 #include "MotorDriver.h"
 #include "timers.h"
+#include "message_handler.h"
 struct MotorDriver *motorDrivers;
+
 
 void initMotorDrivers(struct MotorDriver *_motorDrivers) {
     uint8_t i;
@@ -111,4 +113,45 @@ void motorDriverPWMCycle() {
 	currentPWMCycle = (nextPWMCycle)%PWM_RESOLUTION;
 
 	// fire the next interrupt when the next motor switch must occur
+}
+
+
+/**
+ * Update Motion Vector Handler
+ * @param handler Pointer to MotionVector info being handled
+ * @param buffer  Pointer to message.
+ */
+void updateMotionVectorHandler(struct message_type *handler, uint8_t *buffer) {
+
+    struct motion_data {
+        uint8_t surge;
+        uint8_t sway;
+        uint8_t heave;
+        uint8_t roll;
+        uint8_t yaw;
+        uint8_t pitch;
+    };
+		struct MotorConfiguration {
+			struct MotorDriver surge;
+			struct MotorDriver sway;
+			struct MotorDriver heave;
+			struct MotorDriver roll;
+			struct MotorDriver yaw;
+			struct MotorDriver pitch;
+		};
+		struct MotorConfiguration *motors = (struct MotorConfiguration*) motorDrivers;
+
+    // convert buffer to test_message
+    struct motion_data *message = (struct motion_data*) buffer;
+		
+		motors->surge.speed = message->surge;
+		motors->sway.speed  = message->sway;
+		motors->heave.speed = message->heave;
+		motors->roll.speed  = message->roll;
+		motors->yaw.speed   = message->yaw;
+		motors->pitch.speed = message->pitch;
+
+    // accessing the data through struct instead of byte array:
+		
+
 }

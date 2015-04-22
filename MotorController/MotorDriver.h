@@ -4,11 +4,13 @@
  *  Created on: Feb 12, 2015
  *      Author: vartan
  */
-
-#ifndef MOTORDRIVER_H_
-#define MOTORDRIVER_H_
+#ifndef _MOTORDRIVER_H_
+#define _MOTORDRIVER_H_
 
 #define MOTOR_COUNT 6
+#include "message_handler.h"
+#include "globals.h"
+
 /**
  * Motor Driver
  *
@@ -22,6 +24,10 @@ struct MotorDriver {
     volatile int8_t speed;                    /**< Value which is read/written which
                                       controls motor speed. 0% is stopped, 100% is
                                       full backwards*/
+};
+
+union theMotors {
+	struct MotorDriver motors[MOTOR_COUNT];
 };
 /**
  * Initialize Motor Drivers
@@ -43,5 +49,8 @@ void initMotorDrivers(struct MotorDriver *_motorDrivers);
  * calculating when the next change will be required for the pwm cycle.
  */
 void motorDriverPWMCycle(void);
+
+void updateMotionVectorHandler(struct message_type *handler, uint8_t *buffer);
+
 
 #endif /* MOTORDRIVER_H_ */
