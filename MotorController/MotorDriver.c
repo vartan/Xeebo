@@ -46,7 +46,7 @@ struct MotorDriver *initMotorDrivers() {
             LPC_GPIO->B1[motorDrivers[i].directionPin] |= (1<<3) | (1<<4);
     }
     initMotorTimers();
-		return motorDrivers;
+    return motorDrivers;
 }
 
 void motorDriverPWMCycle() {
@@ -59,14 +59,14 @@ void motorDriverPWMCycle() {
     nextPWMCycle = PWM_RESOLUTION;
     // loop through each motor
     for(i = 0; i < MOTOR_COUNT; i++) {
-          // absolute motor value
-            motorValue = motorDrivers[i].speed>0?motorDrivers[i].speed:-motorDrivers[i].speed;
-          if(motorDrivers[i].speed>0)
-              LPC_GPIO->CLR[motorDrivers[i].directionPort] |= 1<<motorDrivers[i].directionPin;
-            else
-              LPC_GPIO->SET[motorDrivers[i].directionPort] |= 1<<motorDrivers[i].directionPin;
+        // absolute motor value
+        motorValue = motorDrivers[i].speed>0?motorDrivers[i].speed:-motorDrivers[i].speed;
+        if(motorDrivers[i].speed > 0) {
+            LPC_GPIO->CLR[motorDrivers[i].directionPort] |= 1<<motorDrivers[i].directionPin;
+        } else {
+            LPC_GPIO->SET[motorDrivers[i].directionPort] |= 1<<motorDrivers[i].directionPin;
+        }
                 
-
         // add 100 to motor value in order to convert from [-100, 100] to [0, 100]
         motorPWM = motorValue*PWM_RESOLUTION/100;
             
@@ -115,16 +115,17 @@ void updateMotionVectorHandler(struct message_type *handler, uint8_t *buffer) {
         struct MotorDriver yaw;
         struct MotorDriver pitch;
     };
+
     struct MotorConfiguration *motors = (struct MotorConfiguration*) motorDrivers;
 
     // convert buffer to test_message
     struct motion_data *message = (struct motion_data*) buffer;
         
     motors->surge.speed = message->surge;
-    motors->sway.speed = message->sway;
+    motors->sway.speed  = message->sway;
     motors->heave.speed = message->heave;
-    motors->roll.speed = message->roll;
-    motors->yaw.speed = message->yaw;
+    motors->roll.speed  = message->roll;
+    motors->yaw.speed   = message->yaw;
     motors->pitch.speed = message->pitch;
 
     // accessing the data through struct instead of byte array:
