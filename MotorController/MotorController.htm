@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\MotorController.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\MotorController.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5050106: Last Updated: Tue Apr 21 18:21:22 2015
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5050106: Last Updated: Tue Apr 21 18:50:06 2015
 <BR><P>
 <H3>Maximum Stack Usage =        120 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -59,7 +59,7 @@ Function Pointers
  <LI><a href="#[22]">TIMER16_1_IRQHandler</a> from startup_lpc11uxx.o(.text) referenced from startup_lpc11uxx.o(RESET)
  <LI><a href="#[23]">TIMER32_0_IRQHandler</a> from timers.o(i.TIMER32_0_IRQHandler) referenced from startup_lpc11uxx.o(RESET)
  <LI><a href="#[24]">TIMER32_1_IRQHandler</a> from startup_lpc11uxx.o(.text) referenced from startup_lpc11uxx.o(RESET)
- <LI><a href="#[26]">UART_IRQHandler</a> from startup_lpc11uxx.o(.text) referenced from startup_lpc11uxx.o(RESET)
+ <LI><a href="#[26]">UART_IRQHandler</a> from message_handler.o(i.UART_IRQHandler) referenced from startup_lpc11uxx.o(RESET)
  <LI><a href="#[2d]">USBWakeup_IRQHandler</a> from startup_lpc11uxx.o(.text) referenced from startup_lpc11uxx.o(RESET)
  <LI><a href="#[28]">USB_FIQHandler</a> from startup_lpc11uxx.o(.text) referenced from startup_lpc11uxx.o(RESET)
  <LI><a href="#[27]">USB_IRQHandler</a> from startup_lpc11uxx.o(.text) referenced from startup_lpc11uxx.o(RESET)
@@ -320,9 +320,6 @@ Global Symbols
 <P><STRONG><a name="[24]"></a>TIMER32_1_IRQHandler</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, startup_lpc11uxx.o(.text))
 <BR>[Address Reference Count : 1]<UL><LI> startup_lpc11uxx.o(RESET)
 </UL>
-<P><STRONG><a name="[26]"></a>UART_IRQHandler</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, startup_lpc11uxx.o(.text))
-<BR>[Address Reference Count : 1]<UL><LI> startup_lpc11uxx.o(RESET)
-</UL>
 <P><STRONG><a name="[2d]"></a>USBWakeup_IRQHandler</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, startup_lpc11uxx.o(.text))
 <BR>[Address Reference Count : 1]<UL><LI> startup_lpc11uxx.o(RESET)
 </UL>
@@ -345,8 +342,9 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[49]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__Heap_Full
 <LI><a href="#[48]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_heap_descriptor
 </UL>
-<BR>[Called By]<UL><LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;message_queue_push
-<LI><a href="#[5a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;simulateMessageReceive
+<BR>[Called By]<UL><LI><a href="#[26]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_IRQHandler
+<LI><a href="#[57]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;message_queue_push
+<LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;simulateMessageReceive
 </UL>
 
 <P><STRONG><a name="[4a]"></a>free</STRONG> (Thumb, 76 bytes, Stack size 16 bytes, h1_free.o(.text))
@@ -465,8 +463,8 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[42]"></a>exit</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, exit.o(.text))
-<BR><BR>[Calls]<UL><LI><a href="#[53]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_exit
-<LI><a href="#[52]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_call_atexit_fns (Weak Reference)
+<BR><BR>[Calls]<UL><LI><a href="#[52]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_call_atexit_fns (Weak Reference)
+<LI><a href="#[53]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_exit
 </UL>
 <BR>[Called By]<UL><LI><a href="#[40]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_entry_main
 </UL>
@@ -518,51 +516,60 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_lpc11uxx.o(RESET)
 </UL>
+<P><STRONG><a name="[26]"></a>UART_IRQHandler</STRONG> (Thumb, 106 bytes, Stack size 32 bytes, message_handler.o(i.UART_IRQHandler))
+<BR><BR>[Stack]<UL><LI>Max Depth = 104<LI>Call Chain = UART_IRQHandler &rArr; message_queue_push &rArr; malloc &rArr; __Heap_Full &rArr; __Heap_ProvideMemory &rArr; free
+</UL>
+<BR>[Calls]<UL><LI><a href="#[47]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;malloc
+<LI><a href="#[57]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;message_queue_push
+</UL>
+<BR>[Address Reference Count : 1]<UL><LI> startup_lpc11uxx.o(RESET)
+</UL>
 <P><STRONG><a name="[31]"></a>doNothingHandler</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, main.o(i.doNothingHandler))
 <BR>[Address Reference Count : 1]<UL><LI> main.o(.data)
 </UL>
-<P><STRONG><a name="[57]"></a>initMotorDrivers</STRONG> (Thumb, 600 bytes, Stack size 16 bytes, motordriver.o(i.initMotorDrivers))
+<P><STRONG><a name="[58]"></a>initMotorDrivers</STRONG> (Thumb, 600 bytes, Stack size 16 bytes, motordriver.o(i.initMotorDrivers))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = initMotorDrivers &rArr; initMotorTimers &rArr; NVIC_SetPriority
 </UL>
-<BR>[Calls]<UL><LI><a href="#[58]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initMotorTimers
+<BR>[Calls]<UL><LI><a href="#[59]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initMotorTimers
 </UL>
 <BR>[Called By]<UL><LI><a href="#[41]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[58]"></a>initMotorTimers</STRONG> (Thumb, 70 bytes, Stack size 8 bytes, timers.o(i.initMotorTimers))
+<P><STRONG><a name="[59]"></a>initMotorTimers</STRONG> (Thumb, 70 bytes, Stack size 8 bytes, timers.o(i.initMotorTimers))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = initMotorTimers &rArr; NVIC_SetPriority
 </UL>
-<BR>[Calls]<UL><LI><a href="#[59]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NVIC_SetPriority
+<BR>[Calls]<UL><LI><a href="#[5a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NVIC_SetPriority
 </UL>
-<BR>[Called By]<UL><LI><a href="#[57]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initMotorDrivers
+<BR>[Called By]<UL><LI><a href="#[58]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initMotorDrivers
 </UL>
 
 <P><STRONG><a name="[41]"></a>main</STRONG> (Thumb, 50 bytes, Stack size 32 bytes, main.o(i.main))
 <BR><BR>[Stack]<UL><LI>Max Depth = 120<LI>Call Chain = main &rArr; simulateMessageReceive &rArr; message_queue_push &rArr; malloc &rArr; __Heap_Full &rArr; __Heap_ProvideMemory &rArr; free
 </UL>
 <BR>[Calls]<UL><LI><a href="#[4a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;free
-<LI><a href="#[5c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;message_queue_pop
-<LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;message_queue_has_next
-<LI><a href="#[57]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initMotorDrivers
-<LI><a href="#[5a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;simulateMessageReceive
+<LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;message_queue_pop
+<LI><a href="#[5c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;message_queue_has_next
+<LI><a href="#[58]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initMotorDrivers
+<LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;simulateMessageReceive
 </UL>
 <BR>[Called By]<UL><LI><a href="#[40]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_entry_main
 </UL>
 
-<P><STRONG><a name="[5b]"></a>message_queue_has_next</STRONG> (Thumb, 16 bytes, Stack size 0 bytes, message_queue.o(i.message_queue_has_next))
+<P><STRONG><a name="[5c]"></a>message_queue_has_next</STRONG> (Thumb, 16 bytes, Stack size 0 bytes, message_queue.o(i.message_queue_has_next))
 <BR><BR>[Called By]<UL><LI><a href="#[41]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[5c]"></a>message_queue_pop</STRONG> (Thumb, 20 bytes, Stack size 0 bytes, message_queue.o(i.message_queue_pop))
+<P><STRONG><a name="[5d]"></a>message_queue_pop</STRONG> (Thumb, 20 bytes, Stack size 0 bytes, message_queue.o(i.message_queue_pop))
 <BR><BR>[Called By]<UL><LI><a href="#[41]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[5d]"></a>message_queue_push</STRONG> (Thumb, 56 bytes, Stack size 16 bytes, message_queue.o(i.message_queue_push))
+<P><STRONG><a name="[57]"></a>message_queue_push</STRONG> (Thumb, 56 bytes, Stack size 16 bytes, message_queue.o(i.message_queue_push))
 <BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = message_queue_push &rArr; malloc &rArr; __Heap_Full &rArr; __Heap_ProvideMemory &rArr; free
 </UL>
 <BR>[Calls]<UL><LI><a href="#[47]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;malloc
 </UL>
-<BR>[Called By]<UL><LI><a href="#[5a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;simulateMessageReceive
+<BR>[Called By]<UL><LI><a href="#[26]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_IRQHandler
+<LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;simulateMessageReceive
 </UL>
 
 <P><STRONG><a name="[56]"></a>motorDriverPWMCycle</STRONG> (Thumb, 456 bytes, Stack size 24 bytes, motordriver.o(i.motorDriverPWMCycle))
@@ -574,11 +581,11 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[23]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIMER32_0_IRQHandler
 </UL>
 
-<P><STRONG><a name="[5a]"></a>simulateMessageReceive</STRONG> (Thumb, 40 bytes, Stack size 16 bytes, main.o(i.simulateMessageReceive))
+<P><STRONG><a name="[5b]"></a>simulateMessageReceive</STRONG> (Thumb, 40 bytes, Stack size 16 bytes, main.o(i.simulateMessageReceive))
 <BR><BR>[Stack]<UL><LI>Max Depth = 88<LI>Call Chain = simulateMessageReceive &rArr; message_queue_push &rArr; malloc &rArr; __Heap_Full &rArr; __Heap_ProvideMemory &rArr; free
 </UL>
 <BR>[Calls]<UL><LI><a href="#[47]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;malloc
-<LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;message_queue_push
+<LI><a href="#[57]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;message_queue_push
 </UL>
 <BR>[Called By]<UL><LI><a href="#[41]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
@@ -591,10 +598,10 @@ Global Symbols
 <H3>
 Local Symbols
 </H3>
-<P><STRONG><a name="[59]"></a>NVIC_SetPriority</STRONG> (Thumb, 110 bytes, Stack size 8 bytes, timers.o(i.NVIC_SetPriority))
+<P><STRONG><a name="[5a]"></a>NVIC_SetPriority</STRONG> (Thumb, 110 bytes, Stack size 8 bytes, timers.o(i.NVIC_SetPriority))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = NVIC_SetPriority
 </UL>
-<BR>[Called By]<UL><LI><a href="#[58]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initMotorTimers
+<BR>[Called By]<UL><LI><a href="#[59]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initMotorTimers
 </UL>
 <P>
 <H3>
