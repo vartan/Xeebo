@@ -1,5 +1,4 @@
 --cpu Cortex-M0+
-".\comms.o"
 ".\main.o"
 ".\motordriver.o"
 ".\timers.o"
