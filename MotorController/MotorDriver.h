@@ -37,7 +37,7 @@ union theMotors {
  * Initializes interrupts and MotorDriver structs required to generate the PWM
  * for the motors.
  */
-void initMotorDrivers(struct MotorDriver *_motorDrivers);
+struct MotorDriver *initMotorDrivers(void);
 
 /**
  * Motor Driver PWM Cycle

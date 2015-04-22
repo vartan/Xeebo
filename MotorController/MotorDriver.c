@@ -11,51 +11,28 @@
 #include "MotorDriver.h"
 #include "timers.h"
 #include "message_handler.h"
-struct MotorDriver *motorDrivers;
+
+static struct MotorDriver motorDrivers[] = {
+    // motor 0: surge
+    {.directionPort = 0, .directionPin = 21, .pwmPort = 0, .pwmPin = 22, .speed = 0}, 
+    // motor 1: sway
+    {.directionPort = 0, .directionPin = 3,  .pwmPort = 0, .pwmPin = 4,  .speed = 0},
+    // motor 2: heave
+    {.directionPort = 0, .directionPin = 5,  .pwmPort = 0, .pwmPin = 6,  .speed = 0},
+    // motor 3: roll
+    {.directionPort = 0, .directionPin = 8,  .pwmPort = 0, .pwmPin = 7,  .speed = 0},
+    // motor 4: yaw
+    {.directionPort = 0, .directionPin = 9,  .pwmPort = 0, .pwmPin = 16, .speed = 0},
+    // motor 5: pitch
+    {.directionPort = 0, .directionPin = 17, .pwmPort = 0, .pwmPin = 18, .speed = 0},
+};
 
 
-void initMotorDrivers(struct MotorDriver *_motorDrivers) {
+struct MotorDriver *initMotorDrivers() {
     uint8_t i;
-		motorDrivers = _motorDrivers;
-
-
-    motorDrivers[0].directionPort   = 0;
-    motorDrivers[0].directionPin    = 21;
-    motorDrivers[0].pwmPort       = 0;
-    motorDrivers[0].pwmPin        = 22;
-
-    motorDrivers[1].directionPort   = 0;
-    motorDrivers[1].directionPin    = 3;
-    motorDrivers[1].pwmPort       = 0;
-    motorDrivers[1].pwmPin        = 4;
-
-    motorDrivers[2].directionPort   = 0;
-    motorDrivers[2].directionPin    = 5;
-    motorDrivers[2].pwmPort       = 0;
-    motorDrivers[2].pwmPin        = 6;
-
-    motorDrivers[3].directionPort   = 0;
-    motorDrivers[3].directionPin    = 8;
-    motorDrivers[3].pwmPort       = 0;
-    motorDrivers[3].pwmPin        = 7; // led?
-
-    motorDrivers[4].directionPort   = 0;
-    motorDrivers[4].directionPin    = 9;
-    motorDrivers[4].pwmPort       = 0;
-    motorDrivers[4].pwmPin        = 16;
-
-    motorDrivers[5].directionPort   = 0;
-    motorDrivers[5].directionPin    = 17;
-    motorDrivers[5].pwmPort       = 0;
-    motorDrivers[5].pwmPin        = 18;
-
-    motorDrivers[6].directionPort   = 0;
-    motorDrivers[6].directionPin    = 19;
-    motorDrivers[6].pwmPort       = 0;
-    motorDrivers[6].pwmPin        = 20;
 
     for(i=0;i<MOTOR_COUNT;i++) {
-        motorDrivers[i].speed                         = 0;
+        motorDrivers[i].speed = 0;
         LPC_GPIO->DIR[motorDrivers[i].pwmPort] |= 1<<motorDrivers[i].pwmPin;
         LPC_GPIO->DIR[motorDrivers[i].directionPort] |= 1<<motorDrivers[i].directionPin;
         if(!motorDrivers[i].pwmPort)
@@ -68,51 +45,50 @@ void initMotorDrivers(struct MotorDriver *_motorDrivers) {
         else
             LPC_GPIO->B1[motorDrivers[i].directionPin] |= (1<<3) | (1<<4);
     }
-
-
-	initMotorTimers();
+    initMotorTimers();
+		return motorDrivers;
 }
 
 void motorDriverPWMCycle() {
-	static uint32_t currentPWMCycle;
+    static uint32_t currentPWMCycle;
 
-	uint32_t nextPWMCycle, motorPWM, i;
-	int8_t motorValue;
+    uint32_t nextPWMCycle, motorPWM, i;
+    int8_t motorValue;
 
-	// by default, the next PWM cycle is the rollover
-	nextPWMCycle = PWM_RESOLUTION;
-	// loop through each motor
-	for(i = 0; i < MOTOR_COUNT; i++) {
-		  // absolute motor value
-			motorValue = motorDrivers[i].speed>0?motorDrivers[i].speed:-motorDrivers[i].speed;
-		  if(motorDrivers[i].speed>0)
-		      LPC_GPIO->CLR[motorDrivers[i].directionPort] |= 1<<motorDrivers[i].directionPin;
-			else
-		      LPC_GPIO->SET[motorDrivers[i].directionPort] |= 1<<motorDrivers[i].directionPin;
-				
+    // by default, the next PWM cycle is the rollover
+    nextPWMCycle = PWM_RESOLUTION;
+    // loop through each motor
+    for(i = 0; i < MOTOR_COUNT; i++) {
+          // absolute motor value
+            motorValue = motorDrivers[i].speed>0?motorDrivers[i].speed:-motorDrivers[i].speed;
+          if(motorDrivers[i].speed>0)
+              LPC_GPIO->CLR[motorDrivers[i].directionPort] |= 1<<motorDrivers[i].directionPin;
+            else
+              LPC_GPIO->SET[motorDrivers[i].directionPort] |= 1<<motorDrivers[i].directionPin;
+                
 
         // add 100 to motor value in order to convert from [-100, 100] to [0, 100]
-	    motorPWM = motorValue*PWM_RESOLUTION/100;
-			
-		if(motorPWM > currentPWMCycle) {
-			// force enable motor
+        motorPWM = motorValue*PWM_RESOLUTION/100;
+            
+        if(motorPWM > currentPWMCycle) {
+            // force enable motor
             LPC_GPIO->SET[motorDrivers[i].pwmPort]     |= 1<<motorDrivers[i].pwmPin;
-		} else {
-	        // low motor PWM
+        } else {
+            // low motor PWM
             LPC_GPIO->CLR[motorDrivers[i].pwmPort]     |= 1<<motorDrivers[i].pwmPin;
-		}
-	    // this motor is the next motor to pay attention to if it is
-	    // the closest one after the current cycle
-	    if(motorPWM < nextPWMCycle && motorPWM > currentPWMCycle) {
-	        nextPWMCycle = motorPWM;
-	    }
-	}
-  MOTOR_TIMER->MR0 = (nextPWMCycle - currentPWMCycle) % PWM_RESOLUTION;
+        }
+        // this motor is the next motor to pay attention to if it is
+        // the closest one after the current cycle
+        if(motorPWM < nextPWMCycle && motorPWM > currentPWMCycle) {
+            nextPWMCycle = motorPWM;
+        }
+    }
+    MOTOR_TIMER->MR0 = (nextPWMCycle - currentPWMCycle) % PWM_RESOLUTION;
 
-	// calculate next "current PWM cycle" value
-	currentPWMCycle = (nextPWMCycle)%PWM_RESOLUTION;
+    // calculate next "current PWM cycle" value
+    currentPWMCycle = (nextPWMCycle)%PWM_RESOLUTION;
 
-	// fire the next interrupt when the next motor switch must occur
+    // fire the next interrupt when the next motor switch must occur
 }
 
 
@@ -131,27 +107,27 @@ void updateMotionVectorHandler(struct message_type *handler, uint8_t *buffer) {
         uint8_t yaw;
         uint8_t pitch;
     };
-		struct MotorConfiguration {
-			struct MotorDriver surge;
-			struct MotorDriver sway;
-			struct MotorDriver heave;
-			struct MotorDriver roll;
-			struct MotorDriver yaw;
-			struct MotorDriver pitch;
-		};
-		struct MotorConfiguration *motors = (struct MotorConfiguration*) motorDrivers;
+    struct MotorConfiguration {
+        struct MotorDriver surge;
+        struct MotorDriver sway;
+        struct MotorDriver heave;
+        struct MotorDriver roll;
+        struct MotorDriver yaw;
+        struct MotorDriver pitch;
+    };
+    struct MotorConfiguration *motors = (struct MotorConfiguration*) motorDrivers;
 
     // convert buffer to test_message
     struct motion_data *message = (struct motion_data*) buffer;
-		
-		motors->surge.speed = message->surge;
-		motors->sway.speed  = message->sway;
-		motors->heave.speed = message->heave;
-		motors->roll.speed  = message->roll;
-		motors->yaw.speed   = message->yaw;
-		motors->pitch.speed = message->pitch;
+        
+    motors->surge.speed = message->surge;
+    motors->sway.speed = message->sway;
+    motors->heave.speed = message->heave;
+    motors->roll.speed = message->roll;
+    motors->yaw.speed = message->yaw;
+    motors->pitch.speed = message->pitch;
 
     // accessing the data through struct instead of byte array:
-		
+        
 
 }

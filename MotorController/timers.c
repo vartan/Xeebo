@@ -59,7 +59,7 @@ void initMotorTimers() {
     MOTOR_TIMER->TCR  = (1<<0);       // enable run
 }
 int timerLoopCount = 0;
-	int badCount = 0;
+    int badCount = 0;
 
 void TIMER32_0_IRQHandler() {
     int interrupt = MOTOR_TIMER->IR;
@@ -68,9 +68,9 @@ void TIMER32_0_IRQHandler() {
     //MOTOR_TIMER->TCR  = (1<<1);       // disable/reset timer
     motorDriverPWMCycle();
     timerLoopCount++;
-		if(MOTOR_TIMER->TC > MOTOR_TIMER->MR0) {
-			badCount++;
-			MOTOR_TIMER->TC = MOTOR_TIMER->MR0;
-		}
+        if(MOTOR_TIMER->TC > MOTOR_TIMER->MR0) {
+            badCount++;
+            MOTOR_TIMER->TC = MOTOR_TIMER->MR0;
+        }
     //MOTOR_TIMER->TCR  = (1<<0);       // enable run
 }
