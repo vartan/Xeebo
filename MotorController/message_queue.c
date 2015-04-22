@@ -22,7 +22,7 @@ void message_queue_push(struct message_type *message_type, uint8_t *message) {
 	// create the message_queue_item in the heap
 	struct message_queue_item *item = malloc(sizeof(struct message_queue_item));
 	item->message_type = message_type;
-	item->buffer 	     = message;
+	item->buffer 	   = message;
 	if(message_queue_list.length > 0) {
 		message_queue_list.tail->next = item;
 		message_queue_list.tail = item;
