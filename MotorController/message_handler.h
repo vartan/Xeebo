@@ -13,5 +13,5 @@ struct message_type {
     uint8_t receiveLength;
     void (*receiveHandler)(struct message_type *handler, uint8_t *buffer);
 };
-extern struct message_type myHandlers[];
+extern struct message_type message_handlers[];
 #endif
