@@ -24,7 +24,7 @@ static struct MotorDriver motorDrivers[] = {
     // motor 4: yaw
     {.directionPort = 0, .directionPin = 9,  .pwmPort = 0, .pwmPin = 16, .speed = 0},
     // motor 5: pitch
-    {.directionPort = 0, .directionPin = 17, .pwmPort = 0, .pwmPin = 18, .speed = 0},
+    {.directionPort = 0, .directionPin = 17, .pwmPort = 0, .pwmPin = 20, .speed = 0},
 };
 
 

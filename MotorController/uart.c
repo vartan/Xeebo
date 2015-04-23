@@ -11,7 +11,7 @@
 
 #include "uart.h"
 #include "lpc11uxx.h"
-
+#include "message_handler.h"
 volatile uint32_t UARTStatus;
 volatile uint8_t  UARTTxEmpty = 1;
 volatile uint8_t  UARTBuffer[BUFSIZE];

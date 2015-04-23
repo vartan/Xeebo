@@ -19,14 +19,15 @@
 ** Returned value:      None
 ** 
 *****************************************************************************/
-void UART_IRQHandler(void)
+void UART_IRQHandler()
 {
     uint8_t IIRValue, LSRValue;
     uint8_t message_index = 0;
     struct message_type *currentHandler;
     currentHandler = NULL;
     uint8_t *message;
-
+		uint8_t reply[] = {'a'};
+		UARTSend(reply, 1);
 
     // what the hell does shifting right do?? seems like it'd mess up the 
     // bit names
