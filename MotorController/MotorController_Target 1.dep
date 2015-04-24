@@ -1,0 +1,91 @@
+Dependencies for Project 'MotorController', Target 'Target 1': (DO NOT MODIFY !)
+F (.\main.c)(0x5539A850)(--c99 -c --cpu Cortex-M0+ -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork --split_sections-I C:\Users\Michael\Zeebo\MotorController\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\LPC1100_DFP\1.2.0\Device\Include\LPC11Uxx-D__UVISION_VERSION="513" -D_RTE_-o .\main.o --omf_browse .\main.crf --depend .\main.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5476E210)
+I (C:\Keil_v5\ARM\PACK\Keil\LPC1100_DFP\1.2.0\Device\Include\LPC11Uxx\lpc11uxx.h)(0x521F8D46)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cm0.h)(0x53FD12DA)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5476E210)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmInstr.h)(0x53FFD3AA)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmFunc.h)(0x53FFD3AA)
+I (C:\Keil_v5\ARM\PACK\Keil\LPC1100_DFP\1.2.0\Device\Include\LPC11Uxx\system_LPC11Uxx.h)(0x4D8A5228)
+I (main.h)(0x55385B53)
+I (globals.h)(0x55399988)
+I (MotorDriver.h)(0x55385B53)
+I (message_handler.h)(0x55387C3B)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5476E210)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5476E210)
+I (timers.h)(0x55368DE2)
+I (message_queue.h)(0x553872A5)
+I (uart.h)(0x5539784B)
+F (.\message_handler.c)(0x5539A5CC)(--c99 -c --cpu Cortex-M0+ -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork --split_sections-I C:\Users\Michael\Zeebo\MotorController\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\LPC1100_DFP\1.2.0\Device\Include\LPC11Uxx-D__UVISION_VERSION="513" -D_RTE_-o .\message_handler.o --omf_browse .\message_handler.crf --depend .\message_handler.d)
+I (uart.h)(0x5539784B)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5476E210)
+I (C:\Keil_v5\ARM\PACK\Keil\LPC1100_DFP\1.2.0\Device\Include\LPC11Uxx\lpc11uxx.h)(0x521F8D46)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cm0.h)(0x53FD12DA)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmInstr.h)(0x53FFD3AA)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmFunc.h)(0x53FFD3AA)
+I (C:\Keil_v5\ARM\PACK\Keil\LPC1100_DFP\1.2.0\Device\Include\LPC11Uxx\system_LPC11Uxx.h)(0x4D8A5228)
+I (message_handler.h)(0x55387C3B)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5476E210)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5476E210)
+I (message_queue.h)(0x553872A5)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5476E210)
+I (globals.h)(0x55399988)
+F (.\message_queue.c)(0x55385B53)(--c99 -c --cpu Cortex-M0+ -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork --split_sections-I C:\Users\Michael\Zeebo\MotorController\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\LPC1100_DFP\1.2.0\Device\Include\LPC11Uxx-D__UVISION_VERSION="513" -D_RTE_-o .\message_queue.o --omf_browse .\message_queue.crf --depend .\message_queue.d)
+I (message_queue.h)(0x553872A5)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5476E210)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5476E210)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5476E210)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5476E210)
+I (message_handler.h)(0x55387C3B)
+F (.\MotorDriver.c)(0x55397B17)(--c99 -c --cpu Cortex-M0+ -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork --split_sections-I C:\Users\Michael\Zeebo\MotorController\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\LPC1100_DFP\1.2.0\Device\Include\LPC11Uxx-D__UVISION_VERSION="513" -D_RTE_-o .\motordriver.o --omf_browse .\motordriver.crf --depend .\motordriver.d)
+I (globals.h)(0x55399988)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5476E210)
+I (C:\Keil_v5\ARM\PACK\Keil\LPC1100_DFP\1.2.0\Device\Include\LPC11Uxx\LPC11Uxx.h)(0x521F8D46)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cm0.h)(0x53FD12DA)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmInstr.h)(0x53FFD3AA)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmFunc.h)(0x53FFD3AA)
+I (C:\Keil_v5\ARM\PACK\Keil\LPC1100_DFP\1.2.0\Device\Include\LPC11Uxx\system_LPC11Uxx.h)(0x4D8A5228)
+I (MotorDriver.h)(0x55385B53)
+I (message_handler.h)(0x55387C3B)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5476E210)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5476E210)
+I (timers.h)(0x55368DE2)
+F (.\timers.c)(0x55397D17)(--c99 -c --cpu Cortex-M0+ -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork --split_sections-I C:\Users\Michael\Zeebo\MotorController\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\LPC1100_DFP\1.2.0\Device\Include\LPC11Uxx-D__UVISION_VERSION="513" -D_RTE_-o .\timers.o --omf_browse .\timers.crf --depend .\timers.d)
+I (C:\Keil_v5\ARM\PACK\Keil\LPC1100_DFP\1.2.0\Device\Include\LPC11Uxx\lpc11uxx.h)(0x521F8D46)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cm0.h)(0x53FD12DA)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5476E210)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmInstr.h)(0x53FFD3AA)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmFunc.h)(0x53FFD3AA)
+I (C:\Keil_v5\ARM\PACK\Keil\LPC1100_DFP\1.2.0\Device\Include\LPC11Uxx\system_LPC11Uxx.h)(0x4D8A5228)
+I (timers.h)(0x55368DE2)
+I (globals.h)(0x55399988)
+I (MotorDriver.h)(0x55385B53)
+I (message_handler.h)(0x55387C3B)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5476E210)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5476E210)
+F (.\uart.c)(0x5539A774)(--c99 -c --cpu Cortex-M0+ -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork --split_sections-I C:\Users\Michael\Zeebo\MotorController\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\LPC1100_DFP\1.2.0\Device\Include\LPC11Uxx-D__UVISION_VERSION="513" -D_RTE_-o .\uart.o --omf_browse .\uart.crf --depend .\uart.d)
+I (uart.h)(0x5539784B)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5476E210)
+I (C:\Keil_v5\ARM\PACK\Keil\LPC1100_DFP\1.2.0\Device\Include\LPC11Uxx\lpc11uxx.h)(0x521F8D46)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cm0.h)(0x53FD12DA)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmInstr.h)(0x53FFD3AA)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmFunc.h)(0x53FFD3AA)
+I (C:\Keil_v5\ARM\PACK\Keil\LPC1100_DFP\1.2.0\Device\Include\LPC11Uxx\system_LPC11Uxx.h)(0x4D8A5228)
+I (message_handler.h)(0x55387C3B)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5476E210)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5476E210)
+F (.\globals.h)(0x55399988)()
+F (.\main.h)(0x55385B53)()
+F (.\message_handler.h)(0x55387C3B)()
+F (.\message_queue.h)(0x553872A5)()
+F (.\MotorDriver.h)(0x55385B53)()
+F (.\timers.h)(0x55368DE2)()
+F (.\uart.h)(0x5539784B)()
+F (RTE\Device\LPC11U24FBD64_401\startup_LPC11Uxx.s)(0x5538724B)(--cpu Cortex-M0+ --pd "__EVAL SETA 1" -g --apcs=interwork --pd "__MICROLIB SETA 1"-I C:\Users\Michael\Zeebo\MotorController\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\LPC1100_DFP\1.2.0\Device\Include\LPC11Uxx--pd "__UVISION_VERSION SETA 513" --pd "_RTE_ SETA 1"--list .\startup_lpc11uxx.lst --xref -o .\startup_lpc11uxx.o --depend .\startup_lpc11uxx.d)
+F (RTE\Device\LPC11U24FBD64_401\system_LPC11Uxx.c)(0x55385B53)(--c99 -c --cpu Cortex-M0+ -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork --split_sections-I C:\Users\Michael\Zeebo\MotorController\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\LPC1100_DFP\1.2.0\Device\Include\LPC11Uxx-D__UVISION_VERSION="513" -D_RTE_-o .\system_lpc11uxx.o --omf_browse .\system_lpc11uxx.crf --depend .\system_lpc11uxx.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5476E210)
+I (C:\Keil_v5\ARM\PACK\Keil\LPC1100_DFP\1.2.0\Device\Include\LPC11Uxx\LPC11Uxx.h)(0x521F8D46)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cm0.h)(0x53FD12DA)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmInstr.h)(0x53FFD3AA)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmFunc.h)(0x53FFD3AA)
+I (C:\Keil_v5\ARM\PACK\Keil\LPC1100_DFP\1.2.0\Device\Include\LPC11Uxx\system_LPC11Uxx.h)(0x4D8A5228)

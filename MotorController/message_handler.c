@@ -2,7 +2,7 @@
 #include "lpc11uxx.h"
 #include "message_handler.h"
 #include "message_queue.h"
-
+#include "globals.h"
 
 /*****************************************************************************
 ** Function name:       UART_IRQHandler
@@ -19,15 +19,15 @@
 ** Returned value:      None
 ** 
 *****************************************************************************/
+
 void UART_IRQHandler()
 {
+		uint8_t rx;
     uint8_t IIRValue, LSRValue;
-    uint8_t message_index = 0;
-    struct message_type *currentHandler;
-    currentHandler = NULL;
-    uint8_t *message;
-		uint8_t reply[] = {'a'};
-		UARTSend(reply, 1);
+    static uint8_t message_index = 0;
+    static uint8_t *message;
+		static struct message_type *currentHandler;
+
 
     // what the hell does shifting right do?? seems like it'd mess up the 
     // bit names
@@ -58,18 +58,24 @@ void UART_IRQHandler()
             }*/ 
         }
     }
-    else if (IIRValue == IIR_RDA)   /* Receive Data Available */
+    else if (IIRValue == IIR_RDA || IIRValue == IIR_CTI)   /* Receive Data Available */
     {
+				rx = LPC_USART->RBR;
+			  
+			
         if(currentHandler == NULL) {
-            currentHandler = &message_handlers[LPC_USART->RBR];
-            message = malloc(currentHandler->receiveLength * sizeof(uint8_t)); 
-            message_index = 0;
+						if(rx <= MAX_MESSAGE_HANDLER) {
+							currentHandler = &message_handlers[rx];
+							message = malloc(currentHandler->receiveLength * sizeof(uint8_t)); 
+							message_index = 0;
+						}
         } else {
-            message[message_index++] = LPC_USART->RBR;
+            message[message_index++] = rx;
             if(message_index == currentHandler->receiveLength) {
                 message_queue_push(currentHandler, message);
+								currentHandler = NULL;
+
             }
-            currentHandler = NULL;
         }
         
         /* Receive Data Available */
@@ -79,11 +85,8 @@ void UART_IRQHandler()
         //{
         //  UARTCount = 0;      /* buffer overflow */
         //}
-    }
-    else if (IIRValue == IIR_CTI)   /* Character timeout indicator */
-    {
-        /* Character Time-out indicator */
-        //UARTStatus |= 0x100;      /* Bit 9 as the CTI error */
+
+        /* Character Time-out indicator */        //UARTStatus |= 0x100;      /* Bit 9 as the CTI error */
     }
     else if (IIRValue == IIR_THRE)  /* THRE, transmit holding register empty */
     {

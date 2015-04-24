@@ -157,6 +157,7 @@ void UARTInit( uint32_t baudrate )
 	UARTCount = 0;
 
 	NVIC_DisableIRQ(UART_IRQn);
+	LPC_USART->FCR = 0x07;		// Enable and reset TX and RX FIFO
 
 	// Configure PIO1_26/p10 = RX and PIO1_27/p9 = TX
 	LPC_IOCON->PIO1_26 &= ~0x07;	// Clear func bits
@@ -173,7 +174,7 @@ void UARTInit( uint32_t baudrate )
 		__NOP();
   
 	// USART mode
-	LPC_USART->LCR = 0x83;					// 8-N-1 + enable access to Divisor latches
+	LPC_USART->LCR = 0x83; //enable parity, odd 					// 8-N-1 + enable access to Divisor latches
 
 	// Baud rate
 	/* The following is calculated for 9600 baud on a 48M PCLK.
@@ -184,6 +185,8 @@ void UARTInit( uint32_t baudrate )
 	LPC_USART->DLM = 0;
 	LPC_USART->DLL = 250;	
 	LPC_USART->FDR = 0x41;		// MULVAL = 4, DIVADDVAL = 1
+	LPC_USART->FCR = 0x07;		// Enable and reset TX and RX FIFO
+
 	LPC_USART->LCR = 0x03;		// Disable DLAB again
 	
 	// FIFO

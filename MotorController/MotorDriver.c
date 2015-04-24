@@ -132,3 +132,4 @@ void updateMotionVectorHandler(struct message_type *handler, uint8_t *buffer) {
         
 
 }
+

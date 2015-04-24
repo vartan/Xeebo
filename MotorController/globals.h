@@ -10,7 +10,9 @@
 
 #define SYSTEM_CLOCK 		12000000*4
 
-#define PWM_FREQUENCY 		2400
+#define PWM_FREQUENCY 		100
+#define MAX_MESSAGE_HANDLER  3
+
 
 /** PWM resolution step */
 #define PWM_RES_STEP        5

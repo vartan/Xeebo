@@ -1,0 +1,11 @@
+.\uart.o: uart.c
+.\uart.o: uart.h
+.\uart.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\uart.o: C:\Keil_v5\ARM\PACK\Keil\LPC1100_DFP\1.2.0\Device\Include\LPC11Uxx\lpc11uxx.h
+.\uart.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cm0.h
+.\uart.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmInstr.h
+.\uart.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmFunc.h
+.\uart.o: C:\Keil_v5\ARM\PACK\Keil\LPC1100_DFP\1.2.0\Device\Include\LPC11Uxx\system_LPC11Uxx.h
+.\uart.o: message_handler.h
+.\uart.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+.\uart.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h

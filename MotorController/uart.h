@@ -9,7 +9,7 @@
  *
 ******************************************************************************/
 
-#define CONFIG_UART_DEFAULT_UART_IRQHANDLER				0
+#define CONFIG_UART_DEFAULT_UART_IRQHANDLER		0
 #define CONFIG_UART_ENABLE_INTERRUPT					1
 
 #ifndef __UART_H 

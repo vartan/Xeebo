@@ -15,9 +15,11 @@
 #include "message_queue.h"
 #include "uart.h"
 void doNothingHandler (struct message_type *handler, uint8_t *buffer) {
+  uint8_t message[] = "aaaaaaaaaaaaa";
+	UARTSend(&message[0], 12);
 }
-struct message_type message_handlers[] = {
-    {.id = 0, .sendLength = 0, .receiveLength  = 0, .receiveHandler = &doNothingHandler         },
+struct message_type message_handlers[MAX_MESSAGE_HANDLER+1] = {
+    {.id = 0, .sendLength = 0, .receiveLength  = 1, .receiveHandler = &doNothingHandler         },
     {.id = 1, .sendLength = 0, .receiveLength  = 0, .receiveHandler = &doNothingHandler         },
     {.id = 2, .sendLength = 0, .receiveLength  = 0, .receiveHandler = &doNothingHandler         },
     {.id = 3, .sendLength = 0, .receiveLength  = 6, .receiveHandler = &updateMotionVectorHandler}

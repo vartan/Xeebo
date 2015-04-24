@@ -44,7 +44,7 @@ void initMotorTimers() {
     MOTOR_TIMER->TCR = (MOTOR_TIMER->TCR & (~(1<<1))) | (1<<0);
 */
     NVIC_EnableIRQ(TIMER_32_0_IRQn);
-    NVIC_SetPriority(TIMER_32_0_IRQn, 0);
+    //NVIC_SetPriority(TIMER_32_0_IRQn, 0);
     LPC_SYSCON->SYSAHBCLKCTRL |= 1 << 9;          // enable 16-bit timer0 clock
     MOTOR_TIMER->CTCR = 0;                         // disable counter mode
     MOTOR_TIMER->IR   = 0x1F;                      // interrupt flag
