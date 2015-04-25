@@ -25,6 +25,9 @@ I designed the Inertial Measurement Unit (IMU) board and sent it off to get fabr
 
 #Michael Vartan 
 
+This week, I worked to test all of the designs from the previous week, and get the UART working on the LPC11u24. I was able to get messages to and from the LPC11u24, but they are a little garbled, so I have to see what is causing interference. It may be an interrupt priority issue.
+
+I'm happy to say that my uart handler on the embedded chip is working. The chip works via linkedlist to queue up messages received from the main computer. Ideally, the messages will be coming slower than they can be handled, but I added the queue functionality just in case.
 
 #Sam Jacobs
 
