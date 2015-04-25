@@ -8,14 +8,13 @@ categories: weekly
 This is our last weekly report (#9) of the semester
 
 #Brent Scheneman
----
 
 #Michael Vartan 
----
+
 
 #Sam Jacobs
 
-## First Autonomous Test of Zeebo
+###First Autonomous Test of Zeebo
 We have celebrated a major milestone in the development of our project. On Monday 4/20/2015 we conducted the first autonomous test of Zeebo traversing under its own command.
 
 Zeebo was programmed to drive forward for 10 seconds, wait 10 seconds, then drive in reverse for 10 seconds. The pattern was set to repeat 5 times.
@@ -54,7 +53,7 @@ MAGNETIC LATCHING SOLENOID, 33VDC
 MSA (Magnet Schultz of America). 33 Vdc 17 ohm D-Frame, magnetic latching solenoid. Intermittent-duty. Built-in permanent magnet holds the plunger in fully-retracted position until it is manually (or mechanically) extracted. Plunger is equipped with a U-shaped pin that can be used for pull-type operation. Spring and clip keep plunger away from magnet when not energized. 42 x 40 x 36mm (1.65 x 1.55 x 1.40"). Two 6.5" leads terminate to 2-pin Molex-type socket. Plunger is 0.50" diameter x 2.01" long.
 
 
----
+
 
 #Steven Le
 
