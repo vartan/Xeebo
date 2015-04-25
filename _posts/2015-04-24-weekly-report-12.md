@@ -80,3 +80,7 @@ MSA (Magnet Schultz of America). 33 Vdc 17 ohm D-Frame, magnetic latching soleno
 Both boards have been sent out to fabrication through OSH Park with Super Swift expedited shipping.  Turn around time will be 5 business days expected Friday, May 1st.  Hardware implementation is complete with continuous software revisions to function as expected.
 ![Receive Board - TOP](/images/am_rx_board2.png)
 ![Transmit Board - TOP](/images/am_tx_board2.png)
+
+##Final Steps
+Complete the transmit end algorithm to send data through the speaker.
+Analyze the received signal via mic, distinguish the desired frequencies and convert to digital representation with UART response for verification.
