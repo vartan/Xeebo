@@ -35,6 +35,7 @@ We have enjoyed continued success with the design from the mechanical and waterp
 ## Structural Issues That were Revised
 After our first test, it was found that the way in which the frame articulated with the hull prevented easy access to the electronics payload and contributed to a high level of difficulty in removing the front cover.
 ![Front View of Zeebo](/images/sam_week_12_robot_front.png)
+
 ## Pre Test Troubleshooting
 I refined the design and purchased new parts and reassembled the mountain components. The cover can be removed in a fraction of the time it took previously.
 
