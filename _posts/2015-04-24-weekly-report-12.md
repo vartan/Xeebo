@@ -39,6 +39,8 @@ After our first test, it was found that the way in which the frame articulated w
 ## Pre Test Troubleshooting
 I refined the design and purchased new parts and reassembled the mountain components. The cover can be removed in a fraction of the time it took previously.
 
+### Isometric 3D  Drawing
+![Iso](/images/sam_week_12_CAD_iso.png)
 
 I assisted Brent and Michael in debugging the electronics and software.
 
