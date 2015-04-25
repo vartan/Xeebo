@@ -9,6 +9,24 @@ This is our last weekly report (#9) of the semester
 
 #Brent Scheneman
 
+##Thruster Drivers
+The thruster drivers were assembled and secured to Zeebo's main electronics plate that is made out of 1/8" aluminum plate that I cut on a band saw. Once all the drivers were secured, I wired them up for power as well as for control. 
+<br>
+###Thruster Driver Mounting
+![Thruster Driver Mounting](/images/MountingDrivers.PNG)
+<br>
+###Zeebo Electronics Plate
+![Zeebo Electronics Plate](/images/ElectronicsPlate.PNG)
+<br>
+###Zeebo Electronics Plate Installed
+![Zeebo Electronics Plate Installed](/images/ElectronicsPlateInstalled.PNG)
+
+##IMU Board
+I designed the Inertial Measurement Unit (IMU) board and sent it off to get fabricated as well as the stencil that will make applying the solder paste during assembly much easier. We have received the boards, stencils, and parts for the IMU boards so those will be assembled this weekend and will be installed and tested in Zeebo next week.
+<br>
+###IMU Board
+![IMU Board](/images/IMUBoard.PNG)
+
 #Michael Vartan 
 
 
