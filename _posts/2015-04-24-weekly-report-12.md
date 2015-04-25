@@ -5,7 +5,7 @@ date:   2015-04-24 00:00:00
 categories: weekly
 ---
 
-This is our eighth weekly report of the semester
+This is our last weekly report (#9) of the semester
 
 #Brent Scheneman
 ---
