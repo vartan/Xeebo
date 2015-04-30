@@ -13,6 +13,7 @@ This is my continuing weekly report (#10) of the semester
 
 ###Hardware Revisions
 I've decided to change the capacitor (C4) to AUDIO IN on the MSGEQ7 to from 0.01uF to 0.1uF because SparkFun had an old datasheet from the Mixed Signal Integration back in 2004.  The revised schematic acquired is dated 2011.  This doesn't affect the board because it is just a change in capacitor value.
+
 ###Revised Schematic From Datasheet
 ![MSGEQ7 Revised Datasheet Schematic](/images/am_msgeq7ds.png)
 
@@ -21,11 +22,17 @@ I've made it cleaner on my schematic and pcb layout.  I do expect in the next it
 
 ###Rx PCB Board Rendering - TOP
 ![Rx PCB Board Front Rendering](/images/am_rx_boardfront1.0.png)
+
 ###Rx PCB Board Rendering - BOTTOM
 ![Rx PCB Board Back Rendering](/images/am_rx_boardback1.0.png)
+
 ###Tx PCB Board Rendering - TOP
 ![Tx PCB Board Front Rendering](/images/am_tx_boardfront1.0.png)
+
 ###Tx PCB Board Rendering - BOTTOM
 ![Tx PCB Board Back Rendering](/images/am_tx_boardback1.0.png)
 
 ##April 30, 2015
+
+###Working with Software
+Since the MSGEQ7 detects peak frequencies, utilizing the timing diagram with the inputs STROBE and RESET are very important in analyzing.
