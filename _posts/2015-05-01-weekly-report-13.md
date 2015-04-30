@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "Week #13 - Weekly Report 10"
-date:   2015-05-01 23:59:00
+title:  "Week #13- Weekly Report 10"
+date:   2015-05-01 00:00:00
 categories: weekly
 ---
 
