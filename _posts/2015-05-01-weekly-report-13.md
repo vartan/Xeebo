@@ -47,7 +47,7 @@ Since the MSGEQ7 detects peak frequencies, utilizing the timing diagram with the
 Mutual exclusion is the condition in this table since only one frequency can be detected at any given time.
 I also made note that my original desired frequencies were 2kHz and 10kHz but with the assistance of the IC, 1kHz and 2.5kHz is more desirable.  Also calibration will not be a peak performance since I am not using a 5V power supply (using 3.3V from mbed).
 
-I also noticed when testing the mic with the Online Tone Generator (http://onlinetonegenerator.com/) that when a specific volume is reached, the frequencies appear almost saturated for both.  I believe this is because the breakout board from SparkFun for the electret microphones isn't linear so no equalization is built in based on the schematic, therefore non-linear output.  The IC's (MSGEQ7) frequency response is linear across all frequency bands referred on the datasheet.  With the software experiment, there is a usable range before saturation and a possible solution can be utilized with a voltage divider to lower the signal level.
+I also noticed when testing the mic with the Online Tone Generator (http://onlinetonegenerator.com/) that when a specific volume is reached, the frequencies appear almost saturated for both.  I believe this is because the breakout board from SparkFun for the electret microphones isn't linear so no equalization is built in based on the schematic, therefore non-linear output.  The IC's (MSGEQ7) frequency response is linear across all frequency bands referred on the datasheet.  With the software experiment, there is a usable range before saturation and a possible solution can be utilized with a voltage divider to lower the signal level.  Similar observations from another experiment by Anindo Ghosh referenced (http://electronics.stackexchange.com/questions/71873/why-is-my-msgeq7-circuit-giving-arduino-analog-readings-that-are-so-high).
 
 Here is the demo results with the output on the terminal.  The left column represents the range for 1 kHz and right is 2.5 kHz.
 
@@ -58,4 +58,7 @@ Here is the demo results with the output on the terminal.  The left column repre
 ![Saturation at 1 kHz](/images/am_1.0khztone.png)
 
 ###Tone Generator with 2.5 kHz
-![Saturation at 1 kHz](/images/am_2.5khztone.png)
+![Saturation at 2.5 kHz](/images/am_2.5khztone.png)
+
+##May 1, 2015
+Today I'll be focusing on finalizing the report for the semester on my tasks and full implementation in software.  I also received confirmation fron OSH Park that my boards have returned from fabrication and have been shipped as I write this entry.  The goal today is to complete the look up table for the receive function based on signal input with verified output.
