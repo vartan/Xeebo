@@ -174,7 +174,7 @@ void UARTInit( uint32_t baudrate )
 		__NOP();
   
 	// USART mode
-	LPC_USART->LCR = 0x83; //enable parity, odd 					// 8-N-1 + enable access to Divisor latches
+	LPC_USART->LCR = 0x83;					// 8-N-1 + enable access to Divisor latches
 
 	// Baud rate
 	/* The following is calculated for 9600 baud on a 48M PCLK.
@@ -183,7 +183,7 @@ void UARTInit( uint32_t baudrate )
 	 * Use this form to calculate values: http://prototalk.net/forums/showthread.php?t=11
 	 */
 	LPC_USART->DLM = 0;
-	LPC_USART->DLL = 250;	
+	LPC_USART->DLL = 250/2;	
 	LPC_USART->FDR = 0x41;		// MULVAL = 4, DIVADDVAL = 1
 	LPC_USART->FCR = 0x07;		// Enable and reset TX and RX FIFO
 

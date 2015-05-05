@@ -19,7 +19,16 @@
 ** Returned value:      None
 ** 
 *****************************************************************************/
-
+extern void doNothingHandler(struct message_type *handler, uint8_t *buffer);
+extern void updateMotionVectorHandler(struct message_type *handler, uint8_t *buffer);
+struct message_type message_handlers[MAX_MESSAGE_HANDLER+1] = {
+    /*0x00*/ {.id=MSG_FLUSH,      .sendLength= 0, .receiveLength=0, .receiveHandler=&doNothingHandler},
+    /*0x01*/ {.id=MSG_PING,       .sendLength= 1, .receiveLength=1, .receiveHandler=&doNothingHandler},
+    /*0x02*/ {.id=MSG_PONG,       .sendLength= 1, .receiveLength=1, .receiveHandler=&doNothingHandler},
+    /*0x03*/ {.id=MSG_NEW_MOTION, .sendLength= 0, .receiveLength=6, .receiveHandler=&doNothingHandler},
+    /*0x04*/ {.id=MSG_GET_MOTION, .sendLength= 6, .receiveLength=0, .receiveHandler=&updateMotionVectorHandler},
+    /*0x05*/ {.id=MSG_GET_BATTERY,.sendLength= 1, .receiveLength=0, .receiveHandler=&doNothingHandler},
+};
 void UART_IRQHandler()
 {
 		uint8_t rx;

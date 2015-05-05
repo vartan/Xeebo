@@ -15,15 +15,9 @@
 #include "message_queue.h"
 #include "uart.h"
 void doNothingHandler (struct message_type *handler, uint8_t *buffer) {
-  uint8_t message[] = "aaaaaaaaaaaaa";
+  uint8_t message[] = "abcdefgabcdefgabcdefgabcdefgabcdefg";
 	UARTSend(&message[0], 12);
 }
-struct message_type message_handlers[MAX_MESSAGE_HANDLER+1] = {
-    {.id = 0, .sendLength = 0, .receiveLength  = 1, .receiveHandler = &doNothingHandler         },
-    {.id = 1, .sendLength = 0, .receiveLength  = 0, .receiveHandler = &doNothingHandler         },
-    {.id = 2, .sendLength = 0, .receiveLength  = 0, .receiveHandler = &doNothingHandler         },
-    {.id = 3, .sendLength = 0, .receiveLength  = 6, .receiveHandler = &updateMotionVectorHandler}
-};
 
 void simulateMessageReceive(void) {
 
@@ -43,10 +37,11 @@ void simulateMessageReceive(void) {
 int main() {
     struct message_queue_item *incomingMessage;
     struct MotorDriver *motors;
-    UARTInit(9600);
+
+	UARTInit(9600);
 
     // Initialize motor pins and set speeds to zero
-    motors = initMotorDrivers();
+    //motors = initMotorDrivers();
     // debugging code, test the message queue
     //simulateMessageReceive();
     // initialize uart with baud rate 9600

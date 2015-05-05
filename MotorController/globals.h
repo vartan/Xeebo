@@ -5,13 +5,13 @@
  *      Author: vartan
  */
 #include <stdint.h>
-#ifndef MOTORCONTROLLER_GLOBALS_H_
-#define MOTORCONTROLLER_GLOBALS_H
+#ifndef GLOBALS_H
+#define GLOBALS_H
 
 #define SYSTEM_CLOCK 		12000000*4
 
 #define PWM_FREQUENCY 		100
-#define MAX_MESSAGE_HANDLER  3
+#define MAX_MESSAGE_HANDLER  5
 
 
 /** PWM resolution step */
