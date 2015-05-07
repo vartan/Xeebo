@@ -20,53 +20,33 @@ for(var message_name in messageList) {
   if(mp.receiveHandler !== null) {
     mp.messageHandler.on("message", mp.receiveHandler);
   }
-
 }
-// Add message with ID 0x61 (ASCII 'a'). 
-var testHandler = messageHandler.addHandler({
-  id:       ascii('a'),
-  name:     "'a' handler", 
-  length:   4, 
-}).on("message", logMessageHandler).on("message", sendNewLine);
+Q.when(messageHandler.open())
+  .then(sendNewMotion( {
+      surge:100,
+      sway:0,
+      heave:0,
+      roll:0,
+      yaw:0,
+      pitch:0
+    }));
 
-// Add message with ID 0x62 (ASCII 'b')
-var testHandler2 = messageHandler.addHandler({
-  id:       ascii('b'), 
-  name:     "'b' handler",
-  length:   5, 
-}).on("message", logMessageHandler).on("message", sendNewLine);
 
-// Add message with ID 0x65 (ascii 'e')
-var testHandler3 = messageHandler.addHandler({
-  id:       ascii('e'), 
-  name:     "exit handler",
-  length:   3, 
-}).on("message", sendNewLine);
+function sendNewMotion(motionData) {
 
-// Add to message handler, if the payload is "xit", then send a newline, then
-// exit the program.
-testHandler3.on("message", function(event) {
-  if (event.data.toString() === "xit") {
-    Q.fcall(messageHandler.sendMessage("Exiting...\r\n"))
-    .delay(10)
-    .then(process.exit);
 
+      //String.fromCharCode(messageList.NEW_MOTION.id)
+      return messageHandler.sendMessage(new Buffer(
+        messageList.NEW_MOTION.id,
+          motionData.surge,
+          motionData.sway,
+          motionData.heave,
+          motionData.roll,
+          motionData.yaw,
+          motionData.pitch
+        ));
   }
-});
-
-
-
-
-//Example sequence of events:
-//1. ensure message handler is open
-//2. send "test" message
-//3. report how many characters were sent 
-//4. receive 'a' message
-//5. console log a message back to user
-//6. receive 'b' message.
-//7. console log b message back to user
-//8. log "finished"
-
+/*
 Q.when(messageHandler.open())                                                //1
   .then(messageHandler.sendMessage("test\r\n"))                              //2
   .then(function handleSentMessage(messageLength) {                          //3
@@ -84,7 +64,7 @@ Q.when(messageHandler.open())                                                //1
     console.log("Finished!");
   })
   .catch(function(error){console.log(error);});
-
+*/
 
 
 /*************************** Misc. Functions Below ***************************/
