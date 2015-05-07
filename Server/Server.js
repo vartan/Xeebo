@@ -33,18 +33,15 @@ Q.when(messageHandler.open())
 
 
 function sendNewMotion(motionData) {
-
-
-      //String.fromCharCode(messageList.NEW_MOTION.id)
-      return messageHandler.sendMessage(new Buffer(
-        messageList.NEW_MOTION.id,
-          motionData.surge,
-          motionData.sway,
-          motionData.heave,
-          motionData.roll,
-          motionData.yaw,
-          motionData.pitch
-        ));
+  return messageHandler.sendMessage(new Buffer([
+    messageList.NEW_MOTION.id,
+      motionData.surge,
+      motionData.sway,
+      motionData.heave,
+      motionData.roll,
+      motionData.yaw,
+      motionData.pitch
+    ]));
   }
 /*
 Q.when(messageHandler.open())                                                //1
