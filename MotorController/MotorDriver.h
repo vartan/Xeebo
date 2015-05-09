@@ -50,7 +50,32 @@ struct MotorDriver *initMotorDrivers(void);
  */
 void motorDriverPWMCycle(void);
 
+/**
+ * Update Motion Vector Handler
+ * @param handler Pointer to MotionVector info being handled
+ * @param buffer  Pointer to message.
+ */
 void updateMotionVectorHandler(struct message_type *handler, uint8_t *buffer);
 
 
+/**
+ * Motors Driven By Vector
+ * @param  motor1                Pointer to first motor
+ * @param  motor2                Pointer to second motor
+ * @param  vector1               First vector which modifies the motor
+ * @param  vector1motor1modifier How vector 1 modifies motor 1 (most likely 
+ *                               -1 or 1 depending on motor direction)
+ * @param  vector1motor2modifier How vector 1 modifies motor 2 (most likely 
+ *                               -1 or 1 depending on motor direction)
+ * @param  vector2               Second vector which modifies the motor
+ * @param  vector2motor1modifier How vector 2 modifies motor 1 (most likely 
+ *                               -1 or 1 depending on motor direction)
+ * @param  vector2motor2modifier How vector 2 modifies motor 2 (most likely 
+ *                               -1 or 1 depending on motor direction)
+ * @return                       void
+ */
+void motorsDrivenByVectors(volatile int8_t *motor1, volatile int8_t *motor2, 
+        int8_t vector1, int8_t vector1motor1modifier, 
+        int8_t vector1motor2modifier, int8_t vector2, 
+        int8_t vector2motor1modifier, int8_t vector2motor2modifier);
 #endif /* MOTORDRIVER_H_ */

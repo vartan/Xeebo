@@ -1,6 +1,55 @@
 #!/usr/bin/env node
 "use strict";
 var Q = require("q");
+var cv = require('opencv');
+
+try {
+  var camera = new cv.VideoCapture(0);
+  //var window = new cv.NamedWindow('Video', 0)
+  var COLOR = [0, 255, 0]; // default red
+
+  setInterval(function() {
+    camera.read(function(err, im) {
+
+      im.detectObject(cv.FACE_CASCADE, {}, function(err, faces){
+          for (var i=0;i<faces.length; i++){
+            var face = faces[i];
+            var x = face.width/2+face.x;
+            var y = face.height/2+face.y;
+                  im.rectangle([face.x, face.y], [face.width, face.height], COLOR, 2);
+                  im.rectangle([x,y], [1,1], COLOR, 2);
+
+            var centerX = im.width()/2;
+            var centerY = im.height()/2;
+            var distX = Math.abs(centerX - x);
+            var distY = Math.abs(centerY - y);
+            //var dist = Math.sqrt(distX*distX+distY*distY);
+            if(distX < 50) {
+              console.log("X: center");
+            } else if(x > centerX) {
+              console.log("X: right");
+            } else {
+              console.log("X: left");
+            }
+            if(distY < 50) {
+              console.log("Y: center");
+            }else if(y > centerY) {
+              console.log("Y: bottom");
+            } else {
+              console.log("Y: top");
+            }
+          
+            console.log(x+ ", " + y);
+          }
+          im.save('./out.jpg');
+        });
+
+    });
+  }, 1000);
+  
+} catch (e){
+  console.log("Couldn't start camera:", e);
+}
 // Open a new message handler
 var serialIdentifier = process.argv[2] || "/dev/ttyUSB0";
 var messageHandler = require("serialmessages")(serialIdentifier);
