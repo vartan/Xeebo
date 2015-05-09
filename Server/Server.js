@@ -19,6 +19,13 @@ try {
     camera.read(function(err, im) {
 
       im.detectObject(cv.FACE_CASCADE, {}, function(err, faces){
+        if(faces.length == 0) {
+              motionData.pitch = 0;
+              motionData.yaw = 0;
+              updateMotion();
+
+          console.log("no face");
+        }
           for (var i=0;i<faces.length; i++){
             var face = faces[i];
             var x = face.width/2+face.x;
@@ -43,7 +50,7 @@ try {
               console.log("X: left");
               motionData.yaw = -100;
               updateMotion();
-            }
+            } 
             if(distY < 50) {
               console.log("Y: center");
               motionData.pitch = 0;
