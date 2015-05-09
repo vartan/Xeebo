@@ -37,3 +37,9 @@ At 14400 baud rate, my time is at 11252 ms.
 When the frequency is undetermined, a 'N' symbol is displayed.  On next iteration, I would like to add a parity correction bit to change the original data signal received.
 
 ![Unknown Bit](/images/am_rx1.0_test_N.png)
+
+##May 8, 2015
+
+###Testing Receive Board in Software
+Success receiving data by sending a 25-second 5-bit signal with start bit.  Timing is slightly off on the last data bit which results in higher error rate but there is enough samples to distinguish between frequencies.
+![Live Test](/images/RxBoardTest.mp4)
