@@ -2,7 +2,14 @@
 "use strict";
 var Q = require("q");
 var cv = require('opencv');
-
+var motionData = {
+      surge:30,
+      sway:0,
+      heave:0,
+      roll:0,
+      yaw:0,
+      pitch:0
+    };
 try {
   var camera = new cv.VideoCapture(0);
   //var window = new cv.NamedWindow('Video', 0)
@@ -26,17 +33,30 @@ try {
             //var dist = Math.sqrt(distX*distX+distY*distY);
             if(distX < 50) {
               console.log("X: center");
+              motionData.yaw = 0;
+              updateMotion();
             } else if(x > centerX) {
               console.log("X: right");
+              motionData.yaw = 100;
+              updateMotion();
             } else {
               console.log("X: left");
+              motionData.yaw = -100;
+              updateMotion();
             }
             if(distY < 50) {
               console.log("Y: center");
+              motionData.pitch = 0;
+              updateMotion();
             }else if(y > centerY) {
               console.log("Y: bottom");
+              motionData.pitch = 100;
+              updateMotion();
             } else {
               console.log("Y: top");
+              motionData.pitch = -100;
+              updateMotion();
+
             }
           
             console.log(x+ ", " + y);
@@ -45,14 +65,14 @@ try {
         });
 
     });
-  }, 1000);
+  }, 250);
   
 } catch (e){
   console.log("Couldn't start camera:", e);
 }
 // Open a new message handler
 var serialIdentifier = process.argv[2] || "/dev/ttyUSB0";
-var messageHandler = require("serialmessages")(serialIdentifier);
+var messageHandler = require("serialmessages")(serialIdentifier, {baudrate:19200});
 
 var messageList = getMessageProperties();
 
@@ -71,15 +91,12 @@ for(var message_name in messageList) {
   }
 }
 Q.when(messageHandler.open())
-  .then(sendNewMotion( {
-      surge:100,
-      sway:0,
-      heave:0,
-      roll:0,
-      yaw:0,
-      pitch:0
-    }));
+  .then(sendNewMotion(motionData));
 
+function updateMotion() {
+  Q.when(messageHandler.open())
+  .then(sendNewMotion(motionData));
+}
 
 function sendNewMotion(motionData) {
   return messageHandler.sendMessage(new Buffer([
