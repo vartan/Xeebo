@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['globals_2eh',['globals.h',['../globals_8h.html',1,'']]]
+  ['buffer',['buffer',['../structmessage__queue__item.html#a7515e478fc29f59f154d81cffb136860',1,'message_queue_item']]]
 ];

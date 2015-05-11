@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['next',['next',['../structmessage__queue__item.html#aae78e57efd3a0732b6b7959475225a2a',1,'message_queue_item']]]
+  ['sendlength',['sendLength',['../structmessage__type.html#aa66265c619468a301ebfade0ac83ce5a',1,'message_type']]],
+  ['speed',['speed',['../struct_motor_driver.html#a575658b7271579e7b81b8cf73d20d3f4',1,'MotorDriver']]]
 ];

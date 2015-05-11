@@ -95,28 +95,31 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#define __message_handler_h__</span></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
 <div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="structmessage__queue__item.html">   20</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structmessage__queue__item.html">message_queue_item</a> {</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keyword">struct </span><a class="code" href="structmessage__type.html">message_type</a> *<a class="code" href="structmessage__type.html">message_type</a>;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    uint8_t *buffer;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keyword">struct </span><a class="code" href="structmessage__queue__item.html">message_queue_item</a> *next;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;};</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="message__queue_8h.html#abda50aa2224c1a523b2c797f016acf48">message_queue_has_next</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;uint8_t <a class="code" href="message__queue_8h.html#a14a0ccba4ac37938c0cff21a5ff55f35">message_queue_size</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keywordtype">void</span> <a class="code" href="message__queue_8h.html#a1a011b3c3fe10a128fbf2b237e3366cd">message_queue_push</a>(<span class="keyword">struct</span> <a class="code" href="structmessage__type.html">message_type</a> *<a class="code" href="structmessage__type.html">message_type</a>, uint8_t *message);</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keyword">struct </span><a class="code" href="structmessage__queue__item.html">message_queue_item</a> *<a class="code" href="message__queue_8h.html#a8e175b5d04135b0749badbf215a50095">message_queue_pop</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="structmessage__queue__item.html#ad6e074d3dd38910b1da53ccbdb89998e">   24</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="structmessage__type.html">message_type</a> *<a class="code" href="structmessage__queue__item.html#ad6e074d3dd38910b1da53ccbdb89998e">message_type</a>;</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="structmessage__queue__item.html#a7515e478fc29f59f154d81cffb136860">   28</a></span>&#160;    uint8_t *<a class="code" href="structmessage__queue__item.html#a7515e478fc29f59f154d81cffb136860">buffer</a>;</div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="structmessage__queue__item.html#aae78e57efd3a0732b6b7959475225a2a">   32</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="structmessage__queue__item.html">message_queue_item</a> *<a class="code" href="structmessage__queue__item.html#aae78e57efd3a0732b6b7959475225a2a">next</a>;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;};</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="message__queue_8h.html#abda50aa2224c1a523b2c797f016acf48">message_queue_has_next</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;uint8_t <a class="code" href="message__queue_8h.html#a14a0ccba4ac37938c0cff21a5ff55f35">message_queue_size</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="keywordtype">void</span> <a class="code" href="message__queue_8h.html#a1a011b3c3fe10a128fbf2b237e3366cd">message_queue_push</a>(<span class="keyword">struct</span> <a class="code" href="structmessage__type.html">message_type</a> *<a class="code" href="structmessage__type.html">message_type</a>, uint8_t *message);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="keyword">struct </span><a class="code" href="structmessage__queue__item.html">message_queue_item</a> *<a class="code" href="message__queue_8h.html#a8e175b5d04135b0749badbf215a50095">message_queue_pop</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="message__queue_8h_html_a1a011b3c3fe10a128fbf2b237e3366cd"><div class="ttname"><a href="message__queue_8h.html#a1a011b3c3fe10a128fbf2b237e3366cd">message_queue_push</a></div><div class="ttdeci">void message_queue_push(struct message_type *message_type, uint8_t *message)</div><div class="ttdef"><b>Definition:</b> message_queue.c:29</div></div>
 <div class="ttc" id="message__queue_8h_html_abda50aa2224c1a523b2c797f016acf48"><div class="ttname"><a href="message__queue_8h.html#abda50aa2224c1a523b2c797f016acf48">message_queue_has_next</a></div><div class="ttdeci">bool message_queue_has_next(void)</div><div class="ttdef"><b>Definition:</b> message_queue.c:23</div></div>
 <div class="ttc" id="structmessage__type_html"><div class="ttname"><a href="structmessage__type.html">message_type</a></div><div class="ttdef"><b>Definition:</b> message_handler.h:19</div></div>
+<div class="ttc" id="structmessage__queue__item_html_a7515e478fc29f59f154d81cffb136860"><div class="ttname"><a href="structmessage__queue__item.html#a7515e478fc29f59f154d81cffb136860">message_queue_item::buffer</a></div><div class="ttdeci">uint8_t * buffer</div><div class="ttdef"><b>Definition:</b> message_queue.h:28</div></div>
+<div class="ttc" id="structmessage__queue__item_html_ad6e074d3dd38910b1da53ccbdb89998e"><div class="ttname"><a href="structmessage__queue__item.html#ad6e074d3dd38910b1da53ccbdb89998e">message_queue_item::message_type</a></div><div class="ttdeci">struct message_type * message_type</div><div class="ttdef"><b>Definition:</b> message_queue.h:24</div></div>
 <div class="ttc" id="structmessage__queue__item_html"><div class="ttname"><a href="structmessage__queue__item.html">message_queue_item</a></div><div class="ttdef"><b>Definition:</b> message_queue.h:20</div></div>
+<div class="ttc" id="structmessage__queue__item_html_aae78e57efd3a0732b6b7959475225a2a"><div class="ttname"><a href="structmessage__queue__item.html#aae78e57efd3a0732b6b7959475225a2a">message_queue_item::next</a></div><div class="ttdeci">struct message_queue_item * next</div><div class="ttdef"><b>Definition:</b> message_queue.h:32</div></div>
 <div class="ttc" id="message__queue_8h_html_a8e175b5d04135b0749badbf215a50095"><div class="ttname"><a href="message__queue_8h.html#a8e175b5d04135b0749badbf215a50095">message_queue_pop</a></div><div class="ttdeci">struct message_queue_item * message_queue_pop(void)</div><div class="ttdef"><b>Definition:</b> message_queue.c:45</div></div>
 <div class="ttc" id="message__queue_8h_html_a14a0ccba4ac37938c0cff21a5ff55f35"><div class="ttname"><a href="message__queue_8h.html#a14a0ccba4ac37938c0cff21a5ff55f35">message_queue_size</a></div><div class="ttdeci">uint8_t message_queue_size(void)</div><div class="ttdef"><b>Definition:</b> message_queue.c:26</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun May 10 2015 21:26:29 for Zeebo Firmware by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun May 10 2015 22:01:16 for Zeebo Firmware by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

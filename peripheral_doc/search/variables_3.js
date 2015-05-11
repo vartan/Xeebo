@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['id',['id',['../structmessage__type.html#af80c32a93bf1f1326d7165aec45d7813',1,'message_type']]]
+  ['next',['next',['../structmessage__queue__item.html#aae78e57efd3a0732b6b7959475225a2a',1,'message_queue_item']]]
 ];

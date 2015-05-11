@@ -96,28 +96,77 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:af80c32a93bf1f1326d7165aec45d7813"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af80c32a93bf1f1326d7165aec45d7813"></a>
-uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>id</b></td></tr>
+<tr class="memitem:af80c32a93bf1f1326d7165aec45d7813"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmessage__type.html#af80c32a93bf1f1326d7165aec45d7813">id</a></td></tr>
 <tr class="separator:af80c32a93bf1f1326d7165aec45d7813"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa66265c619468a301ebfade0ac83ce5a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa66265c619468a301ebfade0ac83ce5a"></a>
-uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>sendLength</b></td></tr>
+<tr class="memitem:aa66265c619468a301ebfade0ac83ce5a"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmessage__type.html#aa66265c619468a301ebfade0ac83ce5a">sendLength</a></td></tr>
 <tr class="separator:aa66265c619468a301ebfade0ac83ce5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3dcf5c96397ee3edd67f66d73942866f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3dcf5c96397ee3edd67f66d73942866f"></a>
-uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>receiveLength</b></td></tr>
+<tr class="memitem:a3dcf5c96397ee3edd67f66d73942866f"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmessage__type.html#a3dcf5c96397ee3edd67f66d73942866f">receiveLength</a></td></tr>
 <tr class="separator:a3dcf5c96397ee3edd67f66d73942866f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aee6a14269b7eb1ab0868774546c15bef"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aee6a14269b7eb1ab0868774546c15bef"></a>
-void(*&#160;</td><td class="memItemRight" valign="bottom"><b>receiveHandler</b> )(struct <a class="el" href="structmessage__type.html">message_type</a> *handler, uint8_t *buffer)</td></tr>
+<tr class="memitem:aee6a14269b7eb1ab0868774546c15bef"><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmessage__type.html#aee6a14269b7eb1ab0868774546c15bef">receiveHandler</a> )(struct <a class="el" href="structmessage__type.html">message_type</a> *handler, uint8_t *buffer)</td></tr>
 <tr class="separator:aee6a14269b7eb1ab0868774546c15bef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Message handler: Defines the id, and lengths of message protocol. </p>
-</div><hr/>The documentation for this struct was generated from the following file:<ul>
+</div><h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="af80c32a93bf1f1326d7165aec45d7813"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t message_type::id</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Message ID </p>
+
+</div>
+</div>
+<a class="anchor" id="aee6a14269b7eb1ab0868774546c15bef"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void(* message_type::receiveHandler) (struct <a class="el" href="structmessage__type.html">message_type</a> *handler, uint8_t *buffer)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The message handler routine </p>
+
+</div>
+</div>
+<a class="anchor" id="a3dcf5c96397ee3edd67f66d73942866f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t message_type::receiveLength</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>How many bytes an incoming message should be </p>
+
+</div>
+</div>
+<a class="anchor" id="aa66265c619468a301ebfade0ac83ce5a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t message_type::sendLength</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>How many bytes the outgoing message should be </p>
+
+</div>
+</div>
+<hr/>The documentation for this struct was generated from the following file:<ul>
 <li><a class="el" href="message__handler_8h_source.html">message_handler.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun May 10 2015 21:26:29 for Zeebo Firmware by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun May 10 2015 22:01:16 for Zeebo Firmware by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

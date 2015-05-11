@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['uart_2eh',['uart.h',['../uart_8h.html',1,'']]],
-  ['updatemotionvectorhandler',['updateMotionVectorHandler',['../_motor_driver_8c.html#a6ed6f9bd927e75942773601c206206d8',1,'updateMotionVectorHandler(struct message_type *handler, uint8_t *buffer):&#160;MotorDriver.c'],['../_motor_driver_8h.html#a6ed6f9bd927e75942773601c206206d8',1,'updateMotionVectorHandler(struct message_type *handler, uint8_t *buffer):&#160;MotorDriver.c']]]
+  ['receivehandler',['receiveHandler',['../structmessage__type.html#aee6a14269b7eb1ab0868774546c15bef',1,'message_type']]],
+  ['receivelength',['receiveLength',['../structmessage__type.html#a3dcf5c96397ee3edd67f66d73942866f',1,'message_type']]],
+  ['robot_5fmotor_5fconfig',['robot_motor_config',['../structrobot__motor__config.html',1,'']]]
 ];

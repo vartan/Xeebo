@@ -1,6 +1,27 @@
 var searchData=
 [
-  ['pwm_5ffrequency',['PWM_FREQUENCY',['../globals_8h.html#a6177eb86ee16a1956c81749e4e332cf0',1,'globals.h']]],
-  ['pwm_5fres_5fstep',['PWM_RES_STEP',['../globals_8h.html#a82d0868d573ff227829ff74a8f395997',1,'globals.h']]],
-  ['pwmport',['pwmPort',['../struct_motor_driver.html#ab265ded119b88e23a0f9581121feb11e',1,'MotorDriver']]]
+  ['main_2ec',['main.c',['../main_8c.html',1,'']]],
+  ['max_5fmessage_5fhandler',['MAX_MESSAGE_HANDLER',['../globals_8h.html#a3d8c904baf38670d41b304b279f04b92',1,'globals.h']]],
+  ['message_5fhandler_2ec',['message_handler.c',['../message__handler_8c.html',1,'']]],
+  ['message_5fhandler_2eh',['message_handler.h',['../message__handler_8h.html',1,'']]],
+  ['message_5fhandlers',['message_handlers',['../message__handler_8c.html#a458bc07d58ed4faaa55507f869bdc1d5',1,'message_handlers():&#160;message_handler.c'],['../message__handler_8h.html#ae4c9f5c584191c1c55b045fb2ce46b92',1,'message_handlers():&#160;message_handler.c']]],
+  ['message_5fqueue_2ec',['message_queue.c',['../message__queue_8c.html',1,'']]],
+  ['message_5fqueue_2eh',['message_queue.h',['../message__queue_8h.html',1,'']]],
+  ['message_5fqueue_5fhas_5fnext',['message_queue_has_next',['../message__queue_8c.html#abc45d97f7bcdfc9453def216dd49400a',1,'message_queue_has_next():&#160;message_queue.c'],['../message__queue_8h.html#abda50aa2224c1a523b2c797f016acf48',1,'message_queue_has_next(void):&#160;message_queue.c']]],
+  ['message_5fqueue_5fitem',['message_queue_item',['../structmessage__queue__item.html',1,'']]],
+  ['message_5fqueue_5fpop',['message_queue_pop',['../message__queue_8c.html#a67a72ed4302bf830784f14d5c5e06e70',1,'message_queue_pop():&#160;message_queue.c'],['../message__queue_8h.html#a8e175b5d04135b0749badbf215a50095',1,'message_queue_pop(void):&#160;message_queue.c']]],
+  ['message_5fqueue_5fpush',['message_queue_push',['../message__queue_8c.html#a1a011b3c3fe10a128fbf2b237e3366cd',1,'message_queue_push(struct message_type *message_type, uint8_t *message):&#160;message_queue.c'],['../message__queue_8h.html#a1a011b3c3fe10a128fbf2b237e3366cd',1,'message_queue_push(struct message_type *message_type, uint8_t *message):&#160;message_queue.c']]],
+  ['message_5fqueue_5fsize',['message_queue_size',['../message__queue_8c.html#aac58d9d971214494503cd639493a6315',1,'message_queue_size():&#160;message_queue.c'],['../message__queue_8h.html#a14a0ccba4ac37938c0cff21a5ff55f35',1,'message_queue_size(void):&#160;message_queue.c']]],
+  ['message_5ftype',['message_type',['../structmessage__type.html',1,'message_type'],['../structmessage__queue__item.html#ad6e074d3dd38910b1da53ccbdb89998e',1,'message_queue_item::message_type()']]],
+  ['motordriver',['MotorDriver',['../struct_motor_driver.html',1,'']]],
+  ['motordriver_2ec',['MotorDriver.c',['../_motor_driver_8c.html',1,'']]],
+  ['motordriver_2eh',['MotorDriver.h',['../_motor_driver_8h.html',1,'']]],
+  ['motordriverpwmcycle',['motorDriverPWMCycle',['../_motor_driver_8c.html#a2ece1a18effd0c680663a358e88dcc7f',1,'motorDriverPWMCycle():&#160;MotorDriver.c'],['../_motor_driver_8h.html#aa597ebb082fde886b51a49c124a94095',1,'motorDriverPWMCycle(void):&#160;MotorDriver.c']]],
+  ['motorsdrivenbyvectors',['motorsDrivenByVectors',['../_motor_driver_8c.html#a7da8ef93459e2111e887499e020a10a5',1,'motorsDrivenByVectors(volatile int8_t *motor1, volatile int8_t *motor2, int8_t vector1, int8_t vector1motor1modifier, int8_t vector1motor2modifier, int8_t vector2, int8_t vector2motor1modifier, int8_t vector2motor2modifier):&#160;MotorDriver.c'],['../_motor_driver_8h.html#a7da8ef93459e2111e887499e020a10a5',1,'motorsDrivenByVectors(volatile int8_t *motor1, volatile int8_t *motor2, int8_t vector1, int8_t vector1motor1modifier, int8_t vector1motor2modifier, int8_t vector2, int8_t vector2motor1modifier, int8_t vector2motor2modifier):&#160;MotorDriver.c']]],
+  ['msg_5fflush',['MSG_FLUSH',['../message__handler_8h.html#a27a146025a34b6d6f3d54a800db93a8bae21f1fc394aac9fdb1103b2bbc75a575',1,'message_handler.h']]],
+  ['msg_5fget_5fbattery',['MSG_GET_BATTERY',['../message__handler_8h.html#a27a146025a34b6d6f3d54a800db93a8ba94b9b98c2cafb6e0f1c32da2c253891b',1,'message_handler.h']]],
+  ['msg_5fget_5fmotion',['MSG_GET_MOTION',['../message__handler_8h.html#a27a146025a34b6d6f3d54a800db93a8ba76a5a5c363cbd57009bf767b052d72be',1,'message_handler.h']]],
+  ['msg_5fnew_5fmotion',['MSG_NEW_MOTION',['../message__handler_8h.html#a27a146025a34b6d6f3d54a800db93a8baf9acf15e82f1b131f7dfb74775b1d443',1,'message_handler.h']]],
+  ['msg_5fping',['MSG_PING',['../message__handler_8h.html#a27a146025a34b6d6f3d54a800db93a8baadfe01bd4c9e50a1930619703ba3217d',1,'message_handler.h']]],
+  ['msg_5fpong',['MSG_PONG',['../message__handler_8h.html#a27a146025a34b6d6f3d54a800db93a8ba0cff54efa34be5ac1c92f3df685e77c8',1,'message_handler.h']]]
 ];

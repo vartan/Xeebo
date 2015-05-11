@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['themotors',['theMotors',['../unionthe_motors.html',1,'']]]
+  ['robot_5fmotor_5fconfig',['robot_motor_config',['../structrobot__motor__config.html',1,'']]]
 ];

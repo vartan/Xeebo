@@ -1,10 +1,10 @@
 var indexSectionsWithContent =
 {
-  0: "gimpstu",
-  1: "mt",
+  0: "bgimnprstu",
+  1: "mrt",
   2: "gmtu",
   3: "imu",
-  4: "ps",
+  4: "bimnprs",
   5: "s",
   6: "m",
   7: "mps"

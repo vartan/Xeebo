@@ -96,26 +96,63 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:ad6e074d3dd38910b1da53ccbdb89998e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad6e074d3dd38910b1da53ccbdb89998e"></a>
-struct <a class="el" href="structmessage__type.html">message_type</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>message_type</b></td></tr>
+<tr class="memitem:ad6e074d3dd38910b1da53ccbdb89998e"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structmessage__type.html">message_type</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmessage__queue__item.html#ad6e074d3dd38910b1da53ccbdb89998e">message_type</a></td></tr>
 <tr class="separator:ad6e074d3dd38910b1da53ccbdb89998e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7515e478fc29f59f154d81cffb136860"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7515e478fc29f59f154d81cffb136860"></a>
-uint8_t *&#160;</td><td class="memItemRight" valign="bottom"><b>buffer</b></td></tr>
+<tr class="memitem:a7515e478fc29f59f154d81cffb136860"><td class="memItemLeft" align="right" valign="top">uint8_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmessage__queue__item.html#a7515e478fc29f59f154d81cffb136860">buffer</a></td></tr>
 <tr class="separator:a7515e478fc29f59f154d81cffb136860"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aae78e57efd3a0732b6b7959475225a2a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aae78e57efd3a0732b6b7959475225a2a"></a>
-struct <a class="el" href="structmessage__queue__item.html">message_queue_item</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>next</b></td></tr>
+<tr class="memitem:aae78e57efd3a0732b6b7959475225a2a"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structmessage__queue__item.html">message_queue_item</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmessage__queue__item.html#aae78e57efd3a0732b6b7959475225a2a">next</a></td></tr>
 <tr class="separator:aae78e57efd3a0732b6b7959475225a2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Message Queue Item</p>
 <p>A single message to be handled </p>
-</div><hr/>The documentation for this struct was generated from the following file:<ul>
+</div><h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="a7515e478fc29f59f154d81cffb136860"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t* message_queue_item::buffer</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>String containing the contents of the message </p>
+
+</div>
+</div>
+<a class="anchor" id="ad6e074d3dd38910b1da53ccbdb89998e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct <a class="el" href="structmessage__type.html">message_type</a>* message_queue_item::message_type</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Description of the type of message </p>
+
+</div>
+</div>
+<a class="anchor" id="aae78e57efd3a0732b6b7959475225a2a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct <a class="el" href="structmessage__queue__item.html">message_queue_item</a>* message_queue_item::next</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>A pointer to the next message (if applicable) </p>
+
+</div>
+</div>
+<hr/>The documentation for this struct was generated from the following file:<ul>
 <li><a class="el" href="message__queue_8h_source.html">message_queue.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun May 10 2015 21:26:29 for Zeebo Firmware by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun May 10 2015 22:01:16 for Zeebo Firmware by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>
