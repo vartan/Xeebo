@@ -43,4 +43,7 @@ When the frequency is undetermined, a 'N' symbol is displayed.  On next iteratio
 ###Testing Receive Board in Software
 Success receiving data by sending a 25-second 5-bit signal with start bit.  Timing is slightly off on the last data bit which results in higher error rate but there is enough samples to distinguish between frequencies.
 
-[![Live Software Testing](/images/am_thumbnail.png)](https://youtu.be/AyZgAijJ45s "Live Software Testing")
+[![Live Software Testing Rx](/images/am_thumbnail.png)](https://youtu.be/AyZgAijJ45s "Live Software Testing Rx")
+
+###Testing Transmit Board in Software
+[![Live Software Testing Tx](/images/Tx_Board.jpg)](http://youtu.be/gSTx10Q1ziU "Live Software Testing Tx")
