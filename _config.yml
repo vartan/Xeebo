@@ -5,8 +5,8 @@ description: > # this means to ignore newlines until "baseurl:"
   Zeebo is a AUV being developed by students at California State University, Long Beach.
 # Build settings
 safe: true
-baseurl: "" # the subpath of your site, e.g. /blog/
-url: "http://mvartan.com/Xeebo" # the base hostname & protocol for your site
+baseurl: "/Xeebo/" # the subpath of your site, e.g. /blog/
+url: "http://mvartan.com" # the base hostname & protocol for your site
 #twitter_username: mwvartan
 #github_username:  vartan
 permalink: "/:categories/:year/:month/:day/:title/"
